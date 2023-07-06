@@ -20,6 +20,7 @@ import esbuild from 'esbuild';
 import PubAdsPlugin from 'lighthouse-plugin-publisher-ads';
 // @ts-expect-error: plugin has no types.
 import SoftNavPlugin from 'lighthouse-plugin-soft-navigation';
+import * as terser from 'terser';
 
 import * as plugins from './esbuild-plugins.js';
 import {Runner} from '../core/runner.js';
@@ -153,7 +154,8 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
     format: 'iife',
     charset: 'utf8',
     bundle: true,
-    minify: opts.minify,
+    // minify: opts.minify,
+    minify: false,
     treeShaking: true,
     sourcemap: DEBUG,
     banner: {js: banner},
@@ -302,7 +304,14 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
     ],
   });
 
-  await fs.promises.writeFile(result.outputFiles[0].path, result.outputFiles[0].text);
+  // Ideally we'd let esbuild minify, but we need to disable variable name mangling otherwise
+  // our usage of pageFunctions breaks. For now, defer to terser.
+  let code = result.outputFiles[0].text;
+  if (opts.minify) {
+    code = (await terser.minify(result.outputFiles[0].text, {mangle: false})).code;
+  }
+
+  await fs.promises.writeFile(result.outputFiles[0].path, code);
 }
 
 /**

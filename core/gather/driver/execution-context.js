@@ -109,6 +109,7 @@ class ExecutionContext {
         globalThis.__lighthouseExecutionContextUniqueIdentifier =
           ${uniqueExecutionContextIdentifier};
         var s=(r,e)=>Object.defineProperty(r,"name",{value:e,configurable:!0});
+        var __name=(fn)=>fn;
         return new Promise(function (resolve) {
           return Promise.resolve()
             .then(_ => ${expression})

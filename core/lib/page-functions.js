@@ -1,7 +1,3 @@
-// TODO:
-// Make classnames...
-// or....manually keep names ...
-
 /**
  * @license Copyright 2018 The Lighthouse Authors. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -51,9 +47,6 @@ function wrapRuntimeEvalErrorInBrowser(err) {
     stack: err.stack,
   };
 }
-// Object.defineProperty(wrapRuntimeEvalErrorInBrowser, 'name', {
-//   value: 'wrapRuntimeEvalErrorInBrowser',
-// });
 
 /**
  * @template {string} T
@@ -86,9 +79,6 @@ function getElementsInDocument(selector) {
 
   return results;
 }
-// Object.defineProperty(getElementsInDocument, 'name', {
-//   value: 'getElementsInDocument',
-// });
 
 /**
  * Gets the opening tag text of the given node.
@@ -201,8 +191,7 @@ function computeBenchmarkIndex() {
    * The division by 10 is to keep similar magnitudes to an earlier version of BenchmarkIndex that
    * used a string length of 100000 instead of 10000.
    */
-  let benchmarkIndexGC;
-  {
+  function benchmarkIndexGC() {
     const start = Date.now();
     let iterations = 0;
 
@@ -215,7 +204,7 @@ function computeBenchmarkIndex() {
     }
 
     const durationInSeconds = (Date.now() - start) / 1000;
-    benchmarkIndexGC = Math.round(iterations / 10 / durationInSeconds);
+    return Math.round(iterations / 10 / durationInSeconds);
   }
 
   /**
@@ -223,8 +212,7 @@ function computeBenchmarkIndex() {
    * The returned index is the number of times per second a copy can be made, divided by 10.
    * The division by 10 is to keep similar magnitudes to the GC-dependent version.
    */
-  let benchmarkIndexNoGC;
-  {
+  function benchmarkIndexNoGC() {
     const arrA = [];
     const arrB = [];
     for (let i = 0; i < 100000; i++) arrA[i] = arrB[i] = i;
@@ -246,11 +234,11 @@ function computeBenchmarkIndex() {
     }
 
     const durationInSeconds = (Date.now() - start) / 1000;
-    benchmarkIndexNoGC = Math.round(iterations / 10 / durationInSeconds);
+    return Math.round(iterations / 10 / durationInSeconds);
   }
 
   // The final BenchmarkIndex is a simple average of the two components.
-  return (benchmarkIndexGC + benchmarkIndexNoGC) / 2;
+  return (benchmarkIndexGC() + benchmarkIndexNoGC()) / 2;
 }
 
 /**
@@ -263,6 +251,30 @@ function computeBenchmarkIndex() {
  * @return {string}
  */
 function getNodePath(node) {
+  // For our purposes, there's no worthwhile difference between shadow root and document fragment
+  // We can consider them entirely synonymous.
+  /** @param {Node} node @return {node is ShadowRoot} */
+  const isShadowRoot = node => node.nodeType === Node.DOCUMENT_FRAGMENT_NODE;
+  /** @param {Node} node */
+  const getNodeParent = node => isShadowRoot(node) ? node.host : node.parentNode;
+
+  /** @param {Node} node @return {number|'a'} */
+  function getNodeIndex(node) {
+    if (isShadowRoot(node)) {
+      // User-agent shadow roots get 'u'. Non-UA shadow roots get 'a'.
+      return 'a';
+    }
+    let index = 0;
+    let prevNode;
+    while (prevNode = node.previousSibling) { // eslint-disable-line no-cond-assign
+      node = prevNode;
+      // skip empty text nodes
+      if (node.nodeType === Node.TEXT_NODE && (node.nodeValue || '').trim().length === 0) continue;
+      index++;
+    }
+    return index;
+  }
+
   /** @type {Node|null} */
   let currentNode = node;
   const path = [];
@@ -274,43 +286,6 @@ function getNodePath(node) {
   path.reverse();
   return path.join(',');
 }
-
-// For our purposes, there's no worthwhile difference between shadow root and document fragment
-// We can consider them entirely synonymous.
-/** @param {Node} node @return {node is ShadowRoot} */
-const isShadowRoot = node => node.nodeType === Node.DOCUMENT_FRAGMENT_NODE;
-/** @param {Node} node */
-const getNodeParent = node => isShadowRoot(node) ? node.host : node.parentNode;
-// Object.defineProperty(getNodeParent, 'name', {
-//   value: 'getNodeParent',
-// });
-
-/** @param {Node} node @return {number|'a'} */
-function getNodeIndex(node) {
-  if (isShadowRoot(node)) {
-    // User-agent shadow roots get 'u'. Non-UA shadow roots get 'a'.
-    return 'a';
-  }
-  let index = 0;
-  let prevNode;
-  while (prevNode = node.previousSibling) {
-    node = prevNode;
-    // skip empty text nodes
-    if (node.nodeType === Node.TEXT_NODE && (node.nodeValue || '').trim().length === 0) continue;
-    index++;
-  }
-  return index;
-}
-
-/** @type {string} */
-const getNodePathRawString = getNodePath.toString();
-getNodePath.toString = () => `function getNodePath(element) {
-  const isShadowRoot = ${isShadowRoot}
-  const getNodeParent = ${getNodeParent}
-  ${getNodeIndex}
-  return (${getNodePathRawString})(element);
-}`;
-
 
 /**
  * @param {Element} element
@@ -389,9 +364,6 @@ function isPositionFixed(element) {
   }
   return false;
 }
-// Object.defineProperty(isPositionFixed, 'name', {
-//   value: 'isPositionFixed',
-// });
 
 /**
  * Generate a human-readable label for the given element, based on end-user facing
@@ -419,9 +391,6 @@ function getNodeLabel(element) {
   }
   return null;
 }
-// Object.defineProperty(getNodeLabel, 'name', {
-//   value: 'getNodeLabel',
-// });
 
 /**
  * @param {Element} element
@@ -441,9 +410,6 @@ function getBoundingClientRect(element) {
     height: Math.round(rect.height),
   };
 }
-// Object.defineProperty(getBoundingClientRect, 'name', {
-//   value: 'getBoundingClientRect',
-// });
 
 /**
  * RequestIdleCallback shim that calculates the remaining deadline time in order to avoid a potential lighthouse
@@ -480,9 +446,6 @@ function wrapRequestIdleCallback(cpuSlowdownMultiplier) {
     return 'function requestIdleCallback() { [native code] }';
   };
 }
-// Object.defineProperty(wrapRequestIdleCallback, 'name', {
-//   value: 'wrapRequestIdleCallback',
-// });
 
 /**
  * @param {Element|ShadowRoot} element
@@ -539,9 +502,6 @@ function getNodeDetails(element) {
 
   return details;
 }
-// Object.defineProperty(getNodeDetails, 'name', {
-//   value: 'getNodeDetails',
-// });
 
 /**
  *

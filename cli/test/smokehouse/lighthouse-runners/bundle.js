@@ -39,7 +39,7 @@ if (!isMainThread && parentPort) {
       parentPort?.postMessage({type: 'result', value});
     } catch (err) {
       console.error(err);
-      parentPort?.postMessage({type: 'error', value: err});
+      parentPort?.postMessage({type: 'error', value: err.toString()});
     }
   })();
 }
@@ -139,7 +139,7 @@ async function runLighthouse(url, config, testRunnerOptions = {}) {
   }
 
   const result = workerResponse.value;
-  if (!result.lhr || !result.assetsDir) {
+  if (result.type === 'error' || !result.lhr || !result.assetsDir) {
     throw new Error(`invalid response from worker:\n${JSON.stringify(result, null, 2)}`);
   }
 
