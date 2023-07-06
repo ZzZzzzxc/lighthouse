@@ -8,12 +8,13 @@ import assert from 'assert/strict';
 
 import jsdom from 'jsdom';
 
-import {Util} from '../../renderer/util.js';
-import {I18n} from '../../renderer/i18n.js';
+import {ReportUtils} from '../../renderer/report-utils.js';
+import {I18nFormatter} from '../../renderer/i18n-formatter.js';
 import {DOM} from '../../renderer/dom.js';
 import {DetailsRenderer} from '../../renderer/details-renderer.js';
 import {CategoryRenderer} from '../../renderer/category-renderer.js';
 import {readJson} from '../../../core/test/test-utils.js';
+import {Globals} from '../../renderer/report-globals.js';
 
 const sampleResultsOrig = readJson('../../../core/test/results/sample_v2.json', import.meta);
 
@@ -22,18 +23,22 @@ describe('CategoryRenderer', () => {
   let sampleResults;
 
   before(() => {
-    Util.i18n = new I18n('en', {...Util.UIStrings});
+    Globals.apply({
+      providedStrings: {},
+      i18n: new I18nFormatter('en'),
+      reportJson: null,
+    });
 
     const {document} = new jsdom.JSDOM().window;
     const dom = new DOM(document);
     const detailsRenderer = new DetailsRenderer(dom);
     renderer = new CategoryRenderer(dom, detailsRenderer);
 
-    sampleResults = Util.prepareReportResult(sampleResultsOrig);
+    sampleResults = ReportUtils.prepareReportResult(sampleResultsOrig);
   });
 
   after(() => {
-    Util.i18n = undefined;
+    Globals.i18n = undefined;
   });
 
   it('renders an audit', () => {
@@ -296,7 +301,7 @@ describe('CategoryRenderer', () => {
       );
 
       const gauge = categoryDOM.querySelector('.lh-fraction__content');
-      assert.equal(gauge.textContent.trim(), '12/17', 'fraction is included');
+      assert.equal(gauge.textContent.trim(), '18/23', 'fraction is included');
 
       const score = categoryDOM.querySelector('.lh-category-header');
       const title = score.querySelector('.lh-fraction__label');
@@ -318,7 +323,8 @@ describe('CategoryRenderer', () => {
       const categoryDOM = renderer.render(categoryClone, sampleResults.categoryGroups);
 
       // All the group names in the config.
-      const groupNames = Array.from(new Set(auditRefs.map(ref => ref.group))).filter(Boolean);
+      const groupNames = Array.from(
+        new Set(auditRefs.map(ref => ref.group))).filter(n => Boolean(n) && n !== 'hidden');
       assert.ok(groupNames.length > 5, `not enough groups found in category for test`);
 
       // All the group roots in the DOM.
@@ -394,8 +400,10 @@ describe('CategoryRenderer', () => {
 
       categoryGroupIds.forEach(groupId => {
         const selector = `.lh-audit-group--${groupId}`;
-        assert.equal(categoryElem.querySelectorAll(selector).length, 1,
-          `could not find '${selector}'`);
+        if (groupId !== 'hidden') {
+          assert.equal(categoryElem.querySelectorAll(selector).length, 1,
+            `could not find '${selector}'`);
+        }
       });
     });
   });

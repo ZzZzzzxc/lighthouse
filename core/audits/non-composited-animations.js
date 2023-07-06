@@ -18,7 +18,7 @@ const UIStrings = {
   title: 'Avoid non-composited animations',
   /** Description of a diagnostic LH audit that shows the user animations that are not composited. Janky means frames may be skipped and the animation will look bad. Acceptable alternatives here might be 'poor', or 'slow'. */
   description: 'Animations which are not composited can be janky and increase CLS. ' +
-    '[Learn how to avoid non-composited animations](https://web.dev/non-composited-animations)',
+    '[Learn how to avoid non-composited animations](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)',
   /** [ICU Syntax] Label identifying the number of animated elements that are not composited. */
   displayValue: `{itemCount, plural,
   =1 {# animated element found}
@@ -125,6 +125,7 @@ class NonCompositedAnimations extends Audit {
       return {
         score: 1,
         notApplicable: true,
+        metricSavings: {CLS: 0},
       };
     }
 
@@ -195,6 +196,12 @@ class NonCompositedAnimations extends Audit {
     return {
       score: results.length === 0 ? 1 : 0,
       notApplicable: results.length === 0,
+      metricSavings: {
+        // We do not have enough information to accurately predict the impact of individual animations on CLS.
+        // It is also not worth the effort since only a small percentage of sites have their CLS affected by non-composited animations.
+        // https://github.com/GoogleChrome/lighthouse/pull/15099#issuecomment-1558107906
+        CLS: 0,
+      },
       details,
       displayValue,
     };

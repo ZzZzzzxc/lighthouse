@@ -4,6 +4,8 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
+import log from 'lighthouse-logger';
+
 import * as wait from '../../../gather/driver/wait-for-condition.js';
 import {
   mockCommands,
@@ -16,7 +18,6 @@ import {
 
 const {createMockOnceFn} = mockCommands;
 
-timers.useFakeTimers();
 
 function createMockWaitForFn() {
   const {promise, resolve, reject} = createDecomposedPromise();
@@ -54,6 +55,9 @@ function createMockMultipleInvocationWaitForFn() {
 }
 
 describe('waitForFullyLoaded()', () => {
+  before(() => timers.useFakeTimers());
+  after(() => timers.dispose());
+
   let session;
   let networkMonitor;
   /** @type {import('../../../gather/driver/wait-for-condition.js').WaitOptions} */
@@ -61,7 +65,7 @@ describe('waitForFullyLoaded()', () => {
 
   beforeEach(() => {
     session = {sendCommand: fnAny().mockResolvedValue(), setNextProtocolTimeout: fnAny()};
-    networkMonitor = {};
+    networkMonitor = {getInflightRequests: fnAny().mockReturnValue([])};
 
     const overrides = {
       waitForFcp: createMockWaitForFn(),
@@ -177,10 +181,17 @@ describe('waitForFullyLoaded()', () => {
     expect(await loadPromise).toMatchObject({timedOut: false});
   });
 
-  it('should timeout when not resolved fast enough', async () => {
+  it('should timeout and warn when not resolved fast enough', async () => {
     options._waitForTestOverrides.waitForLoadEvent = createMockWaitForFn();
     options._waitForTestOverrides.waitForNetworkIdle = createMockWaitForFn();
     options._waitForTestOverrides.waitForCPUIdle = createMockWaitForFn();
+    networkMonitor.getInflightRequests.mockReturnValue([{url: 'https://example.com'}]);
+
+    /** @type {Array<unknown>} */
+    const warnings = [];
+    /** @param {unknown} evt */
+    const saveWarning = evt => warnings.push(evt);
+    log.events.on('warning', saveWarning);
 
     const loadPromise = makePromiseInspectable(wait.waitForFullyLoaded(
       session,
@@ -201,6 +212,22 @@ describe('waitForFullyLoaded()', () => {
     expect(options._waitForTestOverrides.waitForLoadEvent.getMockCancelFn()).toHaveBeenCalled();
     expect(options._waitForTestOverrides.waitForNetworkIdle.getMockCancelFn()).toHaveBeenCalled();
     expect(options._waitForTestOverrides.waitForCPUIdle.getMockCancelFn()).toHaveBeenCalled();
+    // Check for warn logs
+    log.events.off('warning', saveWarning);
+    expect(warnings).toEqual([
+      [
+        'waitFor',
+        'Timed out waiting for page load. Checking if page is hung...',
+      ],
+      [
+        'waitFor',
+        'Remaining inflight requests URLs',
+        [
+          'https://example.com',
+        ],
+      ],
+    ]);
+
     expect(await loadPromise).toMatchObject({timedOut: true});
   });
 
@@ -223,6 +250,9 @@ describe('waitForFullyLoaded()', () => {
 });
 
 describe('waitForFcp()', () => {
+  before(() => timers.useFakeTimers());
+  after(() => timers.dispose());
+
   let session;
 
   beforeEach(() => {

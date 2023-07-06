@@ -74,6 +74,16 @@ const BLOCKLIST = new Set([
   'mer',
   'mer info',
   'mer information',
+  // Tamil
+  'அடுத்த பக்கம்',
+  'மறுபக்கம்',
+  'முந்தைய பக்கம்',
+  'முன்பக்கம்',
+  'மேலும் அறிக',
+  'மேலும் தகவலுக்கு',
+  'மேலும் தரவுகளுக்கு',
+  'தயவுசெய்து இங்கே அழுத்தவும்',
+  'இங்கே கிளிக் செய்யவும்',
 ]);
 
 const UIStrings = {
@@ -83,7 +93,7 @@ const UIStrings = {
   failureTitle: 'Links do not have descriptive text',
   /** Description of a Lighthouse audit that tells the user *why* they need to have descriptive text on the links in their page. This is displayed after a user expands the section to see more. No character length limits. The last sentence starting with 'Learn' becomes link text to additional documentation. */
   description: 'Descriptive link text helps search engines understand your content. ' +
-  '[Learn how to make links more accessible](https://web.dev/link-text/).',
+  '[Learn how to make links more accessible](https://developer.chrome.com/docs/lighthouse/seo/link-text/).',
   /** [ICU Syntax] Label for the audit identifying the number of links found. "link" here refers to the links in a web page to other web pages. */
   displayValue: `{itemCount, plural,
     =1 {1 link found}
@@ -141,7 +151,7 @@ class LinkText extends Audit {
       {key: 'text', valueType: 'text', label: 'Link Text'},
     ];
 
-    const details = Audit.makeTableDetails(headings, failingLinks, {});
+    const details = Audit.makeTableDetails(headings, failingLinks);
     let displayValue;
 
     if (failingLinks.length) {

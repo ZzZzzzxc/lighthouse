@@ -1,138 +1,6 @@
 {
-  "flow-report/src/i18n/ui-strings.js | allReports": {
-    "message": "Svi izveštaji"
-  },
-  "flow-report/src/i18n/ui-strings.js | categories": {
-    "message": "Kategorije"
-  },
-  "flow-report/src/i18n/ui-strings.js | categoryAccessibility": {
-    "message": "Pristupačnost"
-  },
-  "flow-report/src/i18n/ui-strings.js | categoryBestPractices": {
-    "message": "Najbolje prakse"
-  },
-  "flow-report/src/i18n/ui-strings.js | categoryPerformance": {
-    "message": "Učinak"
-  },
-  "flow-report/src/i18n/ui-strings.js | categoryProgressiveWebApp": {
-    "message": "Progresivna veb-aplikacija"
-  },
-  "flow-report/src/i18n/ui-strings.js | categorySeo": {
-    "message": "Optimizacija za pretraživače"
-  },
-  "flow-report/src/i18n/ui-strings.js | desktop": {
-    "message": "Računar"
-  },
-  "flow-report/src/i18n/ui-strings.js | helpDialogTitle": {
-    "message": "Razumevanje izveštaja o toku za Lighthouse"
-  },
-  "flow-report/src/i18n/ui-strings.js | helpLabel": {
-    "message": "Razumevanje tokova"
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseInstructionNavigation": {
-    "message": "Koristite izveštaje o navigaciji za..."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseInstructionSnapshot": {
-    "message": "Koristite izveštaje sa pregledom za..."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseInstructionTimespan": {
-    "message": "Koristite izveštaje za period za..."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseNavigation1": {
-    "message": "Preuzmite Lighthouse ocenu učinka."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseNavigation2": {
-    "message": "Izmerite pokazatelje učinka za učitavanje stranice, kao što su najveće prikazivanje sadržaja i indeks brzine."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseNavigation3": {
-    "message": "Pristupite mogućnostima progresivnih veb-aplikacija."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseSnapshot1": {
-    "message": "Pronađite probleme sa pristupačnošću u aplikacijama sa jednom stranicom ili kompleksnim formama."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseSnapshot2": {
-    "message": "Procenite najbolje prakse za menije i elemente korisničkog interfejsa sakrivene iza interakcije."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseTimespan1": {
-    "message": "Izmerite vreme izvršavanja prelaza izgleda i JavaScript-a za seriju interakcija."
-  },
-  "flow-report/src/i18n/ui-strings.js | helpUseCaseTimespan2": {
-    "message": "Otkrijte prilike za učinak da biste poboljšali doživljaj za dugoročne stranice i aplikacije sa jednom stranicom."
-  },
-  "flow-report/src/i18n/ui-strings.js | highestImpact": {
-    "message": "Najveći uticaj"
-  },
-  "flow-report/src/i18n/ui-strings.js | informativeAuditCount": {
-    "message": "{numInformative,plural, =1{{numInformative} informativna provera}one{{numInformative} informativna provera}few{{numInformative} informativne provere}other{{numInformative} informativnih provera}}"
-  },
-  "flow-report/src/i18n/ui-strings.js | mobile": {
-    "message": "Mobilni uređaj"
-  },
-  "flow-report/src/i18n/ui-strings.js | navigationDescription": {
-    "message": "Učitavanje stranice"
-  },
-  "flow-report/src/i18n/ui-strings.js | navigationLongDescription": {
-    "message": "Izveštaji o navigaciji analiziraju učitavanje pojedinačne stranice, potpuno isto kao originalni Lighthouse izveštaji."
-  },
-  "flow-report/src/i18n/ui-strings.js | navigationReport": {
-    "message": "Izveštaj o navigaciji"
-  },
-  "flow-report/src/i18n/ui-strings.js | navigationReportCount": {
-    "message": "{numNavigation,plural, =1{{numNavigation} izveštaj o navigaciji}one{{numNavigation} izveštaj o navigaciji}few{{numNavigation} izveštaja o navigaciji}other{{numNavigation} izveštaja o navigaciji}}"
-  },
-  "flow-report/src/i18n/ui-strings.js | passableAuditCount": {
-    "message": "{numPassableAudits,plural, =1{{numPassableAudits} provera koja može da se prođe}one{{numPassableAudits} provera koja može da se prođe}few{{numPassableAudits} provere koje mogu da se prođu}other{{numPassableAudits} provera koje mogu da se prođu}}"
-  },
-  "flow-report/src/i18n/ui-strings.js | passedAuditCount": {
-    "message": "{numPassed,plural, =1{Prošli ste {numPassed} proveru}one{Prošli ste{numPassed} proveru}few{Prošli ste{numPassed} provere}other{Prošli ste{numPassed} provera}}"
-  },
-  "flow-report/src/i18n/ui-strings.js | ratingAverage": {
-    "message": "Prosek"
-  },
-  "flow-report/src/i18n/ui-strings.js | ratingError": {
-    "message": "Greška"
-  },
-  "flow-report/src/i18n/ui-strings.js | ratingFail": {
-    "message": "Slabo"
-  },
-  "flow-report/src/i18n/ui-strings.js | ratingPass": {
-    "message": "Dobro"
-  },
-  "flow-report/src/i18n/ui-strings.js | save": {
-    "message": "Sačuvaj"
-  },
-  "flow-report/src/i18n/ui-strings.js | snapshotDescription": {
-    "message": "Snimljeno stanje stranice"
-  },
-  "flow-report/src/i18n/ui-strings.js | snapshotLongDescription": {
-    "message": "Izveštaji sa pregledom analiziraju stranicu u posebnom stanju, obično posle interakcije sa korisnicima."
-  },
-  "flow-report/src/i18n/ui-strings.js | snapshotReport": {
-    "message": "Izveštaj sa pregledom"
-  },
-  "flow-report/src/i18n/ui-strings.js | snapshotReportCount": {
-    "message": "{numSnapshot,plural, =1{{numSnapshot} izveštaj sa pregledom}one{{numSnapshot} izveštaj sa pregledom}few{{numSnapshot} izveštaja sa pregledom}other{{numSnapshot} izveštaja sa pregledom}}"
-  },
-  "flow-report/src/i18n/ui-strings.js | summary": {
-    "message": "Rezime"
-  },
-  "flow-report/src/i18n/ui-strings.js | timespanDescription": {
-    "message": "Korisničke interakcije"
-  },
-  "flow-report/src/i18n/ui-strings.js | timespanLongDescription": {
-    "message": "Izveštaji za period analiziraju nasumični period, koji obično sadrži interakcije korisnika."
-  },
-  "flow-report/src/i18n/ui-strings.js | timespanReport": {
-    "message": "Izveštaj za period"
-  },
-  "flow-report/src/i18n/ui-strings.js | timespanReportCount": {
-    "message": "{numTimespan,plural, =1{{numTimespan} izveštaj za period}one{{numTimespan} izveštaj za period}few{{numTimespan} izveštaja za period}other{{numTimespan} izveštaja za period}}"
-  },
-  "flow-report/src/i18n/ui-strings.js | title": {
-    "message": "Izveštaj o korisničkom toku za Lighthouse"
-  },
   "core/audits/accessibility/accesskeys.js | description": {
-    "message": "Tasteri za pristup omogućavaju korisnicima da brzo fokusiraju deo stranice. Da bi navigacija radila ispravno, svaki taster za pristup mora da bude jedinstven. [Saznajte više](https://web.dev/accesskeys/)."
+    "message": "Tasteri za pristup omogućavaju korisnicima da brzo fokusiraju deo stranice. Da bi navigacija radila ispravno, svaki taster za pristup mora da bude jedinstven. [Saznajte više o tasterima za pristup](https://dequeuniversity.com/rules/axe/4.7/accesskeys)."
   },
   "core/audits/accessibility/accesskeys.js | failureTitle": {
     "message": "Vrednosti za `[accesskey]` nisu jedinstvene"
@@ -141,7 +9,7 @@
     "message": "Vrednosti za `[accesskey]` su jedinstvene"
   },
   "core/audits/accessibility/aria-allowed-attr.js | description": {
-    "message": "Svaki ARIA element „`role`“ podržava određeni podskup atributa „`aria-*`“. Ako se ovi elementi ne podudaraju, atributi „`aria-*`“ će biti nevažeći. [Saznajte više](https://web.dev/aria-allowed-attr/)."
+    "message": "Svaki ARIA element `role` podržava određeni podskup atributa `aria-*`. Ako se ovi elementi ne podudaraju, atributi `aria-*` će biti nevažeći. [Saznajte kako da se ARIA atributi podudaraju sa ulogama](https://dequeuniversity.com/rules/axe/4.7/aria-allowed-attr)."
   },
   "core/audits/accessibility/aria-allowed-attr.js | failureTitle": {
     "message": "Atributi `[aria-*]` se ne podudaraju sa svojim ulogama"
@@ -150,7 +18,7 @@
     "message": "Atributi `[aria-*]` se podudaraju sa svojim ulogama"
   },
   "core/audits/accessibility/aria-command-name.js | description": {
-    "message": "Kada element nema pristupačan naziv, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više](https://web.dev/aria-name/)."
+    "message": "Kada element nema pristupačan naziv, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte kako da učinite elemente komandi pristupačnijim](https://dequeuniversity.com/rules/axe/4.7/aria-command-name)."
   },
   "core/audits/accessibility/aria-command-name.js | failureTitle": {
     "message": "Elementi `button`, `link` i `menuitem` nemaju nazive prilagođene funkcijama pristupačnosti."
@@ -159,7 +27,7 @@
     "message": "Elementi `button`, `link` i `menuitem` imaju nazive prilagođene funkcijama pristupačnosti"
   },
   "core/audits/accessibility/aria-hidden-body.js | description": {
-    "message": "Tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana, ne rade dosledno kada se `aria-hidden=\"true\"` podesi za `<body>` dokumenta. [Saznajte više](https://web.dev/aria-hidden-body/)."
+    "message": "Tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana, ne rade dosledno kada se `aria-hidden=\"true\"` podesi za `<body>` dokumenta. [Saznajte kako `aria-hidden` utiče na sadržaj dokumenta](https://dequeuniversity.com/rules/axe/4.7/aria-hidden-body)."
   },
   "core/audits/accessibility/aria-hidden-body.js | failureTitle": {
     "message": "Element `[aria-hidden=\"true\"]` je prisutan za `<body>` dokumenta"
@@ -168,7 +36,7 @@
     "message": "Element `[aria-hidden=\"true\"]` nije prisutan za `<body>` dokumenta"
   },
   "core/audits/accessibility/aria-hidden-focus.js | description": {
-    "message": "Elementi po opadajućem redosledu koji mogu da se fokusiraju u okviru elementa `[aria-hidden=\"true\"]` sprečavaju te interaktivne elemente da budu dostupni korisnicima tehnologija za pomoć osobama sa invaliditetom, poput čitača ekrana. [Saznajte više](https://web.dev/aria-hidden-focus/)."
+    "message": "Elementi po opadajućem redosledu koji mogu da se fokusiraju u okviru elementa `[aria-hidden=\"true\"]` sprečavaju te interaktivne elemente da budu dostupni korisnicima tehnologija za pomoć osobama sa invaliditetom, poput čitača ekrana. [Saznajte kako `aria-hidden` utiče na elemente koji mogu da se fokusiraju](https://dequeuniversity.com/rules/axe/4.7/aria-hidden-focus)."
   },
   "core/audits/accessibility/aria-hidden-focus.js | failureTitle": {
     "message": "Elementi `[aria-hidden=\"true\"]` sadrže elemente po opadajućem redosledu koji mogu da se fokusiraju"
@@ -177,7 +45,7 @@
     "message": "Elementi `[aria-hidden=\"true\"]` ne obuhvataju elemente po opadajućem redosledu koji mogu da se fokusiraju"
   },
   "core/audits/accessibility/aria-input-field-name.js | description": {
-    "message": "Kada polje za unos nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više](https://web.dev/aria-name/)."
+    "message": "Kada polje za unos nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više o oznakama polja za unos](https://dequeuniversity.com/rules/axe/4.7/aria-input-field-name)."
   },
   "core/audits/accessibility/aria-input-field-name.js | failureTitle": {
     "message": "ARIA polja za unos nemaju nazive prilagođene funkciji pristupačnosti"
@@ -186,7 +54,7 @@
     "message": "ARIA polja za unos imaju nazive prilagođene funkciji pristupačnosti"
   },
   "core/audits/accessibility/aria-meter-name.js | description": {
-    "message": "Kada element nema pristupačan naziv, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više](https://web.dev/aria-name/)."
+    "message": "Kada element merača nema pristupačan naziv, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte kako da imenujete `meter` elemente](https://dequeuniversity.com/rules/axe/4.7/aria-meter-name)."
   },
   "core/audits/accessibility/aria-meter-name.js | failureTitle": {
     "message": "ARIA elementi `meter` nemaju nazive prilagođene funkcijama pristupačnosti."
@@ -195,7 +63,7 @@
     "message": "ARIA elementi `meter` imaju nazive prilagođene funkcijama pristupačnosti"
   },
   "core/audits/accessibility/aria-progressbar-name.js | description": {
-    "message": "Kada `progressbar` nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više](https://web.dev/aria-name/)."
+    "message": "Kada `progressbar` nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte kako da označite elemente `progressbar`](https://dequeuniversity.com/rules/axe/4.7/aria-progressbar-name)."
   },
   "core/audits/accessibility/aria-progressbar-name.js | failureTitle": {
     "message": "ARIA elementi `progressbar` nemaju nazive prilagođene funkcijama pristupačnosti."
@@ -204,7 +72,7 @@
     "message": "ARIA elementi `progressbar` imaju nazive prilagođene funkcijama pristupačnosti"
   },
   "core/audits/accessibility/aria-required-attr.js | description": {
-    "message": "Pojedine ARIA uloge imaju obavezne atribute koji status elementa opisuju čitačima ekrana. [Saznajte više](https://web.dev/aria-required-attr/)."
+    "message": "Pojedine ARIA uloge imaju obavezne atribute koji status elementa opisuju čitačima ekrana. [Saznajte više o ulogama i obaveznim atributima](https://dequeuniversity.com/rules/axe/4.7/aria-required-attr)."
   },
   "core/audits/accessibility/aria-required-attr.js | failureTitle": {
     "message": "Uloge `[role]` nemaju sve obavezne atribute `[aria-*]`"
@@ -213,7 +81,7 @@
     "message": "Uloge `[role]` imaju sve obavezne atribute `[aria-*]`"
   },
   "core/audits/accessibility/aria-required-children.js | description": {
-    "message": "Pojedine nadređene ARIA uloge moraju da obuhvataju određene podređene uloge da bi pravilno obavljale namenjene funkcije pristupačnosti. [Saznajte više](https://web.dev/aria-required-children/)."
+    "message": "Pojedine nadređene ARIA uloge moraju da obuhvataju određene podređene uloge da bi pravilno obavljale namenjene funkcije pristupačnosti. [Saznajte više o ulogama i obaveznim podređenim elementima](https://dequeuniversity.com/rules/axe/4.7/aria-required-children)."
   },
   "core/audits/accessibility/aria-required-children.js | failureTitle": {
     "message": "Elementima sa ARIA ulogom `[role]` koji zahtevaju da podređeni elementi sadrže konkretni element `[role]` nedostaju neki ili svi ti potrebni podređeni elementi."
@@ -222,7 +90,7 @@
     "message": "Elementi sa ARIA ulogom `[role]` koji zahtevaju da podređeni elementi sadrže konkretni element `[role]` imaju sve potrebne podređene elemente."
   },
   "core/audits/accessibility/aria-required-parent.js | description": {
-    "message": "Pojedine podređene ARIA uloge moraju da budu obuhvaćene određenim nadređenim ulogama da bi pravilno obavljale namenjene funkcije pristupačnosti. [Saznajte više](https://web.dev/aria-required-parent/)."
+    "message": "Pojedine podređene ARIA uloge moraju da budu obuhvaćene određenim nadređenim ulogama da bi pravilno obavljale namenjene funkcije pristupačnosti. [Saznajte više o ARIA ulogama i obaveznom nadređenom elementu](https://dequeuniversity.com/rules/axe/4.7/aria-required-parent)."
   },
   "core/audits/accessibility/aria-required-parent.js | failureTitle": {
     "message": "Uloge `[role]` nisu obuhvaćene svojim obaveznim nadređenim elementom"
@@ -231,7 +99,7 @@
     "message": "Uloge `[role]` su obuhvaćene svojim obaveznim nadređenim elementom"
   },
   "core/audits/accessibility/aria-roles.js | description": {
-    "message": "Vrednosti ARIA uloga moraju da budu važeće da bi pravilno obavljale namenjene funkcije pristupačnosti. [Saznajte više](https://web.dev/aria-roles/)."
+    "message": "Vrednosti ARIA uloga moraju da budu važeće da bi pravilno obavljale namenjene funkcije pristupačnosti. [Saznajte više o važećim ARIA ulogama](https://dequeuniversity.com/rules/axe/4.7/aria-roles)."
   },
   "core/audits/accessibility/aria-roles.js | failureTitle": {
     "message": "Vrednosti za `[role]` nisu važeće"
@@ -240,7 +108,7 @@
     "message": "Vrednosti za `[role]` su važeće"
   },
   "core/audits/accessibility/aria-toggle-field-name.js | description": {
-    "message": "Kada polje za prekidač nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više](https://web.dev/aria-name/)."
+    "message": "Kada polje za prekidač nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više o uključivanju ili isključivanju polja](https://dequeuniversity.com/rules/axe/4.7/aria-toggle-field-name)."
   },
   "core/audits/accessibility/aria-toggle-field-name.js | failureTitle": {
     "message": "ARIA polja prekidača nemaju nazive prilagođene funkciji pristupačnosti"
@@ -249,7 +117,7 @@
     "message": "ARIA polja prekidača imaju nazive prilagođene funkciji pristupačnosti"
   },
   "core/audits/accessibility/aria-tooltip-name.js | description": {
-    "message": "Kada element nema pristupačan naziv, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više](https://web.dev/aria-name/)."
+    "message": "Kada element objašnjenja nema pristupačan naziv, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte kako da imenujete `tooltip` elemente](https://dequeuniversity.com/rules/axe/4.7/aria-tooltip-name)."
   },
   "core/audits/accessibility/aria-tooltip-name.js | failureTitle": {
     "message": "ARIA elementi `tooltip` nemaju nazive prilagođene funkcijama pristupačnosti."
@@ -258,7 +126,7 @@
     "message": "ARIA elementi `tooltip` imaju nazive prilagođene funkcijama pristupačnosti"
   },
   "core/audits/accessibility/aria-treeitem-name.js | description": {
-    "message": "Kada element nema pristupačan naziv, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više](https://web.dev/aria-name/)."
+    "message": "Kada `treeitem` nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju pomoću generičkog naziva, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više o označavanju elemenata `treeitem`](https://dequeuniversity.com/rules/axe/4.7/aria-treeitem-name)."
   },
   "core/audits/accessibility/aria-treeitem-name.js | failureTitle": {
     "message": "ARIA elementi `treeitem` nemaju nazive prilagođene funkcijama pristupačnosti."
@@ -267,7 +135,7 @@
     "message": "ARIA elementi `treeitem` imaju nazive prilagođene funkcijama pristupačnosti"
   },
   "core/audits/accessibility/aria-valid-attr-value.js | description": {
-    "message": "Tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana, ne mogu da interpretiraju ARIA atribute sa nevažećim vrednostima. [Saznajte više](https://web.dev/aria-valid-attr-value/)."
+    "message": "Tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana, ne mogu da protumače ARIA atribute sa nevažećim vrednostima. [Saznajte više o važećim vrednostima za ARIA atribute](https://dequeuniversity.com/rules/axe/4.7/aria-valid-attr-value)."
   },
   "core/audits/accessibility/aria-valid-attr-value.js | failureTitle": {
     "message": "Vrednosti atributa `[aria-*]` nisu važeće"
@@ -276,7 +144,7 @@
     "message": "Vrednosti atributa `[aria-*]` su važeće"
   },
   "core/audits/accessibility/aria-valid-attr.js | description": {
-    "message": "Tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana, ne mogu da interpretiraju ARIA atribute sa nevažećim nazivima. [Saznajte više](https://web.dev/aria-valid-attr/)."
+    "message": "Tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana, ne mogu da protumače ARIA atribute sa nevažećim nazivima. [Saznajte više o važećim ARIA atributima](https://dequeuniversity.com/rules/axe/4.7/aria-valid-attr)."
   },
   "core/audits/accessibility/aria-valid-attr.js | failureTitle": {
     "message": "Atributi `[aria-*]` nisu važeći ili su pogrešno napisani"
@@ -288,7 +156,7 @@
     "message": "Elementi koji nisu prošli proveru"
   },
   "core/audits/accessibility/button-name.js | description": {
-    "message": "Kada dugme nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju kao „dugme“, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte više](https://web.dev/button-name/)."
+    "message": "Kada dugme nema naziv prilagođen funkciji pristupačnosti, čitači ekrana ga najavljuju kao „dugme“, pa korisnici koji se oslanjaju na čitače ekrana ne mogu da ga koriste. [Saznajte kako da učinite dugmad pristupačnijom](https://dequeuniversity.com/rules/axe/4.7/button-name)."
   },
   "core/audits/accessibility/button-name.js | failureTitle": {
     "message": "Dugmad nema nazive prilagođene funkcijama pristupačnosti"
@@ -297,7 +165,7 @@
     "message": "Dugmad ima nazive prilagođene funkcijama pristupačnosti"
   },
   "core/audits/accessibility/bypass.js | description": {
-    "message": "Kada se dodaju načini za zaobilaženje sadržaja koji se ponavlja, korisnici tastature mogu efikasnije da se kreću po stranici. [Saznajte više](https://web.dev/bypass/)."
+    "message": "Kada se dodaju načini za zaobilaženje sadržaja koji se ponavlja, korisnici tastature mogu efikasnije da se kreću po stranici. [Saznajte više o zaobilaženju blokova](https://dequeuniversity.com/rules/axe/4.7/bypass)."
   },
   "core/audits/accessibility/bypass.js | failureTitle": {
     "message": "Stranica ne obuhvata naslov, link za preskakanje niti region orijentira"
@@ -306,7 +174,7 @@
     "message": "Stranica obuhvata naslov, link za preskakanje ili region orijentira"
   },
   "core/audits/accessibility/color-contrast.js | description": {
-    "message": "Mnogi korisnici veoma teško čitaju tekst sa malim kontrastom ili uopšte ne mogu da ga čitaju. [Saznajte više](https://web.dev/color-contrast/)."
+    "message": "Mnogi korisnici veoma teško čitaju tekst sa malim kontrastom ili uopšte ne mogu da ga čitaju. [Saznajte kako da obezbedite dovoljno veliki kontrast boja](https://dequeuniversity.com/rules/axe/4.7/color-contrast)."
   },
   "core/audits/accessibility/color-contrast.js | failureTitle": {
     "message": "Boje u pozadini i u prvom planu nemaju zadovoljavajući odnos kontrasta."
@@ -315,7 +183,7 @@
     "message": "Boje u pozadini i u prvom planu imaju zadovoljavajući odnos kontrasta"
   },
   "core/audits/accessibility/definition-list.js | description": {
-    "message": "Kada liste definicija nisu pravilno označene, čitači ekrana mogu da pružaju zbunjujući ili netačan izlaz. [Saznajte više](https://web.dev/definition-list/)."
+    "message": "Kada liste definicija nisu pravilno označene, čitači ekrana mogu da pružaju zbunjujući ili netačan izlaz. [Saznajte kako da napravite pravilnu strukturu lista definicija](https://dequeuniversity.com/rules/axe/4.7/definition-list)."
   },
   "core/audits/accessibility/definition-list.js | failureTitle": {
     "message": "`<dl>` ne sadrži samo pravilno poređane grupe `<dt>` i `<dd>`, elemente `<script>`, `<template>` ili `<div>`."
@@ -324,7 +192,7 @@
     "message": "`<dl>` sadrži samo pravilno poređane grupe `<dt>` i `<dd>`, elemente `<script>`, `<template>` ili `<div>`."
   },
   "core/audits/accessibility/dlitem.js | description": {
-    "message": "Stavke liste definicija (`<dt>` i `<dd>`) moraju da budu upakovane u nadređeni element`<dl>` da bi čitači ekrana mogli da ih pravilno čitaju. [Saznajte više](https://web.dev/dlitem/)."
+    "message": "Stavke liste definicija (`<dt>` i `<dd>`) moraju da budu upakovane u nadređeni element`<dl>` da bi čitači ekrana mogli da ih pravilno čitaju. [Saznajte kako da napravite pravilnu strukturu lista definicija](https://dequeuniversity.com/rules/axe/4.7/dlitem)."
   },
   "core/audits/accessibility/dlitem.js | failureTitle": {
     "message": "Stavke liste definicija su upakovane u elemente `<dl>`"
@@ -333,7 +201,7 @@
     "message": "Stavke liste definicija su upakovane u elemente`<dl>`"
   },
   "core/audits/accessibility/document-title.js | description": {
-    "message": "Naslov korisnicima čitača ekrana pruža pregled stranice, a korisnici pretraživača se na njega oslanjaju da bi utvrdili da li je stranica relevantna za njihovu pretragu. [Saznajte više](https://web.dev/document-title/)."
+    "message": "Naslov korisnicima čitača ekrana pruža pregled stranice, a korisnici pretraživača se na njega oslanjaju da bi utvrdili da li je stranica relevantna za njihovu pretragu. [Saznajte više o naslovima dokumenata](https://dequeuniversity.com/rules/axe/4.7/document-title)."
   },
   "core/audits/accessibility/document-title.js | failureTitle": {
     "message": "Dokument nema element `<title>`"
@@ -342,7 +210,7 @@
     "message": "Dokument ima element `<title>`"
   },
   "core/audits/accessibility/duplicate-id-active.js | description": {
-    "message": "Da biste se uverili da su vidljivi za tehnologije za pomoć osobama sa invaliditetom, svi elementi koji mogu da se fokusiraju moraju da imaju jedinstveni `id`. [Saznajte više](https://web.dev/duplicate-id-active/)."
+    "message": "Da biste se uverili da su vidljivi za tehnologije za pomoć osobama sa invaliditetom, svi elementi koji mogu da se fokusiraju moraju da imaju jedinstveni `id`. [Saznajte kako da rešite duplirane `id`-ove](https://dequeuniversity.com/rules/axe/4.7/duplicate-id-active)."
   },
   "core/audits/accessibility/duplicate-id-active.js | failureTitle": {
     "message": "Atributi `[id]` na aktivnim elementima koji mogu da se fokusiraju nisu jedinstveni"
@@ -351,7 +219,7 @@
     "message": "Atributi `[id]` na aktivnim elementima koji mogu da se fokusiraju su jedinstveni"
   },
   "core/audits/accessibility/duplicate-id-aria.js | description": {
-    "message": "Vrednost ARIA ID-a mora da bude jedinstvena da bi se sprečilo da tehnologije za pomoć osobama sa invaliditetom propuste druge instance. [Saznajte više](https://web.dev/duplicate-id-aria/)."
+    "message": "Vrednost ARIA ID-a mora da bude jedinstvena da bi se sprečilo da tehnologije za pomoć osobama sa invaliditetom propuste druge instance. [Saznajte kako da otklonite duplikate ARIA ID-ova](https://dequeuniversity.com/rules/axe/4.7/duplicate-id-aria)."
   },
   "core/audits/accessibility/duplicate-id-aria.js | failureTitle": {
     "message": "ARIA ID-ovi nisu jedinstveni"
@@ -360,7 +228,7 @@
     "message": "ARIA ID-ovi su jedinstveni"
   },
   "core/audits/accessibility/form-field-multiple-labels.js | description": {
-    "message": "Tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana koji koriste prvu, poslednju ili sve oznake, mogu da čitaju polja obrasca sa više oznaka na način koji zbunjuje korisnike. [Saznajte više](https://web.dev/form-field-multiple-labels/)."
+    "message": "Tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana koji koriste prvu, poslednju ili sve oznake, mogu da čitaju polja obrasca sa više oznaka na način koji zbunjuje korisnike. [Saznajte kako da koristite oznake obrazaca](https://dequeuniversity.com/rules/axe/4.7/form-field-multiple-labels)."
   },
   "core/audits/accessibility/form-field-multiple-labels.js | failureTitle": {
     "message": "Polja obrasca imaju više oznaka"
@@ -369,7 +237,7 @@
     "message": "Nijedno polje obrasca nema više oznaka"
   },
   "core/audits/accessibility/frame-title.js | description": {
-    "message": "Korisnici čitača ekrana očekuju od naslova okvira da im opišu sadržaj okvira. [Saznajte više](https://web.dev/frame-title/)."
+    "message": "Korisnici čitača ekrana očekuju od naslova okvira da im opišu sadržaj okvira. [Saznajte više o naslovima okvira](https://dequeuniversity.com/rules/axe/4.7/frame-title)."
   },
   "core/audits/accessibility/frame-title.js | failureTitle": {
     "message": "Elementi `<frame>` ili `<iframe>` nemaju naslov"
@@ -378,7 +246,7 @@
     "message": "Elementi `<frame>` ili `<iframe>` imaju naslov"
   },
   "core/audits/accessibility/heading-order.js | description": {
-    "message": "Naslovi sa pravilnim redosledom koji ne preskaču nivoe prenose semantičku strukturu stranice, pa je čine lakšom za kretanje i razumevanje pri korišćenju tehnologija za pomoć osobama sa invaliditetom. [Saznajte više](https://web.dev/heading-order/)."
+    "message": "Naslovi sa pravilnim redosledom koji ne preskaču nivoe prenose semantičku strukturu stranice, pa je čine lakšom za kretanje i razumevanje pri korišćenju tehnologija za pomoć osobama sa invaliditetom. [Saznajte više o redosledu naslova](https://dequeuniversity.com/rules/axe/4.7/heading-order)."
   },
   "core/audits/accessibility/heading-order.js | failureTitle": {
     "message": "Elementi naslova se ne prikazuju opadajućim redosledom"
@@ -387,7 +255,7 @@
     "message": "Elementi naslova se prikazuju opadajućim redosledom"
   },
   "core/audits/accessibility/html-has-lang.js | description": {
-    "message": "Ako za stranicu nije naveden atribut za jezik, čitač ekrana pretpostavlja da je stranica na podrazumevanom jeziku koji je korisnik odabrao tokom podešavanja čitača ekrana. Ako stranica zapravo nije na podrazumevanom jeziku, čitač ekrana možda neće pravilno čitati tekst sa stranice. [Saznajte više](https://web.dev/html-has-lang/)."
+    "message": "Ako za stranicu nije naveden atribut `lang`, čitač ekrana pretpostavlja da je stranica na podrazumevanom jeziku koji je korisnik odabrao tokom podešavanja čitača ekrana. Ako stranica zapravo nije na podrazumevanom jeziku, čitač ekrana možda neće pravilno čitati tekst sa stranice. [Saznajte više o atributu `lang`](https://dequeuniversity.com/rules/axe/4.7/html-has-lang)."
   },
   "core/audits/accessibility/html-has-lang.js | failureTitle": {
     "message": "Element `<html>` nema atribut `[lang]`"
@@ -396,7 +264,7 @@
     "message": "Element `<html>` ima atribut `[lang]`"
   },
   "core/audits/accessibility/html-lang-valid.js | description": {
-    "message": "Navođenjem važećeg koda [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) omogućava se da čitač ekrana pravilno čita tekst. [Saznajte više](https://web.dev/html-lang-valid/)."
+    "message": "Navođenjem važećeg koda [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) omogućava se da čitač ekrana pravilno čita tekst. [Saznajte kako da koristite atribut `lang`](https://dequeuniversity.com/rules/axe/4.7/html-lang-valid)."
   },
   "core/audits/accessibility/html-lang-valid.js | failureTitle": {
     "message": "Element `<html>` nema važeću vrednost za svoj atribut `[lang]`."
@@ -405,7 +273,7 @@
     "message": "Element `<html>` ima važeću vrednost za svoj atribut `[lang]`"
   },
   "core/audits/accessibility/image-alt.js | description": {
-    "message": "Informativni elementi treba da sadrže kratki, opisni alternativni tekst. Dekorativni elementi mogu da se zanemare praznim atributom alt. [Saznajte više](https://web.dev/image-alt/)."
+    "message": "Informativni elementi treba da sadrže kratki, opisni alternativni tekst. Dekorativni elementi mogu da se zanemare praznim atributom alt. [Saznajte više o atributu `alt`](https://dequeuniversity.com/rules/axe/4.7/image-alt)."
   },
   "core/audits/accessibility/image-alt.js | failureTitle": {
     "message": "Elementi slike nemaju atribute `[alt]`"
@@ -414,7 +282,7 @@
     "message": "Elementi slika imaju atribute `[alt]`"
   },
   "core/audits/accessibility/input-image-alt.js | description": {
-    "message": "Kada se slika koristi kao dugme `<input>`, navođenje alternativnog teksta može da pomogne korisnicima da razumeju svrhu dugmeta. [Saznajte više](https://web.dev/input-image-alt/)."
+    "message": "Kada se slika koristi kao dugme `<input>`, navođenje alternativnog teksta može da pomogne korisnicima da razumeju svrhu dugmeta. [Saznajte više o alternativnom tekstu slike za unos](https://dequeuniversity.com/rules/axe/4.7/input-image-alt)."
   },
   "core/audits/accessibility/input-image-alt.js | failureTitle": {
     "message": "Elementi `<input type=\"image\">` ne sadrže tekst `[alt]`"
@@ -423,7 +291,7 @@
     "message": "Elementi `<input type=\"image\">` sadrže tekst `[alt]`"
   },
   "core/audits/accessibility/label.js | description": {
-    "message": "Oznake omogućavaju da tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana, pravilno najavljuju kontrole obrazaca. [Saznajte više](https://web.dev/label/)."
+    "message": "Oznake omogućavaju da tehnologije za pomoć osobama sa invaliditetom, poput čitača ekrana, pravilno najavljuju kontrole obrazaca. [Saznajte više o oznakama elemenata obrasca](https://dequeuniversity.com/rules/axe/4.7/label)."
   },
   "core/audits/accessibility/label.js | failureTitle": {
     "message": "Elementi obrazaca nemaju povezane oznake"
@@ -432,7 +300,7 @@
     "message": "Elementi obrazaca imaju povezane oznake"
   },
   "core/audits/accessibility/link-name.js | description": {
-    "message": "Tekst linka (i alternativni tekst za slike kada se koristi za linkove) koji je prepoznatljiv, jedinstven i može da se fokusira olakšava kretanje za korisnike čitača ekrana. [Saznajte više](https://web.dev/link-name/)."
+    "message": "Tekst linka (i alternativni tekst za slike kada se koristi za linkove) koji je prepoznatljiv, jedinstven i može da se fokusira olakšava kretanje za korisnike čitača ekrana. [Saznajte kako da učinite linkove dostupnim.](https://dequeuniversity.com/rules/axe/4.7/link-name)"
   },
   "core/audits/accessibility/link-name.js | failureTitle": {
     "message": "Naziv linkova ne može da se prepozna"
@@ -441,7 +309,7 @@
     "message": "Naziv linkova može da se prepozna"
   },
   "core/audits/accessibility/list.js | description": {
-    "message": "Čitači ekrana čitaju liste na poseban način. Pravilna struktura liste olakšava razumevanje čitača ekrana. [Saznajte više](https://web.dev/list/)."
+    "message": "Čitači ekrana čitaju liste na poseban način. Pravilna struktura liste olakšava razumevanje čitača ekrana. [Saznajte više o pravilnoj strukturi liste](https://dequeuniversity.com/rules/axe/4.7/list)."
   },
   "core/audits/accessibility/list.js | failureTitle": {
     "message": "Liste ne sadrže isključivo elemente `<li>` i elemente koji podržavaju skripte (`<script>` i`<template>`)."
@@ -450,16 +318,16 @@
     "message": "Liste sadrže isključivo elemente `<li>` i elemente koji podržavaju skripte (`<script>` i `<template>`)."
   },
   "core/audits/accessibility/listitem.js | description": {
-    "message": "Čitači ekrana zahtevaju da stavke liste (`<li>`) budu obuhvaćene nadređenim elementima `<ul>` ili `<ol>` da bi mogle da se pravilno čitaju. [Saznajte više](https://web.dev/listitem/)."
+    "message": "Čitači ekrana zahtevaju da stavke liste (`<li>`) budu obuhvaćene nadređenim elementima `<ul>`, `<ol>` ili `<menu>` da bi mogle da se pravilno čitaju. [Saznajte više o pravilnoj strukturi liste](https://dequeuniversity.com/rules/axe/4.7/listitem)."
   },
   "core/audits/accessibility/listitem.js | failureTitle": {
-    "message": "Stavke liste (`<li>`) nisu obuhvaćene nadređenim elementima`<ul>` ili `<ol>`."
+    "message": "Stavke liste (`<li>`) nisu obuhvaćene nadređenim elementima`<ul>`, `<ol>` ili `<menu>`."
   },
   "core/audits/accessibility/listitem.js | title": {
-    "message": "Stavke liste (`<li>`) su obuhvaćene nadređenim elementima `<ul>` ili `<ol>`"
+    "message": "Stavke liste (`<li>`) su obuhvaćene nadređenim elementima `<ul>`, `<ol>` ili `<menu>`"
   },
   "core/audits/accessibility/meta-refresh.js | description": {
-    "message": "Korisnici ne očekuju da se stranica automatski osvežava i time se fokus premešta na početak stranice. To može da frustira ili zbunjuje korisnike. [Saznajte više](https://web.dev/meta-refresh/)."
+    "message": "Korisnici ne očekuju da se stranica automatski osvežava i time se fokus premešta na početak stranice. To može da frustira ili zbunjuje korisnike. [Saznajte više o osvežavanju metaoznake](https://dequeuniversity.com/rules/axe/4.7/meta-refresh)."
   },
   "core/audits/accessibility/meta-refresh.js | failureTitle": {
     "message": "Dokument koristi metaoznaku `<meta http-equiv=\"refresh\">`"
@@ -468,7 +336,7 @@
     "message": "Dokument ne koristi metaoznaku `<meta http-equiv=\"refresh\">`"
   },
   "core/audits/accessibility/meta-viewport.js | description": {
-    "message": "Onemogućavanje zumiranja predstavlja problem za slabovide korisnike koji se oslanjaju na uvećavanje prikaza ekrana da bi mogli da vide sadržaj veb-stranice. [Saznajte više](https://web.dev/meta-viewport/)."
+    "message": "Onemogućavanje zumiranja predstavlja problem za slabovide korisnike koji se oslanjaju na uvećavanje prikaza ekrana da bi mogli da vide sadržaj veb-stranice. [Saznajte više o metaoznaci oblasti prikaza](https://dequeuniversity.com/rules/axe/4.7/meta-viewport)."
   },
   "core/audits/accessibility/meta-viewport.js | failureTitle": {
     "message": "`[user-scalable=\"no\"]` se koristi u elementu `<meta name=\"viewport\">` ili je vrednost atributa `[maximum-scale]` manja od 5."
@@ -477,7 +345,7 @@
     "message": "`[user-scalable=\"no\"]` se ne koristi u elementu `<meta name=\"viewport\">`, a vrednost atributa `[maximum-scale]` nije manja od 5."
   },
   "core/audits/accessibility/object-alt.js | description": {
-    "message": "Čitači ekrana ne mogu da prevode sadržaj koji nije tekst. Dodavanje alternativnog teksta elementima `<object>` omogućava da čitači ekrana lakše prenesu značenje korisnicima. [Saznajte više](https://web.dev/object-alt/)."
+    "message": "Čitači ekrana ne mogu da prevode sadržaj koji nije tekst. Dodavanje alternativnog teksta elementima `<object>` omogućava da čitači ekrana lakše prenesu značenje korisnicima. [Saznajte više o alternativnom tekstu za elemente `object`](https://dequeuniversity.com/rules/axe/4.7/object-alt)."
   },
   "core/audits/accessibility/object-alt.js | failureTitle": {
     "message": "Elementi `<object>` nemaju alternativni tekst"
@@ -486,7 +354,7 @@
     "message": "Elementi `<object>` imaju alternativni tekst"
   },
   "core/audits/accessibility/tabindex.js | description": {
-    "message": "Vrednost veća od 0 označava eksplicitno naručivanje navigacije. Iako je tehnički ispravno, to često frustrira korisnike koji se oslanjaju na tehnologije za pomoć osobama sa invaliditetom. [Saznajte više](https://web.dev/tabindex/)."
+    "message": "Vrednost veća od 0 označava eksplicitni raspored navigacije. Iako je tehnički ispravno, to često frustrira korisnike koji se oslanjaju na tehnologije za pomoć osobama sa invaliditetom. [Saznajte više o atributu `tabindex`](https://dequeuniversity.com/rules/axe/4.7/tabindex)."
   },
   "core/audits/accessibility/tabindex.js | failureTitle": {
     "message": "Neki elementi imaju vrednost za `[tabindex]` koja je veća od 0"
@@ -495,7 +363,7 @@
     "message": "Vrednost nijednog elementa `[tabindex]` nije veća od 0"
   },
   "core/audits/accessibility/td-headers-attr.js | description": {
-    "message": "Čitači ekrana imaju funkcije koje olakšavaju kretanje kroz tabele. Ako se pobrinete da se ćelije `<td>` koje koriste atribut `[headers]` odnose samo na druge ćelije u istoj tabeli, možete da poboljšate doživljaj za korisnike čitača ekrana. [Saznajte više](https://web.dev/td-headers-attr/)."
+    "message": "Čitači ekrana imaju funkcije koje olakšavaju kretanje kroz tabele. Ako se pobrinete da se ćelije `<td>` koje koriste atribut `[headers]` odnose samo na druge ćelije u istoj tabeli, možete da poboljšate doživljaj za korisnike čitača ekrana. [Saznajte više o atributu `headers`](https://dequeuniversity.com/rules/axe/4.7/td-headers-attr)."
   },
   "core/audits/accessibility/td-headers-attr.js | failureTitle": {
     "message": "Ćelije u elementu `<table>` koje koriste atribut `[headers]` odnose se na element `id` koji se ne nalazi u istoj tabeli."
@@ -504,7 +372,7 @@
     "message": "Ćelije u elementu `<table>` koje koriste atribut `[headers]` odnose se na ćelije tabele u istoj tabeli."
   },
   "core/audits/accessibility/th-has-data-cells.js | description": {
-    "message": "Čitači ekrana imaju funkcije koje olakšavaju kretanje kroz tabele. Ako se pobrinete da se naslovi tabela uvek odnose na neku grupu ćelija, možete da poboljšate doživljaj za korisnike čitača ekrana. [Saznajte više](https://web.dev/th-has-data-cells/)."
+    "message": "Čitači ekrana imaju funkcije koje olakšavaju kretanje kroz tabele. Ako se pobrinete da se naslovi tabela uvek odnose na neku grupu ćelija, možete da poboljšate doživljaj za korisnike čitača ekrana. [Saznajte više o zaglavljima tabela](https://dequeuniversity.com/rules/axe/4.7/th-has-data-cells)."
   },
   "core/audits/accessibility/th-has-data-cells.js | failureTitle": {
     "message": "Elementi `<th>` i elementi sa atributom`[role=\"columnheader\"/\"rowheader\"]` nemaju ćelije sa podacima koje opisuju."
@@ -513,7 +381,7 @@
     "message": "Elementi `<th>` i elementi sa atributom `[role=\"columnheader\"/\"rowheader\"]` imaju ćelije sa podacima koje opisuju."
   },
   "core/audits/accessibility/valid-lang.js | description": {
-    "message": "Navođenjem važećeg koda [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) u elementima omogućava se da čitač ekrana pravilno čita tekst. [Saznajte više](https://web.dev/valid-lang/)."
+    "message": "Navođenjem važećeg koda [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) u elementima omogućava se da čitač ekrana pravilno čita tekst. [Saznajte kako da koristite atribut `lang`](https://dequeuniversity.com/rules/axe/4.7/valid-lang)."
   },
   "core/audits/accessibility/valid-lang.js | failureTitle": {
     "message": "Vrednost atributa `[lang]` nije važeća"
@@ -522,7 +390,7 @@
     "message": "Atributi `[lang]` imaju važeću vrednost"
   },
   "core/audits/accessibility/video-caption.js | description": {
-    "message": "Kada je dostupan titl za video, gluvi korisnici i oni sa oštećenjem sluha lakše mogu da pristupaju informacijama koje video obuhvata. [Saznajte više](https://web.dev/video-caption/)."
+    "message": "Kada je dostupan titl za video, gluvi korisnici i oni sa oštećenjem sluha lakše mogu da pristupaju informacijama koje video obuhvata. [Saznajte više o titlovima video snimaka](https://dequeuniversity.com/rules/axe/4.7/video-caption)."
   },
   "core/audits/accessibility/video-caption.js | failureTitle": {
     "message": "Elementi `<video>` ne obuhvataju element `<track>` sa atributom `[kind=\"captions\"]`."
@@ -537,7 +405,7 @@
     "message": "Predloženi token"
   },
   "core/audits/autocomplete.js | description": {
-    "message": "`autocomplete` pomaže korisnicima da brže šalju obrasce. Da bi korisnicima bilo lakše, ne bi bilo loše da podesite atribut `autocomplete` na važeću vrednost i time omogućite ovu stavku. [Saznajte više](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)"
+    "message": "`autocomplete` pomaže korisnicima da brže šalju obrasce. Da bi korisnicima bilo lakše, ne bi bilo loše da podesite atribut `autocomplete` na važeću vrednost i time omogućite ovu stavku. [Saznajte više o atributu `autocomplete` u obrascima](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)"
   },
   "core/audits/autocomplete.js | failureTitle": {
     "message": "Elementi `<input>` nemaju ispravne atribute `autocomplete`"
@@ -557,6 +425,33 @@
   "core/audits/autocomplete.js | warningOrder": {
     "message": "Pregledajte redosled tokena: „{tokens}“ u elementu {snippet}"
   },
+  "core/audits/bf-cache.js | actionableFailureType": {
+    "message": "Može nešto da se preduzme"
+  },
+  "core/audits/bf-cache.js | description": {
+    "message": "Mnoge navigacije se obavljaju vraćanjem na prethodnu stranicu ili ponovnim prosleđivanjem. Keširanje cele stranice (bfcache) može da ubrza ove povratne navigacije. [Saznajte više o bfcache-u](https://developer.chrome.com/docs/lighthouse/performance/bf-cache/)"
+  },
+  "core/audits/bf-cache.js | displayValue": {
+    "message": "{itemCount,plural, =1{1 razlog neuspeha}one{# razlog neuspeha}few{# razloga neuspeha}other{# razloga neuspeha}}"
+  },
+  "core/audits/bf-cache.js | failureReasonColumn": {
+    "message": "Razlog neuspeha"
+  },
+  "core/audits/bf-cache.js | failureTitle": {
+    "message": "Stranica je sprečila vraćanje keširanja cele stranice"
+  },
+  "core/audits/bf-cache.js | failureTypeColumn": {
+    "message": "Tip neuspeha"
+  },
+  "core/audits/bf-cache.js | notActionableFailureType": {
+    "message": "Ne može ništa da se preduzme"
+  },
+  "core/audits/bf-cache.js | supportPendingFailureType": {
+    "message": "Podrška za pregledač na čekanju"
+  },
+  "core/audits/bf-cache.js | title": {
+    "message": "Stranica nije sprečila vraćanje keširanja cele stranice"
+  },
   "core/audits/bootup-time.js | chromeExtensionsWarning": {
     "message": "Dodaci za Chrome su negativno uticali na brzinu učitavanja ove stranice. Probajte da proverite stranicu u režimu bez arhiviranja ili sa Chrome profila bez dodataka."
   },
@@ -570,7 +465,7 @@
     "message": "Ukupno CPU vreme"
   },
   "core/audits/bootup-time.js | description": {
-    "message": "Preporučujemo vam da smanjite vreme potrebno za raščlanjivanje, kompajliranje i izvršavanje JS datoteka. Prikazivanje manjih JS resursa će vam možda pomoći u tome. [Saznajte više](https://web.dev/bootup-time/)."
+    "message": "Preporučujemo vam da smanjite vreme potrebno za raščlanjivanje, kompajliranje i izvršavanje JS fajlova. Prikazivanje manjih JS resursa će vam možda pomoći u tome. [Saznajte kako da smanjite vreme izvršavanja JavaScript-a](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)."
   },
   "core/audits/bootup-time.js | failureTitle": {
     "message": "Smanjite vreme izvršavanja JavaScript datoteka"
@@ -585,37 +480,37 @@
     "message": "Uklonite duplirane module iz JavaScript paketa"
   },
   "core/audits/byte-efficiency/efficient-animated-content.js | description": {
-    "message": "Veliki GIF-ovi nisu korisni za prikazivanje animiranog sadržaja. Preporučujemo vam da umesto GIF-ova koristite MPEG4/WebM video snimke za animacije i PNG/WebP za statične slike da biste uštedeli mrežne podatke. [Saznajte više](https://web.dev/efficient-animated-content/)"
+    "message": "Veliki GIF-ovi nisu korisni za prikazivanje animiranog sadržaja. Preporučujemo vam da umesto GIF-ova koristite MPEG4/WebM video snimke za animacije i PNG/WebP za statične slike da biste uštedeli mrežne podatke. [Saznajte više o efikasnim video formatima](https://developer.chrome.com/docs/lighthouse/performance/efficient-animated-content/)"
   },
   "core/audits/byte-efficiency/efficient-animated-content.js | title": {
     "message": "Koristite video formate za animirani sadržaj"
   },
   "core/audits/byte-efficiency/legacy-javascript.js | description": {
-    "message": "Polifili i transformacije omogućavaju da stare verzije pregledača koriste nove funkcije JavaScript-a. Međutim, mnogi nisu neophodni za moderne pregledače. Za JavaScript pakete koristite modernu strategiju primene skripte pomoću otkrivanja funkcija modulom/bez modula da biste smanjili količinu koda koji se šalje modernim pregledačima, pritom zadržavajući podršku za stare verzije pregledača. [Saznajte više](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/)"
+    "message": "Polifili i transformacije omogućavaju da stare verzije pregledača koriste nove funkcije JavaScript-a. Međutim, mnogi nisu neophodni za moderne pregledače. Za JavaScript pakete koristite modernu strategiju primene skripte pomoću otkrivanja funkcija modulom/bez modula da biste smanjili količinu koda koji se šalje modernim pregledačima, pritom zadržavajući podršku za stare verzije pregledača. [Saznajte kako se koristi moderni JavaScript](https://web.dev/publish-modern-javascript/)"
   },
   "core/audits/byte-efficiency/legacy-javascript.js | title": {
     "message": "Izbegavajte prikazivanje zastarelog JavaScript-a modernim pregledačima"
   },
   "core/audits/byte-efficiency/modern-image-formats.js | description": {
-    "message": "Formati slika kao što su WebP i AVIF često pružaju bolju kompresiju od PNG-a ili JPEG-a, što omogućava brža preuzimanja i manju potrošnju podataka. [Saznajte više](https://web.dev/uses-webp-images/)."
+    "message": "Formati slika kao što su WebP i AVIF često pružaju bolju kompresiju od PNG-a ili JPEG-a, što omogućava brža preuzimanja i manju potrošnju podataka. [Saznajte više o modernim formatima slika](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/)."
   },
   "core/audits/byte-efficiency/modern-image-formats.js | title": {
     "message": "Prikazujte slike u formatima sledeće generacije"
   },
   "core/audits/byte-efficiency/offscreen-images.js | description": {
-    "message": "Preporučujemo vam da odložite učitavanje slika van ekrana i skrivenih slika dok se svi veoma važni resursi ne učitaju kako biste smanjili vreme do početka interakcije. [Saznajte više](https://web.dev/offscreen-images/)."
+    "message": "Preporučujemo vam da odložite učitavanje slika van ekrana i skrivenih slika dok se svi veoma važni resursi ne učitaju kako biste smanjili vreme do početka interakcije. [Saznajte kako da odložite slike van ekrana](https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/)."
   },
   "core/audits/byte-efficiency/offscreen-images.js | title": {
     "message": "Odložite slike van ekrana"
   },
   "core/audits/byte-efficiency/render-blocking-resources.js | description": {
-    "message": "Resursi blokiraju prvo prikazivanje stranice. Preporučujemo vam da prikazujete sve važne JS/CSS datoteke u tekstu i da odložite sve JS datoteke/stilove koji nisu toliko važni. [Saznajte više](https://web.dev/render-blocking-resources/)."
+    "message": "Resursi blokiraju prvo prikazivanje stranice. Preporučujemo vam da prikazujete sve važne JS/CSS fajlove u tekstu i da odložite sve JS fajlove/stilove koji nisu toliko važni. [Saznajte kako da eliminišete resurse koji blokiraju prikazivanje](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/)."
   },
   "core/audits/byte-efficiency/render-blocking-resources.js | title": {
     "message": "Eliminišite resurse koji blokiraju prikazivanje"
   },
   "core/audits/byte-efficiency/total-byte-weight.js | description": {
-    "message": "Velike mrežne resurse korisnici moraju da plate stvarnim novcem i oni su veoma povezani sa dugim vremenima učitavanja. [Saznajte više](https://web.dev/total-byte-weight/)."
+    "message": "Velike mrežne resurse korisnici moraju da plate stvarnim novcem i oni su veoma povezani sa dugim vremenima učitavanja. [Saznajte kako da smanjite veličine resursa](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
   },
   "core/audits/byte-efficiency/total-byte-weight.js | displayValue": {
     "message": "Ukupna veličina je bila {totalBytes, number, bytes} KiB"
@@ -627,31 +522,31 @@
     "message": "Izbegava ogromne mrežne resurse"
   },
   "core/audits/byte-efficiency/unminified-css.js | description": {
-    "message": "Umanjivanjem CSS datoteka možete da smanjite veličine mrežnih resursa. [Saznajte više](https://web.dev/unminified-css/)."
+    "message": "Umanjivanjem CSS fajlova možete da smanjite veličine mrežnih resursa. [Saznajte kako da umanjite CSS](https://developer.chrome.com/docs/lighthouse/performance/unminified-css/)."
   },
   "core/audits/byte-efficiency/unminified-css.js | title": {
     "message": "Umanjite CSS"
   },
   "core/audits/byte-efficiency/unminified-javascript.js | description": {
-    "message": "Umanjivanje JavaScript datoteka može da smanji veličine resursa i vreme raščlanjivanja skripta. [Saznajte više](https://web.dev/unminified-javascript/)."
+    "message": "Umanjivanje JavaScript fajlova može da smanji veličine resursa i vreme raščlanjivanja skripta. [Saznajte kako da umanjite JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/)."
   },
   "core/audits/byte-efficiency/unminified-javascript.js | title": {
     "message": "Umanjite JavaScript"
   },
   "core/audits/byte-efficiency/unused-css-rules.js | description": {
-    "message": "Smanjite nekorišćena pravila iz opisa stilova i odložite CSS koji se ne koristi za sadržaj iznad preloma da biste smanjili potrošnju bajtova tokom mrežnih aktivnosti. [Saznajte više](https://web.dev/unused-css-rules/)."
+    "message": "Smanjite nekorišćena pravila iz opisa stilova i odložite CSS koji se ne koristi za sadržaj iznad preloma da biste smanjili potrošnju bajtova tokom mrežnih aktivnosti. [Saznajte kako da smanjite CSS koji se ne koristi](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)."
   },
   "core/audits/byte-efficiency/unused-css-rules.js | title": {
     "message": "Smanjite nekorišćeni CSS"
   },
   "core/audits/byte-efficiency/unused-javascript.js | description": {
-    "message": "Smanjite nekorišćeni JavaScript i odložite učitavanje skripti dok ne budu potrebne da biste smanjili potrošnju bajtova tokom mrežnih aktivnosti. [Saznajte više](https://web.dev/unused-javascript/)."
+    "message": "Smanjite nekorišćeni JavaScript i odložite učitavanje skripti dok ne budu potrebne da biste smanjili potrošnju bajtova tokom mrežnih aktivnosti. [Saznajte kako da smanjite JavaScript koji se ne koristi](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
   },
   "core/audits/byte-efficiency/unused-javascript.js | title": {
     "message": "Smanjite nekorišćeni JavaScript"
   },
   "core/audits/byte-efficiency/uses-long-cache-ttl.js | description": {
-    "message": "Dugo trajanje keša može da ubrza ponovne posete stranici. [Saznajte više](https://web.dev/uses-long-cache-ttl/)."
+    "message": "Dugo trajanje keša može da ubrza ponovne posete stranici. [Saznajte više o efikasnim smernicama za keš](https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/)."
   },
   "core/audits/byte-efficiency/uses-long-cache-ttl.js | displayValue": {
     "message": "{itemCount,plural, =1{Pronađen je 1 resurs}one{Pronađen je # resurs}few{Pronađena su # resursa}other{Pronađeno je # resursa}}"
@@ -663,7 +558,7 @@
     "message": "Koristi efikasne smernice keša na statičnim elementima"
   },
   "core/audits/byte-efficiency/uses-optimized-images.js | description": {
-    "message": "Optimizovane slike se učitavaju brže i troše manje mobilnih podataka. [Saznajte više](https://web.dev/uses-optimized-images/)."
+    "message": "Optimizovane slike se učitavaju brže i troše manje mobilnih podataka. [Saznajte kako da efikasno kodirate slike](https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/)."
   },
   "core/audits/byte-efficiency/uses-optimized-images.js | title": {
     "message": "Efikasno kodirajte slike"
@@ -681,19 +576,19 @@
     "message": "Slike su odgovarajuće za prikazanu veličinu"
   },
   "core/audits/byte-efficiency/uses-responsive-images.js | description": {
-    "message": "Prikazujte slike odgovarajuće veličine da biste uštedeli mobilne podatke i poboljšali vreme učitavanja. [Saznajte više](https://web.dev/uses-responsive-images/)."
+    "message": "Prikazujte slike odgovarajuće veličine da biste uštedeli mobilne podatke i poboljšali vreme učitavanja. [Saznajte kako da podesite veličinu slika](https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/)."
   },
   "core/audits/byte-efficiency/uses-responsive-images.js | title": {
     "message": "Odredite odgovarajuću veličinu slika"
   },
   "core/audits/byte-efficiency/uses-text-compression.js | description": {
-    "message": "Resurse zasnovane na tekstu treba da prikazujete u komprimovanom formatu (gzip, deflate ili brotli) da biste smanjili ukupnu količinu potrošenih mrežnih podataka. [Saznajte više](https://web.dev/uses-text-compression/)."
+    "message": "Resurse zasnovane na tekstu treba da prikazujete u komprimovanom formatu (gzip, deflate ili brotli) da biste smanjili ukupnu količinu potrošenih mrežnih podataka. [Saznajte više o komprimovanju teksta](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression/)."
   },
   "core/audits/byte-efficiency/uses-text-compression.js | title": {
     "message": "Omogućite kompresiju teksta"
   },
   "core/audits/content-width.js | description": {
-    "message": "Ako se širina sadržaja aplikacije ne podudara sa širinom oblasti prikaza, aplikacija možda nije optimizovana za ekrane na mobilnim uređajima. [Saznajte više](https://web.dev/content-width/)."
+    "message": "Ako se širina sadržaja aplikacije ne podudara sa širinom oblasti prikaza, aplikacija možda nije optimizovana za ekrane na mobilnim uređajima. [Saznajte kako da odredite veličinu sadržaja za oblast prikaza](https://developer.chrome.com/docs/lighthouse/pwa/content-width/)."
   },
   "core/audits/content-width.js | explanation": {
     "message": "Veličina oblasti prikaza od {innerWidth} piksela se ne podudara sa veličinom prozora od {outerWidth} piksela."
@@ -705,7 +600,7 @@
     "message": "Sadržaj je odgovarajuće veličine za oblast prikaza"
   },
   "core/audits/critical-request-chains.js | description": {
-    "message": "Lanci veoma važnih zahteva u nastavku vam prikazuju koji resursi se učitavaju sa visokim prioritetom. Preporučujemo vam da smanjite dužinu lanaca, da smanjite veličinu preuzimanja za resurse ili da odložite preuzimanje resursa koji nisu neophodni radi bržeg učitavanja stranice. [Saznajte više](https://web.dev/critical-request-chains/)."
+    "message": "Lanci veoma važnih zahteva u nastavku vam prikazuju koji resursi se učitavaju sa visokim prioritetom. Preporučujemo vam da smanjite dužinu lanaca, da smanjite veličinu preuzimanja za resurse ili da odložite preuzimanje resursa koji nisu neophodni radi bržeg učitavanja stranice. [Saznajte kako da izbegnete pravljenje lanaca kritičnih zahteva](https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains/)."
   },
   "core/audits/critical-request-chains.js | displayValue": {
     "message": "{itemCount,plural, =1{Pronađen je 1 lanac}one{Pronađen je # lanac}few{Pronađena su # lanca}other{Pronađeno je # lanaca}}"
@@ -720,13 +615,13 @@
     "message": "Ozbiljnost"
   },
   "core/audits/csp-xss.js | description": {
-    "message": "Snažne smernice za bezbednost sadržaja znatno smanjuju rizik od napada skriptovanjem dinamički generisanih veb-stranica. [Saznajte više](https://web.dev/csp-xss/)"
+    "message": "Snažne smernice za bezbednost sadržaja (CSP) znatno smanjuju rizik od napada skriptovanjem dinamički generisanih veb-stranica (XSS). [Saznajte kako da koristite CSP da biste sprečili XSS](https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/)"
   },
   "core/audits/csp-xss.js | itemSeveritySyntax": {
     "message": "Sintaksa"
   },
   "core/audits/csp-xss.js | metaTagMessage": {
-    "message": "Stranica sadrži CSP definisan u <meta> oznaci. Savetujemo vam da definišete CSP u HTTP zaglavlju ako možete."
+    "message": "Stranica sadrži CSP definisan u <meta> oznaci. Razmotrite premeštanje CSP-a u HTTP zaglavlje ili definisanje drugog strogog CSP-a u HTTP zaglavlju."
   },
   "core/audits/csp-xss.js | noCsp": {
     "message": "Nije pronađen nijedan CSP u režimu primene"
@@ -741,7 +636,7 @@
     "message": "Red"
   },
   "core/audits/deprecations.js | description": {
-    "message": "Zastareli API-ji će na kraju biti uklonjeni iz pregledača. [Saznajte više](https://web.dev/deprecations/)."
+    "message": "Zastareli API-ji će na kraju biti uklonjeni iz pregledača. [Saznajte više o zastarelim API-jima](https://developer.chrome.com/docs/lighthouse/best-practices/deprecations/)."
   },
   "core/audits/deprecations.js | displayValue": {
     "message": "{itemCount,plural, =1{Otkriveno je 1 upozorenje}one{Otkriveno je # upozorenje}few{Otkrivena su # upozorenja}other{Otkriveno je # upozorenja}}"
@@ -753,7 +648,7 @@
     "message": "Izbegava zastarele API-je"
   },
   "core/audits/dobetterweb/charset.js | description": {
-    "message": "Utvrđivanje kodiranja znakova je obavezno. To može da se uradi pomoću oznake `<meta>` u prva 1024 bajta HTML-a ili u HTTP zaglavlju odgovora Content-Type. [Saznajte više](https://web.dev/charset/)."
+    "message": "Utvrđivanje kodiranja znakova je obavezno. To može da se uradi pomoću oznake `<meta>` u prva 1024 bajta HTML-a ili u HTTP zaglavlju odgovora Content-Type. [Saznajte više o deklarisanju kodiranja znakova](https://developer.chrome.com/docs/lighthouse/best-practices/charset/)."
   },
   "core/audits/dobetterweb/charset.js | failureTitle": {
     "message": "Charset nije utvrđen ili se utvrđuje prekasno u HTML-u"
@@ -762,10 +657,13 @@
     "message": "Pravilno definisan charset"
   },
   "core/audits/dobetterweb/doctype.js | description": {
-    "message": "Navođenjem doctype-a sprečava se prelazak na arhajski režim pregledača. [Saznajte više](https://web.dev/doctype/)."
+    "message": "Navođenjem doctype-a sprečava se prelazak na arhajski režim pregledača. [Saznajte više o deklaraciji doctype](https://developer.chrome.com/docs/lighthouse/best-practices/doctype/)."
   },
   "core/audits/dobetterweb/doctype.js | explanationBadDoctype": {
-    "message": "Naziv za doctype mora da bude string napisan malim slovima `html`"
+    "message": "Naziv za doctype mora da bude string `html`"
+  },
+  "core/audits/dobetterweb/doctype.js | explanationLimitedQuirks": {
+    "message": "Dokument sadrži `doctype` koji pokreće `limited-quirks-mode`"
   },
   "core/audits/dobetterweb/doctype.js | explanationNoDoctype": {
     "message": "Dokument mora da sadrži doctype"
@@ -775,6 +673,9 @@
   },
   "core/audits/dobetterweb/doctype.js | explanationSystemId": {
     "message": "Očekivani systemId će biti prazan string"
+  },
+  "core/audits/dobetterweb/doctype.js | explanationWrongDoctype": {
+    "message": "Dokument sadrži `doctype` koji pokreće `quirks-mode`"
   },
   "core/audits/dobetterweb/doctype.js | failureTitle": {
     "message": "Stranici nedostaje HTML doctype, pa se aktivira arhajski režim"
@@ -789,7 +690,7 @@
     "message": "Vrednost"
   },
   "core/audits/dobetterweb/dom-size.js | description": {
-    "message": "Veliki DOM će povećati potrošnju memorije, izazvati duža [izračunavanja stilova](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) i dovesti do skupih [preoblikovanja izgleda](https://developers.google.com/speed/articles/reflow). [Saznajte više](https://web.dev/dom-size/)."
+    "message": "Veliki DOM će povećati potrošnju memorije, izazvati duža [izračunavanja stilova](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) i dovesti do skupih [preoblikovanja izgleda](https://developers.google.com/speed/articles/reflow). [Saznajte kako da izbegnete prekomernu veličinu DOM-a](https://developer.chrome.com/docs/lighthouse/performance/dom-size/)."
   },
   "core/audits/dobetterweb/dom-size.js | displayValue": {
     "message": "{itemCount,plural, =1{1 element}one{# element}few{# elementa}other{# elemenata}}"
@@ -810,7 +711,7 @@
     "message": "Izbegava preveliku veličinu DOM-a"
   },
   "core/audits/dobetterweb/geolocation-on-start.js | description": {
-    "message": "Korisnici nemaju poverenja u sajtove koji traže njihovu lokaciju bez konteksta ili ih takvi sajtovi zbunjuju. Preporučujemo vam da umesto toga povežete zahtev sa radnjom koju obavlja korisnik. [Saznajte više](https://web.dev/geolocation-on-start/)."
+    "message": "Korisnici nemaju poverenja u sajtove koji traže njihovu lokaciju bez konteksta ili ih takvi sajtovi zbunjuju. Preporučujemo vam da umesto toga povežete zahtev sa radnjom koju obavlja korisnik. [Saznajte više o dozvoli za geolociranje](https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/)."
   },
   "core/audits/dobetterweb/geolocation-on-start.js | failureTitle": {
     "message": "Traži dozvolu za geolociranje pri učitavanju stranice"
@@ -840,13 +741,13 @@
     "message": "Verzija"
   },
   "core/audits/dobetterweb/js-libraries.js | description": {
-    "message": "Sve korisničke JavaScript biblioteke otkrivene na ovoj stranici. [Saznajte više](https://web.dev/js-libraries/)."
+    "message": "Sve korisničke JavaScript biblioteke otkrivene na ovoj stranici. [Saznajte više o ovoj dijagnostičkom nadzoru otkrivanja JavaScript biblioteke](https://developer.chrome.com/docs/lighthouse/best-practices/js-libraries/)."
   },
   "core/audits/dobetterweb/js-libraries.js | title": {
     "message": "Otkrivene su JavaScript biblioteke"
   },
   "core/audits/dobetterweb/no-document-write.js | description": {
-    "message": "Ako korisnici imaju spore veze, spoljne skripte koje se dinamički ubacuju pomoću atributa `document.write()` mogu da odlože učitavanje stranice za desetine sekundi. [Saznajte više](https://web.dev/no-document-write/)."
+    "message": "Ako korisnici imaju spore veze, spoljne skripte koje se dinamički ubacuju pomoću atributa `document.write()` mogu da odlože učitavanje stranice za desetine sekundi. [Saznajte kako da izbegnete document.write()](https://developer.chrome.com/docs/lighthouse/best-practices/no-document-write/)."
   },
   "core/audits/dobetterweb/no-document-write.js | failureTitle": {
     "message": "Izbegnite `document.write()`"
@@ -855,7 +756,7 @@
     "message": "Izbegava atribut `document.write()`"
   },
   "core/audits/dobetterweb/notification-on-start.js | description": {
-    "message": "Korisnici nemaju poverenja u sajtove koji traže dozvolu za slanje obaveštenja bez konteksta ili ih takvi sajtovi zbunjuju. Preporučujemo vam da umesto toga povežete zahtev sa pokretima korisnika. [Saznajte više](https://web.dev/notification-on-start/)."
+    "message": "Korisnici nemaju poverenja u sajtove koji traže dozvolu za slanje obaveštenja bez konteksta ili ih takvi sajtovi zbunjuju. Preporučujemo vam da umesto toga povežete zahtev sa pokretima korisnika. [Saznajte više o odgovornom dobijanju dozvole za obaveštenja](https://developer.chrome.com/docs/lighthouse/best-practices/notification-on-start/)."
   },
   "core/audits/dobetterweb/notification-on-start.js | failureTitle": {
     "message": "Traži dozvolu za obaveštenja pri učitavanju stranice"
@@ -863,20 +764,20 @@
   "core/audits/dobetterweb/notification-on-start.js | title": {
     "message": "Izbegavajte traženje dozvole za obaveštenja pri učitavanju stranice"
   },
-  "core/audits/dobetterweb/password-inputs-can-be-pasted-into.js | description": {
-    "message": "Sprečavanje lepljenja lozinke narušava dobre smernice za bezbednost. [Saznajte više](https://web.dev/password-inputs-can-be-pasted-into/)."
+  "core/audits/dobetterweb/paste-preventing-inputs.js | description": {
+    "message": "Sprečavanje lepljenja unosa je loša praksa za korisnički doživljaj i ugrožava bezbednost blokiranjem menadžera lozinki.[Saznajte više o poljima za unos prilagođenim korisnicima](https://developer.chrome.com/docs/lighthouse/best-practices/paste-preventing-inputs/)."
   },
-  "core/audits/dobetterweb/password-inputs-can-be-pasted-into.js | failureTitle": {
-    "message": "Sprečava korisnike da nalepe vrednost u polja za lozinke"
+  "core/audits/dobetterweb/paste-preventing-inputs.js | failureTitle": {
+    "message": "Sprečava korisnike da nalepljuju vrednosti u polja za unos"
   },
-  "core/audits/dobetterweb/password-inputs-can-be-pasted-into.js | title": {
-    "message": "Dozvoljava korisnicima da nalepe vrednost u polja za lozinke"
+  "core/audits/dobetterweb/paste-preventing-inputs.js | title": {
+    "message": "Dozvoljava korisnicima da nalepe vrednost u polja za unos"
   },
   "core/audits/dobetterweb/uses-http2.js | columnProtocol": {
     "message": "Protokol"
   },
   "core/audits/dobetterweb/uses-http2.js | description": {
-    "message": "HTTP/2 ima brojne prednosti u odnosu na HTTP/1.1, uključujući binarna zaglavlja i multipleksiranje. [Saznajte više](https://web.dev/uses-http2/)."
+    "message": "HTTP/2 ima brojne prednosti u odnosu na HTTP/1.1, uključujući binarna zaglavlja i multipleksiranje. [Saznajte više o protokolu HTTP/2](https://developer.chrome.com/docs/lighthouse/best-practices/uses-http2/)."
   },
   "core/audits/dobetterweb/uses-http2.js | displayValue": {
     "message": "{itemCount,plural, =1{1 zahtev nije isporučen preko protokola HTTP/2}one{# zahtev nije isporučen preko protokola HTTP/2}few{# zahteva nisu isporučena preko protokola HTTP/2}other{# zahteva nije isporučeno preko protokola HTTP/2}}"
@@ -885,7 +786,7 @@
     "message": "Koristite HTTP/2"
   },
   "core/audits/dobetterweb/uses-passive-event-listeners.js | description": {
-    "message": "Preporučujemo vam da pasivne obrađivače događaja označite kao `passive` da biste poboljšali rezultate pomeranja. [Saznajte više](https://web.dev/uses-passive-event-listeners/)."
+    "message": "Preporučujemo vam da pasivne obrađivače događaja označite kao `passive` da biste poboljšali rezultate pomeranja. [Saznajte više o usvajanju pasivnih osluškivača događaja](https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/)."
   },
   "core/audits/dobetterweb/uses-passive-event-listeners.js | failureTitle": {
     "message": "Ne koristite pasivne obrađivače da biste poboljšali učinak pomeranja"
@@ -894,7 +795,7 @@
     "message": "Koristite pasivne obrađivače da biste poboljšali učinak pomeranja"
   },
   "core/audits/errors-in-console.js | description": {
-    "message": "Greške evidentirane u konzoli ukazuju na nerešene probleme. One su rezultat neuspelih mrežnih zahteva i drugih problema u vezi sa pregledačem. [Saznajte više](https://web.dev/errors-in-console/)"
+    "message": "Greške evidentirane u konzoli ukazuju na nerešene probleme. One su rezultat neuspelih mrežnih zahteva i drugih problema u vezi sa pregledačem. [Saznajte više o ovim greškama u dijagnostičkom nadzoru konzole](https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/)"
   },
   "core/audits/errors-in-console.js | failureTitle": {
     "message": "Greške pregledača su evidentirane u konzoli"
@@ -903,7 +804,7 @@
     "message": "Nijedna greška pregledača nije evidentirana u konzoli"
   },
   "core/audits/font-display.js | description": {
-    "message": "Iskoristite CSS funkciju za prikaz fontova da biste bili sigurni da korisnik može da vidi tekst dok se veb-fontovi učitavaju. [Saznajte više](https://web.dev/font-display/)."
+    "message": "Iskoristite CSS funkciju `font-display` da bi tekst bio vidljiv korisnicima dok se veb-fontovi učitavaju. [Saznajte više o funkciji `font-display`](https://developer.chrome.com/docs/lighthouse/performance/font-display/)."
   },
   "core/audits/font-display.js | failureTitle": {
     "message": "Pobrinite se da tekst ostane vidljiv tokom učitavanja veb-fontova"
@@ -921,7 +822,7 @@
     "message": "Razmera (prikazana)"
   },
   "core/audits/image-aspect-ratio.js | description": {
-    "message": "Dimenzije prikaza slike treba da se podudaraju sa prirodnom razmerom. [Saznajte više](https://web.dev/image-aspect-ratio/)."
+    "message": "Dimenzije prikaza slike treba da se podudaraju sa prirodnom razmerom. [Saznajte više o razmeri slike](https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/)."
   },
   "core/audits/image-aspect-ratio.js | failureTitle": {
     "message": "Prikazuje slike sa pogrešnom razmerom"
@@ -939,7 +840,7 @@
     "message": "Očekivana veličina"
   },
   "core/audits/image-size-responsive.js | description": {
-    "message": "Prirodne dimenzije slike treba da budu proporcionalne razmeri veličine ekrana i piksela da bi slike bile što jasnije. [Saznajte više](https://web.dev/serve-responsive-images/)."
+    "message": "Prirodne dimenzije slike treba da budu proporcionalne razmeri veličine ekrana i piksela da bi slike bile što jasnije. [Saznajte kako da pružate prilagodljive slike](https://web.dev/serve-responsive-images/)."
   },
   "core/audits/image-size-responsive.js | failureTitle": {
     "message": "Prikazuje slike sa niskom rezolucijom"
@@ -957,7 +858,7 @@
     "message": "Razlog neuspeha"
   },
   "core/audits/installable-manifest.js | description": {
-    "message": "Serviser je tehnologija koja omogućava aplikaciji da koristi mnoge funkcije progresivnih veb-aplikacija, poput oflajn rada, dodavanja na početni ekran i iskačućih obaveštenja. Uz odgovarajuće primene servisera i manifesta pregledači mogu proaktivno da traže od korisnika da dodaju aplikaciju na početni ekran, što može da dovede do većeg angažovanja. [Saznajte više](https://web.dev/installable-manifest/)."
+    "message": "Serviser je tehnologija koja omogućava aplikaciji da koristi mnoge funkcije progresivnih veb-aplikacija, poput oflajn rada, dodavanja na početni ekran i iskačućih obaveštenja. Uz odgovarajuće primene servisera i manifesta pregledači mogu proaktivno da traže od korisnika da dodaju aplikaciju na početni ekran, što može da dovede do većeg angažovanja. [Saznajte više o uslovima za instaliranje za manifest](https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/)."
   },
   "core/audits/installable-manifest.js | displayValue": {
     "message": "{itemCount,plural, =1{1 razlog}one{# razlog}few{# razloga}other{# razloga}}"
@@ -1034,6 +935,9 @@
   "core/audits/installable-manifest.js | protocol-timeout": {
     "message": "Lighthouse nije uspeo da utvrdi da li je postojao serviser. Probajte sa novijom verzijom Chrome-a."
   },
+  "core/audits/installable-manifest.js | scheme-not-supported-for-webapk": {
+    "message": "Šema URL-a manifesta ({scheme}) nije podržana na Android-u."
+  },
   "core/audits/installable-manifest.js | start-url-not-valid": {
     "message": "Početni URL manifesta nije važeći"
   },
@@ -1059,7 +963,7 @@
     "message": "Razrešenje zahteva"
   },
   "core/audits/is-on-https.js | description": {
-    "message": "Svi sajtovi treba da budu zaštićeni HTTPS-om, čak i oni koji ne obrađuju osetljive podatke. To obuhvata izbegavanje [mešovitog sadržaja](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), odnosno učitavanje nekih resursa preko HTTP-a iako se početni zahtev prikazuje preko HTTPS-a. HTTPS sprečava uljeze da neovlašćeno pristupaju komunikaciji između aplikacije i korisnika ili da je pasivno slušaju. On je preduslov za HTTP/2 i API-je brojnih novih veb-platformi. [Saznajte više](https://web.dev/is-on-https/)."
+    "message": "Svi sajtovi treba da budu zaštićeni HTTPS-om, čak i oni koji ne obrađuju osetljive podatke. To obuhvata izbegavanje [mešovitog sadržaja](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), odnosno učitavanje nekih resursa preko HTTP-a iako se početni zahtev prikazuje preko HTTPS-a. HTTPS sprečava uljeze da neovlašćeno pristupaju komunikaciji između aplikacije i korisnika ili da je pasivno slušaju. On je preduslov za HTTP/2 i API-je brojnih novih veb-platformi. [Saznajte više o protokolu HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/)."
   },
   "core/audits/is-on-https.js | displayValue": {
     "message": "{itemCount,plural, =1{Pronađen je 1 nebezbedan zahtev}one{Pronađen je # nebezbedan zahtev}few{Pronađena su # nebezbedna zahteva}other{Pronađeno je # nebezbednih zahteva}}"
@@ -1076,8 +980,29 @@
   "core/audits/is-on-https.js | warning": {
     "message": "Dozvoljen uz upozorenje"
   },
+  "core/audits/largest-contentful-paint-element.js | columnPercentOfLCP": {
+    "message": "% LCP-a"
+  },
+  "core/audits/largest-contentful-paint-element.js | columnPhase": {
+    "message": "Faza"
+  },
+  "core/audits/largest-contentful-paint-element.js | columnTiming": {
+    "message": "Vreme"
+  },
   "core/audits/largest-contentful-paint-element.js | description": {
-    "message": "Ovo je najveći element sadržaja koji je prikazan u oblasti prikaza. [Saznajte više](https://web.dev/lighthouse-largest-contentful-paint/)"
+    "message": "Ovo je najveći element sadržaja koji je prikazan u oblasti prikaza. [Saznajte više o elementu sa najvećim prikazivanjem sadržaja](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemLoadDelay": {
+    "message": "Kašnjenje učitavanja"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemLoadTime": {
+    "message": "Brzina učitavanja"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemRenderDelay": {
+    "message": "Kašnjenje renderovanja"
+  },
+  "core/audits/largest-contentful-paint-element.js | itemTTFB": {
+    "message": "TTFB"
   },
   "core/audits/largest-contentful-paint-element.js | title": {
     "message": "Element sa najvećim prikazivanjem sadržaja"
@@ -1086,13 +1011,13 @@
     "message": "CLS doprinos"
   },
   "core/audits/layout-shift-elements.js | description": {
-    "message": "Ovi DOM elementi najviše doprinose CLS-u stranice."
+    "message": "Ovi DOM elementi najviše doprinose CLS-u stranice. [Saznajte kako da poboljšate CLS](https://web.dev/optimize-cls/)"
   },
   "core/audits/layout-shift-elements.js | title": {
     "message": "Izbegavajte velike promene rasporeda"
   },
   "core/audits/lcp-lazy-loaded.js | description": {
-    "message": "Slike iznad preloma koje se sporo učitavaju prikazuju se kasnije u ciklusu stranice, što može da izazove kašnjenje najvećeg prikazivanja sadržaja. [Saznajte više](https://web.dev/lcp-lazy-loading/)."
+    "message": "Slike iznad preloma koje se sporo učitavaju prikazuju se kasnije u ciklusu stranice, što može da izazove kašnjenje najvećeg prikazivanja sadržaja. [Saznajte više o optimalnom sporom učitavanju](https://web.dev/lcp-lazy-loading/)."
   },
   "core/audits/lcp-lazy-loaded.js | failureTitle": {
     "message": "Slika najvećeg prikazivanja sadržaja je sporo učitana"
@@ -1101,7 +1026,7 @@
     "message": "Slika najvećeg prikazivanja sadržaja nije sporo učitana"
   },
   "core/audits/long-tasks.js | description": {
-    "message": "Navodi najduže zadatke u glavnoj niti, što je korisno za identifikovanje onih koji najviše doprinose kašnjenju prikaza. [Saznajte više](https://web.dev/long-tasks-devtools/)"
+    "message": "Navodi najduže zadatke u glavnoj niti, što je korisno za identifikovanje onih koji najviše doprinose kašnjenju prikaza. [Saznajte kako da izbegnete duge zadatke u glavnoj niti](https://web.dev/long-tasks-devtools/)"
   },
   "core/audits/long-tasks.js | displayValue": {
     "message": "{itemCount,plural, =1{Pronađen je # dugi zadatak}one{Pronađen je # dugi zadatak}few{Pronađena su # duga zadatka}other{Pronađeno je # dugih zadataka}}"
@@ -1113,7 +1038,7 @@
     "message": "Kategorija"
   },
   "core/audits/mainthread-work-breakdown.js | description": {
-    "message": "Preporučujemo vam da smanjite vreme potrebno za raščlanjivanje, kompajliranje i izvršavanje JS datoteka. Prikazivanje manjih JS resursa će vam možda pomoći u tome. [Saznajte više](https://web.dev/mainthread-work-breakdown/)"
+    "message": "Preporučujemo vam da smanjite vreme potrebno za raščlanjivanje, kompajliranje i izvršavanje JS fajlova. Prikazivanje manjih JS resursa će vam možda pomoći u tome. [Saznajte kako da smanjite rad glavne niti](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
   },
   "core/audits/mainthread-work-breakdown.js | failureTitle": {
     "message": "Smanjite rad glavne niti"
@@ -1122,25 +1047,25 @@
     "message": "Smanjuje rad glavne niti"
   },
   "core/audits/manual/pwa-cross-browser.js | description": {
-    "message": "Da bi imali što više korisnika, sajtovi treba da rade u svim značajnijim pregledačima. [Saznajte više](https://web.dev/pwa-cross-browser/)."
+    "message": "Da bi imali što više korisnika, sajtovi treba da rade u svim značajnijim pregledačima. [Saznajte više o kompatibilnosti sa više pregledača](https://developer.chrome.com/docs/lighthouse/pwa/pwa-cross-browser/)."
   },
   "core/audits/manual/pwa-cross-browser.js | title": {
     "message": "Sajt radi u različitim veb-pregledačima"
   },
   "core/audits/manual/pwa-each-page-has-url.js | description": {
-    "message": "Uverite se da do pojedinačnih stranica vode precizni linkovi preko URL-ova i da su URL-ovi jedinstveni u svrhu deljenja na društvenim medijima. [Saznajte više](https://web.dev/pwa-each-page-has-url/)."
+    "message": "Uverite se da do pojedinačnih stranica vode precizni linkovi preko URL-ova i da su URL-ovi jedinstveni u svrhu deljenja na društvenim medijima. [Saznajte više o pružanju preciznih linkova](https://developer.chrome.com/docs/lighthouse/pwa/pwa-each-page-has-url/)."
   },
   "core/audits/manual/pwa-each-page-has-url.js | title": {
     "message": "Svaka stranica ima URL"
   },
   "core/audits/manual/pwa-page-transitions.js | description": {
-    "message": "Korisnici treba da imaju utisak da su prelazi brzi dok dodiruju stavke, čak i na sporoj mreži. Ovaj doživljaj je ključan za utisak koji će korisnik imati o učinku. [Saznajte više](https://web.dev/pwa-page-transitions/)."
+    "message": "Korisnici treba da imaju utisak da su prelazi brzi dok dodiruju stavke, čak i na sporoj mreži. Ovaj doživljaj je ključan za utisak koji će korisnik imati o učinku. [Saznajte više o prelascima sa stranice na stranicu](https://developer.chrome.com/docs/lighthouse/pwa/pwa-page-transitions/)."
   },
   "core/audits/manual/pwa-page-transitions.js | title": {
     "message": "Prelasci sa stranice na stranicu ne deluju kao da se blokiraju zbog mreže"
   },
   "core/audits/maskable-icon.js | description": {
-    "message": "Ikona koja može da se maskira omogućava da slika prekrije ceo oblik bez vodoravnog oivičenja kada se aplikacija instalira na uređaju. [Saznajte više](https://web.dev/maskable-icon-audit/)."
+    "message": "Ikona koja može da se maskira omogućava da slika prekrije ceo oblik bez vodoravnog oivičenja kada se aplikacija instalira na uređaju. [Saznajte više o ikonama manifesta koje mogu da se maskiraju](https://developer.chrome.com/docs/lighthouse/pwa/maskable-icon-audit/)."
   },
   "core/audits/maskable-icon.js | failureTitle": {
     "message": "Manifest ne sadrži ikonu koja može da se maskira"
@@ -1149,43 +1074,46 @@
     "message": "Manifest sadrži ikonu koja može da se maskira"
   },
   "core/audits/metrics/cumulative-layout-shift.js | description": {
-    "message": "Kumulativni pomak sadržaja stranice meri kretanje vidljivih elemenata unutar oblasti prikaza. [Saznajte više](https://web.dev/cls/)."
+    "message": "Kumulativni pomak sadržaja stranice meri kretanje vidljivih elemenata unutar oblasti prikaza. [Saznajte više o pokazatelju Kumulativni pomak sadržaja stranice](https://web.dev/cls/)."
+  },
+  "core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
+    "message": "Interakcija do sledećeg prikazivanja meri brzinu odgovora stranice, koliko dugo stranici treba da vidljivo odgovori na unos korisnika. [Saznajte više o pokazatelju Interakcija do sledećeg prikazivanja](https://web.dev/inp/)."
   },
   "core/audits/metrics/first-contentful-paint.js | description": {
-    "message": "Prvo prikazivanje sadržaja označava vreme kada se prikazuju prvi tekst ili slika. [Saznajte više](https://web.dev/first-contentful-paint/)."
+    "message": "Prvo prikazivanje sadržaja označava vreme kada se prikazuju prvi tekst ili slika. [Saznajte više o pokazatelju Prvo prikazivanje sadržaja](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
   },
   "core/audits/metrics/first-meaningful-paint.js | description": {
-    "message": "Prvo značajno prikazivanje označava vreme kada primarni sadržaj stranice postaje vidljiv. [Saznajte više](https://web.dev/first-meaningful-paint/)."
+    "message": "Prvo značajno prikazivanje označava vreme kada primarni sadržaj stranice postaje vidljiv. [Saznajte više o pokazatelju Prvo značajno prikazivanje](https://developer.chrome.com/docs/lighthouse/performance/first-meaningful-paint/)."
   },
   "core/audits/metrics/interactive.js | description": {
-    "message": "Vreme do interakcije je količina vremena koja je potrebna da bi stranica postala potpuno interaktivna. [Saznajte više](https://web.dev/interactive/)."
+    "message": "Vreme do početka interakcije je količina vremena koja je potrebna da bi stranica postala potpuno interaktivna. [Saznajte više o pokazatelju Vreme do početka interakcije](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
   },
   "core/audits/metrics/largest-contentful-paint.js | description": {
-    "message": "Najveće prikazivanje sadržaja označava trenutak u kojem se prikazuju najveći tekst ili slika. [Saznajte više](https://web.dev/lighthouse-largest-contentful-paint/)"
+    "message": "Najveće prikazivanje sadržaja označava trenutak u kojem se prikazuju najveći tekst ili slika. [Saznajte više o pokazatelju Najveće prikazivanje sadržaja](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
   },
   "core/audits/metrics/max-potential-fid.js | description": {
-    "message": "Maksimalno potencijalno kašnjenje prvog prikaza koje može da se desi korisnicima je trajanje najdužeg zadatka. [Saznajte više](https://web.dev/lighthouse-max-potential-fid/)."
+    "message": "Maksimalno potencijalno kašnjenje prvog prikaza koje može da se desi korisnicima je trajanje najdužeg zadatka. [Saznajte više o pokazatelju Maksimalno potencijalno kašnjenje prvog prikaza](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
   },
   "core/audits/metrics/speed-index.js | description": {
-    "message": "Indeks brzine prikazuje koliko brzo sadržaj stranice postaje vidljiv za korisnike. [Saznajte više](https://web.dev/speed-index/)."
+    "message": "Indeks brzine prikazuje koliko brzo sadržaj stranice postaje vidljiv za korisnike. [Saznajte više o pokazatelju Indeks brzine](https://developer.chrome.com/docs/lighthouse/performance/speed-index/)."
   },
   "core/audits/metrics/total-blocking-time.js | description": {
-    "message": "Zbir svih perioda između FCP-a i vremena do početka interakcije, kada zadatak traje duže od 50 ms, izraženo u milisekundama. [Saznajte više](https://web.dev/lighthouse-total-blocking-time/)."
+    "message": "Zbir svih perioda između FCP-a i vremena do početka interakcije, kada zadatak traje duže od 50 ms, izraženo u milisekundama. [Saznajte više o pokazatelju Ukupno vreme blokiranja](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)."
   },
   "core/audits/network-rtt.js | description": {
-    "message": "Trajanja povratnog puta (RTT) mreže znatno utiču na učinak. Ako je trajanje povratnog puta do početne lokacije veliko, to znači da bi serveri koji su bliži korisniku mogli da poboljšaju učinak. [Saznajte više](https://hpbn.co/primer-on-latency-and-bandwidth/)."
+    "message": "Trajanja povratnog puta (RTT) mreže znatno utiču na učinak. Ako je trajanje povratnog puta do početne lokacije veliko, to znači da bi serveri koji su bliži korisniku mogli da poboljšaju učinak. [Saznajte više o trajanju povratnog puta](https://hpbn.co/primer-on-latency-and-bandwidth/)."
   },
   "core/audits/network-rtt.js | title": {
     "message": "Trajanja povratnog puta mreže"
   },
   "core/audits/network-server-latency.js | description": {
-    "message": "Kašnjenja servera mogu da utiču na učinak veba. Ako je kašnjenje servera za početnu lokaciju veliko, to znači da je server preopterećen ili da ima slab pozadinski učinak. [Saznajte više](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall)."
+    "message": "Kašnjenja servera mogu da utiču na učinak veba. Ako je kašnjenje servera za početnu lokaciju veliko, to znači da je server preopterećen ili da ima slab pozadinski učinak. [Saznajte više o vremenu odgovora servera](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall)."
   },
   "core/audits/network-server-latency.js | title": {
     "message": "Pozadinska kašnjenja servera"
   },
   "core/audits/no-unload-listeners.js | description": {
-    "message": "Događaj `unload` se ne pokreće pouzdano i ako se on obrađuje, to može da spreči optimizacije pregledača poput keša za kretanje unazad i unapred. Bolje da koristite događaje`pagehide` ili `visibilitychange`. [Saznajte više](https://web.dev/bfcache/#never-use-the-unload-event)"
+    "message": "Događaj `unload` se ne pokreće pouzdano i ako se on obrađuje, to može da spreči optimizacije pregledača poput keša za kretanje unazad i unapred. Bolje da koristite događaje `pagehide` ili `visibilitychange`. [Saznajte više o uklanjanju osluškivača događaja](https://web.dev/bfcache/#never-use-the-unload-event)"
   },
   "core/audits/no-unload-listeners.js | failureTitle": {
     "message": "Registruje obrađivača događaja `unload`"
@@ -1194,7 +1122,7 @@
     "message": "Izbegava obrađivače događaja `unload`"
   },
   "core/audits/non-composited-animations.js | description": {
-    "message": "Animacije koje nisu kompozitne mogu da budu problematične i da povećavaju kumulativni pomak sadržaja stranice. [Saznajte više](https://web.dev/non-composited-animations)"
+    "message": "Animacije koje nisu kompozitne mogu da budu problematične i da povećavaju kumulativni pomak sadržaja stranice. [Saznajte kako da izbegnete animacije koje nisu kompozitne](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations/)"
   },
   "core/audits/non-composited-animations.js | displayValue": {
     "message": "{itemCount,plural, =1{Pronađen je # animiran element}one{Pronađen je # animiran element}few{Pronađena su # animirana elementa}other{Pronađeno je # animiranih elemenata}}"
@@ -1221,7 +1149,7 @@
     "message": "Efekat ima nepodržane parametre vremena"
   },
   "core/audits/performance-budget.js | description": {
-    "message": "Zahteve za količinu i veličinu mreže održavajte ispod granica određenih ciljevima za učinak. [Saznajte više](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
+    "message": "Zahteve za količinu i veličinu mreže održavajte ispod granica određenih ciljevima za učinak. [Saznajte više o ograničenjima učinka](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
   },
   "core/audits/performance-budget.js | requestCountOverBudget": {
     "message": "{count,plural, =1{1 zahtev}one{# zahtev}few{# zahteva}other{# zahteva}}"
@@ -1230,7 +1158,7 @@
     "message": "Cilj za učinak"
   },
   "core/audits/preload-fonts.js | description": {
-    "message": "Predučitajte `optional` fontove da bi novi posetioci mogli da ih koriste. [Saznajte više](https://web.dev/preload-optional-fonts/)"
+    "message": "Predučitajte `optional` fontove da bi novi posetioci mogli da ih koriste. [Saznajte više o predučitavanju fontova](https://web.dev/preload-optional-fonts/)"
   },
   "core/audits/preload-fonts.js | failureTitle": {
     "message": "Fontovi koji koriste `font-display: optional` nisu predučitani"
@@ -1238,20 +1166,20 @@
   "core/audits/preload-fonts.js | title": {
     "message": "Fontovi koji koriste `font-display: optional` su predučitani"
   },
-  "core/audits/preload-lcp-image.js | description": {
-    "message": "Predučitajte sliku koju koristi element sa najvećim prikazivanjem sadržaja da biste smanjili vreme za najveće prikazivanje sadržaja. [Saznajte više](https://web.dev/optimize-lcp/#preload-important-resources)."
+  "core/audits/prioritize-lcp-image.js | description": {
+    "message": "Ako se LCP element dinamički dodaje na stranicu, treba da predučitate sliku da biste poboljšali LCP (najveće prikazivanje sadržaja). [Saznajte više o učitavanju LCP elemenata](https://web.dev/optimize-lcp/#optimize-when-the-resource-is-discovered)."
   },
-  "core/audits/preload-lcp-image.js | title": {
+  "core/audits/prioritize-lcp-image.js | title": {
     "message": "Predučitajte sliku sa najvećim prikazivanjem sadržaja"
   },
   "core/audits/redirects.js | description": {
-    "message": "Preusmeravanja dovode do dodatnih kašnjenja pre učitavanja stranice. [Saznajte više](https://web.dev/redirects/)."
+    "message": "Preusmeravanja dovode do dodatnih kašnjenja pre učitavanja stranice. [Saznajte kako da izbegnete preusmeravanja stranice](https://developer.chrome.com/docs/lighthouse/performance/redirects/)."
   },
   "core/audits/redirects.js | title": {
     "message": "Izbegavajte višestruka preusmeravanja stranice"
   },
   "core/audits/resource-summary.js | description": {
-    "message": "Da biste podesili ciljeve za količinu i veličinu resursa stranice, dodajte datoteku budget.json file. [Saznajte više](https://web.dev/use-lighthouse-for-performance-budgets/)."
+    "message": "Da biste podesili ciljeve za količinu i veličinu resursa stranice, dodajte datoteku budget.json file. [Saznajte više o ograničenjima učinka](https://web.dev/use-lighthouse-for-performance-budgets/)."
   },
   "core/audits/resource-summary.js | displayValue": {
     "message": "{requestCount,plural, =1{1 zahtev • {byteCount, number, bytes} KiB}one{# zahtev • {byteCount, number, bytes} KiB}few{# zahteva • {byteCount, number, bytes} KiB}other{# zahteva • {byteCount, number, bytes} KiB}}"
@@ -1260,7 +1188,7 @@
     "message": "Omogući da broj zahteva i veličine prenosa budu mali"
   },
   "core/audits/seo/canonical.js | description": {
-    "message": "Kanonički linkovi predlažu koji URL treba da se prikaže u rezultatima pretrage. [Saznajte više](https://web.dev/canonical/)."
+    "message": "Kanonički linkovi predlažu koji URL treba da se prikaže u rezultatima pretrage. [Saznajte više o kanoničkim linkovima](https://developer.chrome.com/docs/lighthouse/seo/canonical/)."
   },
   "core/audits/seo/canonical.js | explanationConflict": {
     "message": "Više neusaglašenih URL-ova ({urlList})"
@@ -1287,7 +1215,7 @@
     "message": "Link koji ne može da se popiše"
   },
   "core/audits/seo/crawlable-anchors.js | description": {
-    "message": "Pretraživači mogu da koriste `href` atribute na linkovima za popisivanje veb-sajtova. Uverite se da `href` atribut elemenata sidra vodi na odgovarajuće odredište kako bi više stranica sa sajta moglo da se otkrije. [Saznajte više](https://support.google.com/webmasters/answer/9112205)"
+    "message": "Pretraživači mogu da koriste `href` atribute na linkovima za popisivanje veb-sajtova. Uverite se da `href` atribut elemenata sidra vodi na odgovarajuće odredište kako bi više stranica sa sajta moglo da se otkrije. [Saznajte kako da omogućite da se linkovi popisuju](https://support.google.com/webmasters/answer/9112205)"
   },
   "core/audits/seo/crawlable-anchors.js | failureTitle": {
     "message": "Linkovi ne mogu da se popišu"
@@ -1308,7 +1236,7 @@
     "message": "Birač"
   },
   "core/audits/seo/font-size.js | description": {
-    "message": "Veličine fontova ispod 12 piksela su premale da bi bile čitljive i zbog njih korisnici na mobilnim uređajima moraju da „zumiraju prstima“ kako bi mogli da čitaju sadržaj. Potrudite se da >60% teksta stranice bude ≥12 piksela. [Saznajte više](https://web.dev/font-size/)."
+    "message": "Veličine fontova ispod 12 piksela su premale da bi bile čitljive i zbog njih korisnici na mobilnim uređajima moraju da „zumiraju prstima“ kako bi mogli da čitaju sadržaj. Potrudite se da >60% teksta stranice bude ≥12 piksela. [Saznajte više o čitljivim veličinama fontova](https://developer.chrome.com/docs/lighthouse/seo/font-size/)."
   },
   "core/audits/seo/font-size.js | displayValue": {
     "message": "{decimalProportion, number, extendedPercent} čitljivog teksta"
@@ -1326,7 +1254,7 @@
     "message": "Dokument koristi čitljive veličine fontova"
   },
   "core/audits/seo/hreflang.js | description": {
-    "message": "Linkovi hreflang obaveštavaju pretraživače koju verziju stranice treba da navedu u rezultatima pretrage za dati jezik ili region. [Saznajte više](https://web.dev/hreflang/)."
+    "message": "Linkovi hreflang obaveštavaju pretraživače koju verziju stranice treba da navedu u rezultatima pretrage za dati jezik ili region. [Saznajte više o linkovima `hreflang`](https://developer.chrome.com/docs/lighthouse/seo/hreflang/)."
   },
   "core/audits/seo/hreflang.js | failureTitle": {
     "message": "Dokument nema važeći atribut `hreflang`"
@@ -1341,7 +1269,7 @@
     "message": "Neočekivani kôd jezika"
   },
   "core/audits/seo/http-status-code.js | description": {
-    "message": "Stranice sa neuspešnim HTTP kodovima statusa možda neće biti pravilno indeksirane. [Saznajte više](https://web.dev/http-status-code/)."
+    "message": "Stranice sa neuspešnim HTTP kodovima statusa možda neće biti pravilno indeksirane. [Saznajte više o HTTP kodovima statusa](https://developer.chrome.com/docs/lighthouse/seo/http-status-code/)."
   },
   "core/audits/seo/http-status-code.js | failureTitle": {
     "message": "Stranica ima neuspešan HTTP kôd statusa"
@@ -1350,7 +1278,7 @@
     "message": "Stranica ima uspešan HTTP kôd statusa"
   },
   "core/audits/seo/is-crawlable.js | description": {
-    "message": "Pretraživači ne mogu da uvrste stranice u rezultate pretrage ako nemaju dozvolu da ih popisuju. [Saznajte više](https://web.dev/is-crawable/)."
+    "message": "Pretraživači ne mogu da uvrste stranice u rezultate pretrage ako nemaju dozvolu da ih popisuju. [Saznajte više o direktivama popisivača](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/)."
   },
   "core/audits/seo/is-crawlable.js | failureTitle": {
     "message": "Indeksiranje stranice je blokirano"
@@ -1359,7 +1287,7 @@
     "message": "Indeksiranje stranice nije blokirano"
   },
   "core/audits/seo/link-text.js | description": {
-    "message": "Opisni tekst u linkovima pomaže pretraživačima da razumeju sadržaj. [Saznajte više](https://web.dev/link-text/)."
+    "message": "Opisni tekst u linkovima pomaže pretraživačima da razumeju sadržaj. [Saznajte kako da učinite linkove pristupačnijim](https://developer.chrome.com/docs/lighthouse/seo/link-text/)."
   },
   "core/audits/seo/link-text.js | displayValue": {
     "message": "{itemCount,plural, =1{Pronađen je 1 link}one{Pronađen je # link}few{Pronađena su # linka}other{Pronađeno je # linkova}}"
@@ -1371,13 +1299,13 @@
     "message": "Linkovi imaju opisni tekst"
   },
   "core/audits/seo/manual/structured-data.js | description": {
-    "message": "Pokrenite [alatku za testiranje strukturiranih podataka](https://search.google.com/structured-data/testing-tool/) i [alatku za analiziranje strukturiranih podataka](http://linter.structured-data.org/) da biste procenili strukturirane podatke. [Saznajte više](https://web.dev/structured-data/)."
+    "message": "Pokrenite [alatku za testiranje strukturiranih podataka](https://search.google.com/structured-data/testing-tool/) i [alatku za analiziranje strukturiranih podataka](http://linter.structured-data.org/) da biste procenili strukturirane podatke. [Saznajte više o strukturiranim podacima](https://developer.chrome.com/docs/lighthouse/seo/structured-data/)."
   },
   "core/audits/seo/manual/structured-data.js | title": {
     "message": "Strukturirani podaci su važeći"
   },
   "core/audits/seo/meta-description.js | description": {
-    "message": "Metaopisi mogu da budu uvršteni u rezultate pretrage da bi pružili sažeti rezime sadržaja stranice. [Saznajte više](https://web.dev/meta-description/)."
+    "message": "Metaopisi mogu da budu uvršteni u rezultate pretrage da bi pružili sažeti rezime sadržaja stranice. [Saznajte više o metaopisu](https://developer.chrome.com/docs/lighthouse/seo/meta-description/)."
   },
   "core/audits/seo/meta-description.js | explanation": {
     "message": "Polje za tekst opisa je prazno."
@@ -1389,7 +1317,7 @@
     "message": "Dokument ima metaopis"
   },
   "core/audits/seo/plugins.js | description": {
-    "message": "Pretraživači ne mogu da indeksiraju sadržaj dodatnih komponenata, a mnogi uređaji ograničavaju dodatne komponente ili ih ne podržavaju. [Saznajte više](https://web.dev/plugins/)."
+    "message": "Pretraživači ne mogu da indeksiraju sadržaj dodatnih komponenata, a mnogi uređaji ograničavaju dodatne komponente ili ih ne podržavaju. [Saznajte više o izbegavanju dodatnih komponenti](https://developer.chrome.com/docs/lighthouse/seo/plugins/)."
   },
   "core/audits/seo/plugins.js | failureTitle": {
     "message": "Dokument koristi dodatne komponente"
@@ -1398,7 +1326,7 @@
     "message": "Dokument izbegava dodatne komponente"
   },
   "core/audits/seo/robots-txt.js | description": {
-    "message": "Ako datoteka robots.txt nije pravilno napravljena, popisivači možda neće moći da razumeju kako želite da se veb-sajt popiše ili indeksira. [Saznajte više](https://web.dev/robots-txt/)."
+    "message": "Ako fajl robots.txt nije pravilno napravljen, popisivači možda neće moći da razumeju kako želite da se veb-sajt popiše ili indeksira. [Saznajte više o fajlu robots.txt](https://developer.chrome.com/docs/lighthouse/seo/invalid-robots-txt/)."
   },
   "core/audits/seo/robots-txt.js | displayValueHttpBadCode": {
     "message": "Zahtev za datoteku robots.txt vratio je HTTP status: {statusCode}"
@@ -1416,7 +1344,7 @@
     "message": "Datoteka robots.txt je važeća"
   },
   "core/audits/seo/tap-targets.js | description": {
-    "message": "Interaktivni elementi poput dugmadi i linkova treba da budu dovoljno veliki (48×48 piksela) i da imaju dovoljno prostora oko sebe da bi bilo lako da se dodirnu bez preklapanja sa drugim elementima. [Saznajte više](https://web.dev/tap-targets/)."
+    "message": "Interaktivni elementi poput dugmadi i linkova treba da budu dovoljno veliki (48×48 piksela) ili da imaju dovoljno prostora oko sebe da bi bilo lako da se dodirnu bez preklapanja sa drugim elementima. [Saznajte više o ciljevima za dodir](https://developer.chrome.com/docs/lighthouse/seo/tap-targets/)."
   },
   "core/audits/seo/tap-targets.js | displayValue": {
     "message": "{decimalProportion, number, percent} ciljeva dodirivanja ima odgovarajuću veličinu"
@@ -1437,7 +1365,7 @@
     "message": "Ciljevi dodirivanja imaju odgovarajuću veličinu"
   },
   "core/audits/server-response-time.js | description": {
-    "message": "Vreme odgovora servera za glavni dokument treba da bude kratko jer svi drugi zahtevi zavise od njega. [Saznajte više](https://web.dev/time-to-first-byte/)."
+    "message": "Vreme odgovora servera za glavni dokument treba da bude kratko jer svi drugi zahtevi zavise od njega. [Saznajte više o pokazatelju Vreme do prvog bajta](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/)."
   },
   "core/audits/server-response-time.js | displayValue": {
     "message": "Osnovnom dokumentu je trebalo {timeInMs, number, milliseconds} ms"
@@ -1449,7 +1377,7 @@
     "message": "Početno vreme odgovora servera je bilo kratko"
   },
   "core/audits/service-worker.js | description": {
-    "message": "Serviser je tehnologija koja omogućava aplikaciji da koristi mnoge funkcije progresivnih veb-aplikacija, poput oflajn rada, dodavanja na početni ekran i iskačućih obaveštenja. [Saznajte više](https://web.dev/service-worker/)."
+    "message": "Serviser je tehnologija koja omogućava aplikaciji da koristi mnoge funkcije progresivnih veb-aplikacija, poput oflajn rada, dodavanja na početni ekran i iskačućih obaveštenja. [Saznajte više o serviserima](https://developer.chrome.com/docs/lighthouse/pwa/service-worker/)."
   },
   "core/audits/service-worker.js | explanationBadManifest": {
     "message": "Ovu stranicu kontroliše serviser, ali nije pronađen nijedan `start_url` jer nije uspelo raščlanjivanje manifesta kao važeće JSON datoteke"
@@ -1470,7 +1398,7 @@
     "message": "Registruje serviser koji kontroliše stranicu i `start_url`"
   },
   "core/audits/splash-screen.js | description": {
-    "message": "Tematski uvodni ekran obezbeđuje kvalitetan doživljaj kada korisnici pokreću aplikaciju sa početnih ekrana. [Saznajte više](https://web.dev/splash-screen/)."
+    "message": "Tematski uvodni ekran obezbeđuje kvalitetan doživljaj kada korisnici pokreću aplikaciju sa početnih ekrana. [Saznajte više o uvodnim ekranima](https://developer.chrome.com/docs/lighthouse/pwa/splash-screen/)."
   },
   "core/audits/splash-screen.js | failureTitle": {
     "message": "Nije konfigurisano za prilagođeni uvodni ekran"
@@ -1479,7 +1407,7 @@
     "message": "Konfigurisano za prilagođeni uvodni ekran"
   },
   "core/audits/themed-omnibox.js | description": {
-    "message": "Traka za adresu pregledača može da ima temu koja odgovara sajtu. [Saznajte više](https://web.dev/themed-omnibox/)."
+    "message": "Traka za adresu pregledača može da ima temu koja odgovara sajtu. [Saznajte više o tome kako se tematizuje traka za adresu](https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/)."
   },
   "core/audits/themed-omnibox.js | failureTitle": {
     "message": "Ne podešava boju teme za traku za adresu."
@@ -1503,7 +1431,7 @@
     "message": "Proizvod"
   },
   "core/audits/third-party-facades.js | description": {
-    "message": "Neka ugrađivanja trećih strana mogu odloženo da se učitavaju. Predlažemo da ih zamenite fasadom dok ne budu potrebna. [Saznajte više](https://web.dev/third-party-facades/)."
+    "message": "Neka ugrađivanja trećih strana mogu sporo da se učitavaju. Predlažemo da ih zamenite fasadom dok ne budu potrebna. [Saznajte kako da odložite treće strane pomoću fasade](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades/)."
   },
   "core/audits/third-party-facades.js | displayValue": {
     "message": "{itemCount,plural, =1{Dostupna je # alternativna fasada}one{Dostupna je # alternativna fasada}few{Dostupne su # alternativne fasade}other{Dostupno je # alternativnih fasada}}"
@@ -1518,7 +1446,7 @@
     "message": "Nezavisni dobavljač"
   },
   "core/audits/third-party-summary.js | description": {
-    "message": "Kôd nezavisnog dobavljača može značajno da utiče na učinak učitavanja. Ograničite broj suvišnih nezavisnih dobavljača usluge i probajte da učitate kôd nezavisnog dobavljača kada stranica primarno završi sa učitavanjem. [Saznajte više](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)."
+    "message": "Kôd nezavisnog dobavljača može značajno da utiče na učinak učitavanja. Ograničite broj suvišnih nezavisnih dobavljača usluge i probajte da učitate kôd nezavisnog dobavljača kada stranica primarno završi sa učitavanjem. [Saznajte kako da smanjite uticaj treće strane](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)."
   },
   "core/audits/third-party-summary.js | displayValue": {
     "message": "Kôd nezavisnog dobavljača je blokirao glavnu nit {timeInMs, number, milliseconds} ms"
@@ -1536,13 +1464,13 @@
     "message": "Pokazatelj"
   },
   "core/audits/timing-budget.js | description": {
-    "message": "Podesite budžet za brzinu učitavanja da biste lakše pratili učinak sajta. Sajtovi sa dobrim učinkom se učitavaju za kratko vreme i brzo reaguju na događaje unosa korisnika. [Saznajte više](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
+    "message": "Podesite budžet za brzinu učitavanja da biste lakše pratili učinak sajta. Sajtovi sa dobrim učinkom se učitavaju za kratko vreme i brzo reaguju na događaje unosa korisnika. [Saznajte više o ograničenjima učinka](https://developers.google.com/web/tools/lighthouse/audits/budgets)."
   },
   "core/audits/timing-budget.js | title": {
     "message": "Budžet za brzinu učitavanja"
   },
   "core/audits/unsized-images.js | description": {
-    "message": "Podesite eksplicitnu širinu i visinu u elementima slika radi smanjenja prelaza izgleda i poboljšanja kumulativnog pomaka sadržaja stranice. [Saznajte više](https://web.dev/optimize-cls/#images-without-dimensions)"
+    "message": "Podesite eksplicitnu širinu i visinu u elementima slika radi smanjenja prelaza izgleda i poboljšanja kumulativnog pomaka sadržaja stranice. [Saznajte kako da podesite dimenzije slike](https://web.dev/optimize-cls/#images-without-dimensions)"
   },
   "core/audits/unsized-images.js | failureTitle": {
     "message": "Elementi slika nemaju eksplicitne: `width` i `height`"
@@ -1554,7 +1482,7 @@
     "message": "Tip"
   },
   "core/audits/user-timings.js | description": {
-    "message": "Preporučujemo vam da opremite aplikaciju API-jem za vreme korisnika da biste izmerili učinak aplikacije u realnom svetu tokom ključnih korisničkih doživljaja. [Saznajte više](https://web.dev/user-timings/)."
+    "message": "Preporučujemo vam da opremite aplikaciju API-jem za vreme korisnika da biste izmerili učinak aplikacije u realnom svetu tokom ključnih korisničkih doživljaja. [Saznajte više o oznakama Vreme korisnika](https://developer.chrome.com/docs/lighthouse/performance/user-timings/)."
   },
   "core/audits/user-timings.js | displayValue": {
     "message": "{itemCount,plural, =1{1 vreme korisnika}one{# vreme korisnika}few{# vremena korisnika}other{# vremena korisnika}}"
@@ -1566,7 +1494,7 @@
     "message": "Povezivanje unapred `<link rel=preconnect>` je pronađeno za „{securityOrigin}“, ali ga pregledač nije upotrebio. Proverite da li pravilno koristite atribut `crossorigin`."
   },
   "core/audits/uses-rel-preconnect.js | description": {
-    "message": "Razmislite o tome da dodate savete za resurse `preconnect` ili `dns-prefetch` kako biste uspostavili rane veze sa važnim izvorima trećih strana. [Saznajte više](https://web.dev/uses-rel-preconnect/)."
+    "message": "Razmislite o tome da dodate savete za resurse `preconnect` ili `dns-prefetch` kako biste uspostavili rane veze sa važnim izvorima trećih strana. [Saznajte kako da se unapred povežete sa obaveznim izvorima](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/)."
   },
   "core/audits/uses-rel-preconnect.js | title": {
     "message": "Povežite se unapred sa potrebnim izvorima"
@@ -1581,7 +1509,7 @@
     "message": "Predučitavanje `<link>` je pronađeno za „{preloadURL}“, ali ga pregledač nije upotrebio. Proverite da li pravilno koristite atribut `crossorigin`."
   },
   "core/audits/uses-rel-preload.js | description": {
-    "message": "Preporučujemo vam da koristite `<link rel=preload>` kako biste kasnije tokom učitavanja stranice dali prioritet preuzimanju resursa koji se trenutno traže. [Saznajte više](https://web.dev/uses-rel-preload/)."
+    "message": "Preporučujemo vam da koristite `<link rel=preload>` kako biste kasnije tokom učitavanja stranice dali prioritet preuzimanju resursa koji se trenutno traže. [Saznajte kako da unapred učitate ključne zahteve](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preload/)."
   },
   "core/audits/uses-rel-preload.js | title": {
     "message": "Unapred učitajte najvažnije zahteve"
@@ -1590,7 +1518,7 @@
     "message": "URL mape"
   },
   "core/audits/valid-source-maps.js | description": {
-    "message": "Izvorne mape prevode umanjen kôd u originalni izvorni kôd. To pomaže programerima pri otklanjanju grešaka u proizvodnji. Pored toga, Lighthouse sadrži dodatni uvid. Ne bi bilo loše da primenite izvorne mape da biste mogli da koristite te prednosti. [Saznajte više](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps)."
+    "message": "Izvorne mape prevode umanjen kôd u originalni izvorni kôd. To pomaže programerima pri otklanjanju grešaka u proizvodnji. Pored toga, Lighthouse sadrži dodatni uvid. Ne bi bilo loše da primenite izvorne mape da biste mogli da koristite te prednosti. [Saznajte više o izvornim mapama](https://developer.chrome.com/docs/devtools/javascript/source-maps/)."
   },
   "core/audits/valid-source-maps.js | failureTitle": {
     "message": "Nedostaju izvorne mape za veliki JavaScript prve strane"
@@ -1605,7 +1533,7 @@
     "message": "Stranica ima važeće izvorne mape"
   },
   "core/audits/viewport.js | description": {
-    "message": "`<meta name=\"viewport\">` optimizuje aplikaciju za veličine ekrana mobilnih telefona, ali i sprečava [kašnjenje od 300 milisekundi pri unosu korisnika](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). [Saznajte više](https://web.dev/viewport/)."
+    "message": "`<meta name=\"viewport\">` optimizuje aplikaciju za veličine ekrana mobilnih telefona, ali i sprečava [kašnjenje od 300 milisekundi pri unosu korisnika](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). [Saznajte više o korišćenju metaoznake oblasti prikaza](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)."
   },
   "core/audits/viewport.js | explanationNoTag": {
     "message": "Nije pronađena oznaka `<meta name=\"viewport\">`"
@@ -1615,6 +1543,30 @@
   },
   "core/audits/viewport.js | title": {
     "message": "Ima oznaku `<meta name=\"viewport\">` sa oznakom `width` ili `initial-scale`"
+  },
+  "core/audits/work-during-interaction.js | description": {
+    "message": "To je rad na blokiranju niti koje se odvija tokom merenja interakcije do sledećeg prikazivanja. [Saznajte više o pokazatelju Interakcija do sledećeg prikazivanja](https://web.dev/inp/)."
+  },
+  "core/audits/work-during-interaction.js | displayValue": {
+    "message": "{timeInMs, number, milliseconds} ms je potrošeno na događaj „{interactionType}“"
+  },
+  "core/audits/work-during-interaction.js | eventTarget": {
+    "message": "Cilj događaja"
+  },
+  "core/audits/work-during-interaction.js | failureTitle": {
+    "message": "Umanjite rad tokom ključne interakcije"
+  },
+  "core/audits/work-during-interaction.js | inputDelay": {
+    "message": "Kašnjenje unosa"
+  },
+  "core/audits/work-during-interaction.js | presentationDelay": {
+    "message": "Kašnjenje prezentacije"
+  },
+  "core/audits/work-during-interaction.js | processingTime": {
+    "message": "Vreme obrade"
+  },
+  "core/audits/work-during-interaction.js | title": {
+    "message": "Smanjuje rad tokom ključne interakcije"
   },
   "core/config/default-config.js | a11yAriaGroupDescription": {
     "message": "To su prilike da poboljšate korišćenje ARIA uloga u aplikaciji, čime može da poboljša doživljaj korisnika tehnologije za pomoć osobama sa invaliditetom, kao što je čitač ekrana."
@@ -1635,10 +1587,10 @@
     "message": "Najbolje prakse"
   },
   "core/config/default-config.js | a11yCategoryDescription": {
-    "message": "Ove provere ističu prilike za [poboljšanje pristupačnosti veb-aplikacije](https://developers.google.com/web/fundamentals/accessibility). Automatski može da se otkrije samo jedan podskup problema sa pristupačnošću, pa preporučujemo da obavljate i ručno testiranje."
+    "message": "Ove provere ističu prilike za [poboljšanje pristupačnosti veb-aplikacije](https://developer.chrome.com/docs/lighthouse/accessibility/). Automatski može da se otkrije samo jedan podskup problema sa pristupačnošću, pa preporučujemo da obavljate i ručno testiranje."
   },
   "core/config/default-config.js | a11yCategoryManualDescription": {
-    "message": "Ove stavke obrađuju oblasti koje alatka za automatizovano testiranje ne može da obuhvati. Saznajte više u vodiču o [sprovođenju pregleda pristupačnosti](https://developers.google.com/web/fundamentals/accessibility/how-to-review)."
+    "message": "Ove stavke obrađuju oblasti koje alatka za automatizovano testiranje ne može da obuhvati. Saznajte više u vodiču o [sprovođenju pregleda pristupačnosti](https://web.dev/how-to-review/)."
   },
   "core/config/default-config.js | a11yCategoryTitle": {
     "message": "Pristupačnost"
@@ -1695,7 +1647,7 @@
     "message": "Ciljevi"
   },
   "core/config/default-config.js | diagnosticsGroupDescription": {
-    "message": "Više informacija o učinku aplikacije. Ovi brojevi ne [utiču direktno](https://web.dev/performance-scoring/) na ocenu učinka."
+    "message": "Više informacija o učinku aplikacije. Ovi brojevi ne [utiču direktno](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) na ocenu učinka."
   },
   "core/config/default-config.js | diagnosticsGroupTitle": {
     "message": "Dijagnostika"
@@ -1707,7 +1659,7 @@
     "message": "Poboljšanja prvog prikazivanja"
   },
   "core/config/default-config.js | loadOpportunitiesGroupDescription": {
-    "message": "Ovi predlozi mogu da vam pomognu da se stranica učitava brže. Ne [utiču direktno](https://web.dev/performance-scoring/) na ocenu učinka."
+    "message": "Ovi predlozi mogu da vam pomognu da se stranica učitava brže. Ne [utiču direktno](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) na ocenu učinka."
   },
   "core/config/default-config.js | loadOpportunitiesGroupTitle": {
     "message": "Mogućnosti"
@@ -1725,10 +1677,10 @@
     "message": "Učinak"
   },
   "core/config/default-config.js | pwaCategoryDescription": {
-    "message": "Ovim proverama se ocenjuju aspekti progresivne veb-aplikacije. [Saznajte više](https://developers.google.com/web/progressive-web-apps/checklist)."
+    "message": "Ovim proverama se proveravaju aspekti progresivne veb-aplikacije. [Saznajte šta čini dobru progresivnu veb-aplikaciju](https://web.dev/pwa-checklist/)."
   },
   "core/config/default-config.js | pwaCategoryManualDescription": {
-    "message": "Ove provere zahteva osnovna [Kontrolna lista za progresivne veb-aplikacije](https://developers.google.com/web/progressive-web-apps/checklist), ali ih Lighthouse ne sprovodi automatski. One ne utiču na vaš rezultat, ali je važno da ih ručno potvrdite."
+    "message": "Ove provere zahteva osnovna [Kontrolna lista za progresivne veb-aplikacije](https://web.dev/pwa-checklist/), ali ih Lighthouse ne sprovodi automatski. One ne utiču na vaš rezultat, ali je važno da ih ručno potvrdite."
   },
   "core/config/default-config.js | pwaCategoryTitle": {
     "message": "PWA"
@@ -1740,7 +1692,7 @@
     "message": "Optimizovano za PWA"
   },
   "core/config/default-config.js | seoCategoryDescription": {
-    "message": "Zahvaljujući ovim proverama stranica će sigurno biti u skladu sa osnovnim savetima za optimizaciju za pretraživače. Ima mnogo dodatnih faktora koje Lighthouse ovde ne uzima u obzir, a koji mogu da utiču na rangiranje u pretrazi, uključujući učinak u [Osnovnim pokazateljima za veb](https://web.dev/learn-web-vitals/). [Saznajte više](https://support.google.com/webmasters/answer/35769)."
+    "message": "Zahvaljujući ovim proverama stranica će sigurno biti u skladu sa osnovnim savetima za optimizaciju za pretraživače. Ima mnogo dodatnih faktora koje Lighthouse ovde ne uzima u obzir, a koji mogu da utiču na rangiranje u pretrazi, uključujući učinak u [Osnovnim pokazateljima za veb](https://web.dev/learn-core-web-vitals/). [Saznajte više o osnovama Google pretrage](https://support.google.com/webmasters/answer/35769)."
   },
   "core/config/default-config.js | seoCategoryManualDescription": {
     "message": "Pokrećite ove dodatne validatore na sajtu da biste proverili dodatne najbolje prakse optimizacije za pretraživače."
@@ -1761,13 +1713,13 @@
     "message": "Popisivanje i indeksiranje"
   },
   "core/config/default-config.js | seoMobileGroupDescription": {
-    "message": "Uverite se da su stranice prilagođene mobilnim uređajima da korisnici ne bi morali da umanjuju ili uvećavaju prikaz kako bi čitali stranice sa sadržajem. [Saznajte više](https://developers.google.com/search/mobile-sites/)."
+    "message": "Uverite se da su stranice prilagođene mobilnim uređajima da korisnici ne bi morali da umanjuju ili uvećavaju prikaz kako bi čitali stranice sa sadržajem. [Saznajte kako da prilagodite stranice mobilnim uređajima](https://developers.google.com/search/mobile-sites/)."
   },
   "core/config/default-config.js | seoMobileGroupTitle": {
     "message": "Prilagođeno mobilnim uređajima"
   },
   "core/gather/driver/environment.js | warningSlowHostCpu": {
-    "message": "Izgleda da testirani uređaj ima sporiji procesor nego što  Lighthouse očekuje. To može negativno da utiče na ocenu učinka. Saznajte više o [kalibrisanju odgovarajućeg množioca u vezi sa usporavanjem procesora](https://github.com/GoogleChrome/lighthouse/blob/master/docs/throttling.md#cpu-throttling)."
+    "message": "Izgleda da testirani uređaj ima sporiji procesor nego što  Lighthouse očekuje. To može negativno da utiče na ocenu učinka. Saznajte više o [kalibrisanju odgovarajućeg množioca u vezi sa usporavanjem procesora](https://github.com/GoogleChrome/lighthouse/blob/main/docs/throttling.md#cpu-throttling)."
   },
   "core/gather/driver/navigation.js | warningRedirected": {
     "message": "Stranica se možda ne učitava na očekivan način zato što je probni URL ({requested}) preusmeren na {final}. Probajte direktno da testirate drugi URL."
@@ -1775,8 +1727,359 @@
   "core/gather/driver/navigation.js | warningTimeout": {
     "message": "Učitavanje stranice je bilo presporo da bi se dovršilo u okviru vremenskog ograničenja. Rezultati mogu da budu nepotpuni."
   },
+  "core/gather/driver/storage.js | warningCacheTimeout": {
+    "message": "Vremensko ograničenje za brisanje keša pregledača je isteklo. Probajte ponovo da proverite ovu stranicu i prijavite grešku ako se problem nastavi."
+  },
   "core/gather/driver/storage.js | warningData": {
     "message": "{locationCount,plural, =1{Na ovoj lokaciji možda ima sačuvanih podataka koji utiču na efikasnost učitavanja: {locations}. Proverite tu stranicu u prozoru bez arhiviranja da biste sprečili da ti resursi utiču na rezultate.}one{Na ovim lokacijama možda ima sačuvanih podataka koji utiču na efikasnost učitavanja: {locations}. Proverite tu stranicu u prozoru bez arhiviranja da biste sprečili da ti resursi utiču na rezultate.}few{Na ovim lokacijama možda ima sačuvanih podataka koji utiču na efikasnost učitavanja: {locations}. Proverite tu stranicu u prozoru bez arhiviranja da biste sprečili da ti resursi utiču na rezultate.}other{Na ovim lokacijama možda ima sačuvanih podataka koji utiču na efikasnost učitavanja: {locations}. Proverite tu stranicu u prozoru bez arhiviranja da biste sprečili da ti resursi utiču na rezultate.}}"
+  },
+  "core/gather/driver/storage.js | warningOriginDataTimeout": {
+    "message": "Vremensko ograničenje za brisanje izvornih podataka je isteklo. Probajte ponovo da proverite ovu stranicu i prijavite grešku ako se problem nastavi."
+  },
+  "core/gather/gatherers/link-elements.js | headerParseWarning": {
+    "message": "Greška pri raščlanjivanju zaglavlja `link` ({error}): `{header}`"
+  },
+  "core/lib/bf-cache-strings.js | HTTPMethodNotGET": {
+    "message": "Samo stranice učitane preko GET zahteva ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | HTTPStatusNotOK": {
+    "message": "Samo stranice sa kodom statusa 2XX mogu da se keširaju."
+  },
+  "core/lib/bf-cache-strings.js | JavaScriptExecution": {
+    "message": "Chrome je otkrio pokušaj izvršavanja JavaScript-a dok je bio u kešu."
+  },
+  "core/lib/bf-cache-strings.js | appBanner": {
+    "message": "Stranice koje su zahtevale AppBanner trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | backForwardCacheDisabled": {
+    "message": "Oznake su onemogućile keširanje cele stranice. Posetite chrome://flags/#back-forward-cache da biste ga omogućili lokalno na uređaju."
+  },
+  "core/lib/bf-cache-strings.js | backForwardCacheDisabledByCommandLine": {
+    "message": "Komandna linija je onemogućila keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | backForwardCacheDisabledByLowMemory": {
+    "message": "Keširanje cele stranice je onemogućeno zbog nedovoljno memorije."
+  },
+  "core/lib/bf-cache-strings.js | backForwardCacheDisabledForDelegate": {
+    "message": "Delegat ne podržava keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | backForwardCacheDisabledForPrerender": {
+    "message": "Funkcija za prikazivanje unapred je onemogućila keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | broadcastChannel": {
+    "message": "Ova stranica ne može da se kešira jer ima instancu BroadcastChannel sa registrovanim slušaocima."
+  },
+  "core/lib/bf-cache-strings.js | cacheControlNoStore": {
+    "message": "Stranice sa zaglavljem cache-control:no-store ne mogu da pristupe keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | cacheFlushed": {
+    "message": "Keš je namerno obrisan."
+  },
+  "core/lib/bf-cache-strings.js | cacheLimit": {
+    "message": "Stranica je uklonjena iz keša da bi se dozvolilo keširanje druge stranice."
+  },
+  "core/lib/bf-cache-strings.js | containsPlugins": {
+    "message": "Stranice koje imaju dodatne komponente trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentFileChooser": {
+    "message": "Stranice koje koriste FileChooser API trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentFileSystemAccess": {
+    "message": "Stranice koje koriste API za pristup sistemu fajlova trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentMediaDevicesDispatcherHost": {
+    "message": "Stranice koje koriste dispečer za medijski uređaj ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentMediaPlay": {
+    "message": "Reprodukcija iz medija plejera je bila u toku pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentMediaSession": {
+    "message": "Stranice koje koriste MediaSession API i podešavaju status reprodukcije ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentMediaSessionService": {
+    "message": "Stranice koje koriste MediaSession API i podešavaju obrađivače radnji ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentScreenReader": {
+    "message": "Čitač ekrana je onemogućio keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentSecurityHandler": {
+    "message": "Stranice koje koriste SecurityHandler trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentSerial": {
+    "message": "Stranice koje koriste Serial API trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentWebAuthenticationAPI": {
+    "message": "Stranice koje koriste WebAuthetication API trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentWebBluetooth": {
+    "message": "Stranice koje koriste WebBluetooth API trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | contentWebUSB": {
+    "message": "Stranice koje koriste WebUSB API trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | dedicatedWorkerOrWorklet": {
+    "message": "Stranice koje koriste predviđeni obrađivač ili radni zadatak trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | documentLoaded": {
+    "message": "Dokument nije dovršio učitavanje pre napuštanja dokumenta."
+  },
+  "core/lib/bf-cache-strings.js | embedderAppBannerManager": {
+    "message": "App Banner je bio aktivan pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderChromePasswordManagerClientBindCredentialManager": {
+    "message": "Chrome menadžer lozinki je bio aktivan pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderDomDistillerSelfDeletingRequestDelegate": {
+    "message": "DOM destilacija je bila u toku pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderDomDistillerViewerSource": {
+    "message": "DOM Distiller Viewer je bio aktivan pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderExtensionMessaging": {
+    "message": "Keširanje cele stranice je onemogućeno jer su dodaci koristili API za razmenu poruka."
+  },
+  "core/lib/bf-cache-strings.js | embedderExtensionMessagingForOpenPort": {
+    "message": "Dodaci sa trajnom vezom treba da zatvore vezu pre keširanja cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderExtensionSentMessageToCachedFrame": {
+    "message": "Dodaci sa trajnom vezom su pokušali da šalju poruke okvirima u keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderExtensions": {
+    "message": "Keširanje cele stranice je onemogućeno zbog dodataka."
+  },
+  "core/lib/bf-cache-strings.js | embedderModalDialog": {
+    "message": "Modalni dijalog kao što je ponovno slanje obrasca ili dijalog za HTTP lozinku je prikazan pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderOfflinePage": {
+    "message": "Oflajn stranica je prikazana pri napuštanju."
+  },
+  "core/lib/bf-cache-strings.js | embedderOomInterventionTabHelper": {
+    "message": "Traka za intervenciju u vezi sa nedostatkom memorije je bila prisutna pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderPermissionRequestManager": {
+    "message": "Došlo je do slanja zahteva za dozvole pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderPopupBlockerTabHelper": {
+    "message": "Otkriven je blokator iskačućih prozora pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderSafeBrowsingThreatDetails": {
+    "message": "Prikazani su detalji o Bezbednom pregledanju pri napuštanju stranice."
+  },
+  "core/lib/bf-cache-strings.js | embedderSafeBrowsingTriggeredPopupBlocker": {
+    "message": "Bezbedno pregledanje je otkrilo da ova stranica sadrži zloupotrebu i blokiralo je iskačući prozor."
+  },
+  "core/lib/bf-cache-strings.js | enteredBackForwardCacheBeforeServiceWorkerHostAdded": {
+    "message": "Serviser je aktiviran dok je stranica bila u procesu keširanja cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | errorDocument": {
+    "message": "Keširanje cele stranice je onemogućeno zbog greške u dokumentu."
+  },
+  "core/lib/bf-cache-strings.js | fencedFramesEmbedder": {
+    "message": "Stranice koje koriste FencedFrames ne mogu da se skladište u kešu cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | foregroundCacheLimit": {
+    "message": "Stranica je uklonjena iz keša da bi se dozvolilo keširanje druge stranice."
+  },
+  "core/lib/bf-cache-strings.js | grantedMediaStreamAccess": {
+    "message": "Stranice koje su odobrile pristup za strimovanje medija trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | haveInnerContents": {
+    "message": "Stranice koje koriste portale trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | idleManager": {
+    "message": "Stranice koje koriste IdleManager trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | indexedDBConnection": {
+    "message": "Stranice koje imaju otvorenu IndexedDB vezu trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | ineligibleAPI": {
+    "message": "Koriste se API-ji koji ne ispunjavaju uslove."
+  },
+  "core/lib/bf-cache-strings.js | injectedJavascript": {
+    "message": "Stranice na kojima se StyleSheet umeće pomoću dodataka trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | injectedStyleSheet": {
+    "message": "Stranice na kojima se StyleSheet umeće pomoću dodataka trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | internalError": {
+    "message": "Interna greška."
+  },
+  "core/lib/bf-cache-strings.js | keepaliveRequest": {
+    "message": "Keširanje cele stranice je onemogućeno zbog zahteva za održavanje linka."
+  },
+  "core/lib/bf-cache-strings.js | keyboardLock": {
+    "message": "Stranice koje koriste zaključavanje tastature trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | loading": {
+    "message": "Stranica nije dovršila učitavanje pre napuštanja stranice."
+  },
+  "core/lib/bf-cache-strings.js | mainResourceHasCacheControlNoCache": {
+    "message": "Stranice čiji glavni resurs ima cache-control:no-cache ne mogu da pristupe keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | mainResourceHasCacheControlNoStore": {
+    "message": "Stranice čiji glavni resurs ima cache-control:no-store ne mogu da pristupe keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | navigationCancelledWhileRestoring": {
+    "message": "Kretanje je otkazano pre nego što je stranica mogla da bude vraćena iz keša cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | networkExceedsBufferLimit": {
+    "message": "Stranica je uklonjena iz keša jer je aktivna mrežna veza primila previše podataka. Chrome ograničava količinu podataka koju stranica može da primi dok je keširana."
+  },
+  "core/lib/bf-cache-strings.js | networkRequestDatapipeDrainedAsBytesConsumer": {
+    "message": "Stranice koje imaju preuzimanje() ili XHR u toku ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | networkRequestRedirected": {
+    "message": "Stranica je uklonjena iz keširanja cele stranice jer je aktivan mrežni zahtev obuhvatao preusmeravanje."
+  },
+  "core/lib/bf-cache-strings.js | networkRequestTimeout": {
+    "message": "Stranica je uklonjena iz keša jer je mrežna veza bila predugo otvorena. Chrome ograničava vreme koje stranica ima za primanje podataka dok je keširana."
+  },
+  "core/lib/bf-cache-strings.js | noResponseHead": {
+    "message": "Stranice koje nemaju ispravno zaglavlje odgovora ne mogu da pristupe keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | notMainFrame": {
+    "message": "Kretanje se desilo u okviru koji nije glavni okvir."
+  },
+  "core/lib/bf-cache-strings.js | outstandingIndexedDBTransaction": {
+    "message": "Stranice sa aktivnim indeksiranim DB transakcijama trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | outstandingNetworkRequestDirectSocket": {
+    "message": "Stranice sa aktivnim zahtevom za mrežu trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | outstandingNetworkRequestFetch": {
+    "message": "Stranice sa aktivnim zahtevom za preuzimanje mreže trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | outstandingNetworkRequestOthers": {
+    "message": "Stranice sa aktivnim zahtevom za mrežu trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | outstandingNetworkRequestXHR": {
+    "message": "Stranice sa aktivnim XHR zahtevom za mrežu trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | paymentManager": {
+    "message": "Stranice koje koriste PaymentManager trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | pictureInPicture": {
+    "message": "Stranice koje koriste funkciju Slika u slici trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | portal": {
+    "message": "Stranice koje koriste portale trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | printing": {
+    "message": "Stranice koje prikazuju korisnički interfejs za štampanje trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | relatedActiveContentsExist": {
+    "message": "Stranica je otvorena pomoću metoda `window.open()`, a druga kartica sadrži referencu na nju ili je stranica otvorila prozor."
+  },
+  "core/lib/bf-cache-strings.js | rendererProcessCrashed": {
+    "message": "Otkazao je proces renderovanja za stranicu u kešu cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | rendererProcessKilled": {
+    "message": "Proces renderovanja za stranicu u kešu cele stranice je prekinut."
+  },
+  "core/lib/bf-cache-strings.js | requestedAudioCapturePermission": {
+    "message": "Stranice koje zahtevaju dozvole za snimanje audio sadržaja trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | requestedBackForwardCacheBlockedSensors": {
+    "message": "Stranice koje zahtevaju dozvole za senzore trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | requestedBackgroundWorkPermission": {
+    "message": "Stranice koje zahtevaju sinhronizaciju u pozadini ili dozvole za preuzimanje trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | requestedMIDIPermission": {
+    "message": "Stranice koje zahtevaju dozvole za MIDI trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | requestedNotificationsPermission": {
+    "message": "Stranice koje zahtevaju dozvole za obaveštenja trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | requestedStorageAccessGrant": {
+    "message": "Stranice koje zahtevaju pristup memorijskom prostoru trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | requestedVideoCapturePermission": {
+    "message": "Stranice koje zahtevaju dozvole za snimanje videa trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | schemeNotHTTPOrHTTPS": {
+    "message": "Samo stranice čija šema URL-a je HTTP ili HTTPS mogu da se keširaju."
+  },
+  "core/lib/bf-cache-strings.js | serviceWorkerClaim": {
+    "message": "Stranicu je preuzeo serviser dok je keširanje cele stranice u toku."
+  },
+  "core/lib/bf-cache-strings.js | serviceWorkerPostMessage": {
+    "message": "Serviser je pokušao da pošalje stranicu koja je u procesu keširanja cele stranice atributu `MessageEvent`."
+  },
+  "core/lib/bf-cache-strings.js | serviceWorkerUnregistration": {
+    "message": "Registracija za ServiceWorker je opozvana dok je bilo u toku keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | serviceWorkerVersionActivation": {
+    "message": "Stranica je uklonjena iz keširanja cele stranice zbog aktivacije servisera."
+  },
+  "core/lib/bf-cache-strings.js | sessionRestored": {
+    "message": "Chrome je restartovao i obrisao unose keširanja cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | sharedWorker": {
+    "message": "Stranice koje koriste SharedWorker trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | speechRecognizer": {
+    "message": "Stranice koje koriste SpeechRecognizer trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | speechSynthesis": {
+    "message": "Stranice koje koriste SpeechSynthesis trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | subframeIsNavigating": {
+    "message": "iframe na stranici je započeo kretanje koje se nije završilo."
+  },
+  "core/lib/bf-cache-strings.js | subresourceHasCacheControlNoCache": {
+    "message": "Stranice čiji podresurs ima cache-control:no-cache ne mogu da pristupe keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | subresourceHasCacheControlNoStore": {
+    "message": "Stranice čiji podresurs ima cache-control:no-store ne mogu da pristupe keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | timeout": {
+    "message": "Stranica je premašila maksimalno vreme za keširanje cele stranice i istekla je."
+  },
+  "core/lib/bf-cache-strings.js | timeoutPuttingInCache": {
+    "message": "Isteklo je vreme da stranica pristupi keširanju cele stranice (verovatno zbog obrađivača sakrivanja stranice koji su dugo bili pokrenuti)."
+  },
+  "core/lib/bf-cache-strings.js | unloadHandlerExistsInMainFrame": {
+    "message": "Stranica ima unload obrađivač u glavnom okviru."
+  },
+  "core/lib/bf-cache-strings.js | unloadHandlerExistsInSubFrame": {
+    "message": "Stranica ima unload obrađivač u podokviru."
+  },
+  "core/lib/bf-cache-strings.js | userAgentOverrideDiffers": {
+    "message": "Pregledač je promenio zaglavlje zamene korisničkog agenta."
+  },
+  "core/lib/bf-cache-strings.js | wasGrantedMediaAccess": {
+    "message": "Stranice koje su odobrile pristup za snimanje video ili audio sadržaja trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webDatabase": {
+    "message": "Stranice koje koriste WebDatabase trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webHID": {
+    "message": "Stranice koje koriste WebHID trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webLocks": {
+    "message": "Stranice koje koriste WebLocks trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webNfc": {
+    "message": "Stranice koje koriste WebNfc trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webOTPService": {
+    "message": "Stranice koje koriste WebOTPService trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webRTC": {
+    "message": "Stranice sa WebRTC-om ne mogu da pristupe keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webShare": {
+    "message": "Stranice koje koriste WebShare trenutno ne ispunjavaju uslove za keširanje cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webSocket": {
+    "message": "Keširanje celih stranica sa WebSocket-om nije moguće."
+  },
+  "core/lib/bf-cache-strings.js | webTransport": {
+    "message": "Stranice sa WebTransport-om ne mogu da pristupe keširanju cele stranice."
+  },
+  "core/lib/bf-cache-strings.js | webXR": {
+    "message": "Stranice koje koriste WebXR trenutno ne ispunjavaju uslove za keširanje cele stranice."
   },
   "core/lib/csp-evaluator.js | allowlistFallback": {
     "message": "Možete da dodate https: i http: URL šeme (koje ignorišu pregledači koji podržavaju strict-dynamic) radi kompatibilnosti unazad sa starijim pregledačima."
@@ -1922,6 +2225,9 @@
   "core/lib/i18n/i18n.js | imageResourceType": {
     "message": "Slika"
   },
+  "core/lib/i18n/i18n.js | interactionToNextPaint": {
+    "message": "Interakcija do sledećeg prikazivanja"
+  },
   "core/lib/i18n/i18n.js | interactiveMetric": {
     "message": "Time to Interactive"
   },
@@ -1997,6 +2303,9 @@
   "core/lib/lh-error.js | noFcp": {
     "message": "Stranica nije prikazala nikakav sadržaj. Uverite se da je prozor pregledača u prvom planu tokom učitavanja i probajte ponovo. ({errorCode})"
   },
+  "core/lib/lh-error.js | noLcp": {
+    "message": "Na stranici se nije prikazao sadržaj koji se kvalifikuje kao najveće prikazivanje sadržaja (LCP). Uverite se da stranica ima važeći LCP element i probajte ponovo. ({errorCode})"
+  },
   "core/lib/lh-error.js | notHtml": {
     "message": "Navedena stranica nije HTML (prikazuje se kao {mimeType} MIME tipa)."
   },
@@ -2032,6 +2341,153 @@
   },
   "core/lib/lh-error.js | urlInvalid": {
     "message": "Izgleda da je URL koji ste naveli nevažeći."
+  },
+  "core/lib/navigation-error.js | warningXhtml": {
+    "message": "MIME tip stranice je XHTML: Lighthouse ne podržava izričito ovaj tip dokumenta"
+  },
+  "core/user-flow.js | defaultFlowName": {
+    "message": "Korisnički tok ({url})"
+  },
+  "core/user-flow.js | defaultNavigationName": {
+    "message": "Izveštaj o navigaciji ({url})"
+  },
+  "core/user-flow.js | defaultSnapshotName": {
+    "message": "Izveštaj sa pregledom ({url})"
+  },
+  "core/user-flow.js | defaultTimespanName": {
+    "message": "Izveštaj za period ({url})"
+  },
+  "flow-report/src/i18n/ui-strings.js | allReports": {
+    "message": "Svi izveštaji"
+  },
+  "flow-report/src/i18n/ui-strings.js | categories": {
+    "message": "Kategorije"
+  },
+  "flow-report/src/i18n/ui-strings.js | categoryAccessibility": {
+    "message": "Pristupačnost"
+  },
+  "flow-report/src/i18n/ui-strings.js | categoryBestPractices": {
+    "message": "Najbolje prakse"
+  },
+  "flow-report/src/i18n/ui-strings.js | categoryPerformance": {
+    "message": "Učinak"
+  },
+  "flow-report/src/i18n/ui-strings.js | categoryProgressiveWebApp": {
+    "message": "Progresivna veb-aplikacija"
+  },
+  "flow-report/src/i18n/ui-strings.js | categorySeo": {
+    "message": "Optimizacija za pretraživače"
+  },
+  "flow-report/src/i18n/ui-strings.js | desktop": {
+    "message": "Računar"
+  },
+  "flow-report/src/i18n/ui-strings.js | helpDialogTitle": {
+    "message": "Razumevanje izveštaja o toku za Lighthouse"
+  },
+  "flow-report/src/i18n/ui-strings.js | helpLabel": {
+    "message": "Razumevanje tokova"
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseInstructionNavigation": {
+    "message": "Koristite izveštaje o navigaciji za..."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseInstructionSnapshot": {
+    "message": "Koristite izveštaje sa pregledom za..."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseInstructionTimespan": {
+    "message": "Koristite izveštaje za period za..."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseNavigation1": {
+    "message": "Preuzmite Lighthouse ocenu učinka."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseNavigation2": {
+    "message": "Izmerite pokazatelje učinka za učitavanje stranice, kao što su najveće prikazivanje sadržaja i indeks brzine."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseNavigation3": {
+    "message": "Pristupite mogućnostima progresivnih veb-aplikacija."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseSnapshot1": {
+    "message": "Pronađite probleme sa pristupačnošću u aplikacijama sa jednom stranicom ili kompleksnim formama."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseSnapshot2": {
+    "message": "Procenite najbolje prakse za menije i elemente korisničkog interfejsa sakrivene iza interakcije."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseTimespan1": {
+    "message": "Izmerite vreme izvršavanja prelaza izgleda i JavaScript-a za seriju interakcija."
+  },
+  "flow-report/src/i18n/ui-strings.js | helpUseCaseTimespan2": {
+    "message": "Otkrijte prilike za učinak da biste poboljšali doživljaj za dugoročne stranice i aplikacije sa jednom stranicom."
+  },
+  "flow-report/src/i18n/ui-strings.js | highestImpact": {
+    "message": "Najveći uticaj"
+  },
+  "flow-report/src/i18n/ui-strings.js | informativeAuditCount": {
+    "message": "{numInformative,plural, =1{{numInformative} informativna provera}one{{numInformative} informativna provera}few{{numInformative} informativne provere}other{{numInformative} informativnih provera}}"
+  },
+  "flow-report/src/i18n/ui-strings.js | mobile": {
+    "message": "Mobilni uređaj"
+  },
+  "flow-report/src/i18n/ui-strings.js | navigationDescription": {
+    "message": "Učitavanje stranice"
+  },
+  "flow-report/src/i18n/ui-strings.js | navigationLongDescription": {
+    "message": "Izveštaji o navigaciji analiziraju učitavanje pojedinačne stranice, potpuno isto kao originalni Lighthouse izveštaji."
+  },
+  "flow-report/src/i18n/ui-strings.js | navigationReport": {
+    "message": "Izveštaj o navigaciji"
+  },
+  "flow-report/src/i18n/ui-strings.js | navigationReportCount": {
+    "message": "{numNavigation,plural, =1{{numNavigation} izveštaj o navigaciji}one{{numNavigation} izveštaj o navigaciji}few{{numNavigation} izveštaja o navigaciji}other{{numNavigation} izveštaja o navigaciji}}"
+  },
+  "flow-report/src/i18n/ui-strings.js | passableAuditCount": {
+    "message": "{numPassableAudits,plural, =1{{numPassableAudits} provera koja može da se prođe}one{{numPassableAudits} provera koja može da se prođe}few{{numPassableAudits} provere koje mogu da se prođu}other{{numPassableAudits} provera koje mogu da se prođu}}"
+  },
+  "flow-report/src/i18n/ui-strings.js | passedAuditCount": {
+    "message": "{numPassed,plural, =1{Prošli ste {numPassed} proveru}one{Prošli ste{numPassed} proveru}few{Prošli ste{numPassed} provere}other{Prošli ste{numPassed} provera}}"
+  },
+  "flow-report/src/i18n/ui-strings.js | ratingAverage": {
+    "message": "Prosek"
+  },
+  "flow-report/src/i18n/ui-strings.js | ratingError": {
+    "message": "Greška"
+  },
+  "flow-report/src/i18n/ui-strings.js | ratingFail": {
+    "message": "Slabo"
+  },
+  "flow-report/src/i18n/ui-strings.js | ratingPass": {
+    "message": "Dobro"
+  },
+  "flow-report/src/i18n/ui-strings.js | save": {
+    "message": "Sačuvaj"
+  },
+  "flow-report/src/i18n/ui-strings.js | snapshotDescription": {
+    "message": "Snimljeno stanje stranice"
+  },
+  "flow-report/src/i18n/ui-strings.js | snapshotLongDescription": {
+    "message": "Izveštaji sa pregledom analiziraju stranicu u posebnom stanju, obično posle interakcije sa korisnicima."
+  },
+  "flow-report/src/i18n/ui-strings.js | snapshotReport": {
+    "message": "Izveštaj sa pregledom"
+  },
+  "flow-report/src/i18n/ui-strings.js | snapshotReportCount": {
+    "message": "{numSnapshot,plural, =1{{numSnapshot} izveštaj sa pregledom}one{{numSnapshot} izveštaj sa pregledom}few{{numSnapshot} izveštaja sa pregledom}other{{numSnapshot} izveštaja sa pregledom}}"
+  },
+  "flow-report/src/i18n/ui-strings.js | summary": {
+    "message": "Rezime"
+  },
+  "flow-report/src/i18n/ui-strings.js | timespanDescription": {
+    "message": "Korisničke interakcije"
+  },
+  "flow-report/src/i18n/ui-strings.js | timespanLongDescription": {
+    "message": "Izveštaji za period analiziraju nasumični period, koji obično sadrži interakcije korisnika."
+  },
+  "flow-report/src/i18n/ui-strings.js | timespanReport": {
+    "message": "Izveštaj za period"
+  },
+  "flow-report/src/i18n/ui-strings.js | timespanReportCount": {
+    "message": "{numTimespan,plural, =1{{numTimespan} izveštaj za period}one{{numTimespan} izveštaj za period}few{{numTimespan} izveštaja za period}other{{numTimespan} izveštaja za period}}"
+  },
+  "flow-report/src/i18n/ui-strings.js | title": {
+    "message": "Izveštaj o korisničkom toku za Lighthouse"
   },
   "node_modules/lighthouse-stack-packs/packs/amp.js | efficient-animated-content": {
     "message": "Kada je u pitanju animirani sadržaj, koristite [`amp-anim`](https://amp.dev/documentation/components/amp-anim/) da biste smanjili korišćenje procesora kada sadržaj nije na ekranu."
@@ -2076,7 +2532,7 @@
     "message": "Navedite `@font-display` kad definišete prilagođene fontove u temi."
   },
   "node_modules/lighthouse-stack-packs/packs/drupal.js | modern-image-formats": {
-    "message": "Predlažemo da instalirate i konfigurišete [modul za korišćenje WebP formata slike](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=webp&solrsort=iss_project_release_usage+desc&op=Search) na sajtu. Takvi moduli automatski generišu WebP verziju otpremljenih slika da bi optimizovali brzinu učitavanja."
+    "message": "Predlažemo da konfigurišete [WebP formate slika pomoću stila Konverzija slike](https://www.drupal.org/docs/core-modules-and-themes/core-modules/image-module/working-with-images#styles) na sajtu."
   },
   "node_modules/lighthouse-stack-packs/packs/drupal.js | offscreen-images": {
     "message": "Instalirajte [Drupal modul](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=im_vid_3%3A67&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=%22lazy+load%22&solrsort=iss_project_release_usage+desc&op=Search) koji može odloženo da učitava slike. Takvi moduli pružaju mogućnost odlaganja svih slika van ekrana da bi se poboljšao učinak."
@@ -2114,11 +2570,77 @@
   "node_modules/lighthouse-stack-packs/packs/drupal.js | uses-responsive-images": {
     "message": "Uverite se da koristite izvorne [stilove prilagodljivih slika](https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8) koje pruža Drupal (dostupni u Drupal-u 8 i novijim verzijama). Koristite stilove prilagodljivih slika pri renderovanju polja za slike preko režima prikaza, prikaza ili slika otpremljenih putem WYSIWYG uređivača."
   },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | font-display": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Optimize Fonts` da biste automatski iskoristili CSS funkciju `font-display` kako bi tekst bio vidljiv korisnicima dok se veb-fontovi učitavaju."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | modern-image-formats": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Next-Gen Formats` da biste konvertovali slike u WebP."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | offscreen-images": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Lazy Load Images` da biste odložili učitavanje slika van ekrana dok ne budu potrebne."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | render-blocking-resources": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Critical CSS` i `Script Delay` da biste odložili nekritični JS ili CSS."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | server-response-time": {
+    "message": "Koristite [Ezoic Cloud Caching](https://pubdash.ezoic.com/speed/caching) da biste keširali sadržaj na svetskoj mreži i poboljšali vreme do prvog bajta."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | unminified-css": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Minify CSS` da biste automatski umanjili CSS kako bi se smanjile veličine mrežnih resursa."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | unminified-javascript": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Minify Javascript` da biste automatski umanjili JS radi smanjenja veličine mrežnih resursa."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | unused-css-rules": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Remove Unused CSS` radi lakšeg rešavanja ovog problema. Time se identifikuju CSS klase koje se stvarno koriste na svakoj stranici vašeg sajta i uklanjaju se sve druge da bi veličina datoteke ostala mala."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | uses-long-cache-ttl": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Efficient Static Cache Policy` da biste podesili preporučene vrednosti u zaglavlju keširanja za statične elemente."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | uses-optimized-images": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Next-Gen Formats` da biste konvertovali slike u WebP."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | uses-rel-preconnect": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Pre-Connect Origins` da biste automatski dodali savete za `preconnect` resurse radi uspostavljanja ranih veza sa važnim izvorima trećih strana."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | uses-rel-preload": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Preload Fonts` i `Preload Background Images` da biste dodali linkove za `preload` kako biste dali prednost preuzimanju resursa koji se trenutno traže kasnije tokom učitavanja stranice."
+  },
+  "node_modules/lighthouse-stack-packs/packs/ezoic.js | uses-responsive-images": {
+    "message": "Koristite [Ezoic Leap](https://pubdash.ezoic.com/speed) i omogućite `Resize Images` da biste promenili veličinu slika tako da odgovara uređaju i time smanjili veličine mrežnih resursa."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | modern-image-formats": {
+    "message": "Koristite komponentu `gatsby-plugin-image`, a ne `<img>`, da biste automatski optimizovali format slika. [Saznajte više](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | offscreen-images": {
+    "message": "Koristite komponentu `gatsby-plugin-image`, a ne `<img>`, da biste automatski sporo učitavali slike. [Saznajte više](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | prioritize-lcp-image": {
+    "message": "Koristite komponentu `gatsby-plugin-image` i podesite upit `loading` na `eager`. [Saznajte više](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image#shared-props)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | render-blocking-resources": {
+    "message": "Koristite `Gatsby Script API` da biste odložili učitavanje skripta treće strane koje nisu toliko važne. [Saznajte više](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-css-rules": {
+    "message": "Koristite dodatnu komponentu `PurgeCSS` `Gatsby` da biste uklonili neiskorišćena pravila iz opisa stilova. [Saznajte više](https://purgecss.com/plugins/gatsby.html)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | unused-javascript": {
+    "message": "Koristite `Webpack Bundle Analyzer` da biste otkrili neiskorišćeni JavaScript kôd. [Saznajte više](https://www.gatsbyjs.com/plugins/gatsby-plugin-webpack-bundle-analyser-v2/)"
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-long-cache-ttl": {
+    "message": "Konfigurišite keširanje za nepromenljive elemente. [Saznajte više](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/caching/)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-optimized-images": {
+    "message": "Koristite komponentu `gatsby-plugin-image`, a ne `<img>`, da biste podesili kvalitet slike. [Saznajte više](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/gatsby.js | uses-responsive-images": {
+    "message": "Koristite komponentu `gatsby-plugin-image` da biste podesili odgovarajuće `sizes`. [Saznajte više](https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin-image)."
+  },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | efficient-animated-content": {
     "message": "Predlažemo da otpremite GIF u uslugu koja će ga kodirati za ugradnju kao HTML5 video."
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | modern-image-formats": {
-    "message": "Predlažemo da koristite [dodatnu komponentu](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=webp) ili uslugu koja automatski konvertuje otpremljene slike u optimalne formate."
+    "message": "Preporučujemo da koristite [dodatnu komponentu](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=webp) ili uslugu koja automatski konvertuje otpremljene slike u optimalne formate."
   },
   "node_modules/lighthouse-stack-packs/packs/joomla.js | offscreen-images": {
     "message": "Instalirajte [Joomla dodatnu komponentu za odloženo učitavanje](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=lazy%20loading) koja omogućava da odložite sve slike van ekrana ili pređite na šablon koji pruža tu funkciju. Počev od verzije Joomla 4.0, sve nove slike će [automatski](https://github.com/joomla/joomla-cms/pull/30748) dobiti atribut `loading` od osnovnih funkcija."
@@ -2193,13 +2715,19 @@
     "message": "Oznake `<link rel=preload>` mogu da se dodaju [izmenom izgleda teme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | modern-image-formats": {
-    "message": "Koristite API za optimizaciju slike `Next.js` da biste prikazivali moderne formate poput `WebP` i `AVIF`. [Saznajte više](https://nextjs.org/docs/api-reference/next/image#acceptable-formats)."
+    "message": "Koristite komponentu `next/image`, a ne `<img>`, da biste automatski optimizovali format slika. [Saznajte više](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | offscreen-images": {
-    "message": "Koristite komponentu `next/image`, koja je podrazumevano podešena na `loading=\"lazy\"`. [Saznajte više](https://nextjs.org/docs/api-reference/next/image#loading)."
+    "message": "Koristite komponentu `next/image`, a ne `<img>`, da biste automatski sporo učitavali slike. [Saznajte više](https://nextjs.org/docs/basic-features/image-optimization)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/next.js | prioritize-lcp-image": {
+    "message": "Koristite komponentu `next/image` i postavite „priority“ na „true“ da biste unapred učitali LCP sliku. [Saznajte više](https://nextjs.org/docs/api-reference/next/image#priority)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | render-blocking-resources": {
     "message": "Koristite komponentu `next/script` da biste odložili učitavanje skripta treće strane koje nisu toliko važne. [Saznajte više](https://nextjs.org/docs/basic-features/script)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/next.js | unsized-images": {
+    "message": "Koristite komponentu `next/image` da biste se uverili da su slike uvek odgovarajuće veličine. [Saznajte više](https://nextjs.org/docs/api-reference/next/image#width)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | unused-css-rules": {
     "message": "Preporučujemo vam da podesite `PurgeCSS` u konfiguraciji komponente `Next.js` da biste uklonili neiskorišćena pravila iz opisa stilova. [Saznajte više](https://purgecss.com/guides/next.html)."
@@ -2214,13 +2742,31 @@
     "message": "Konfigurišite keširanje za nepromenljive elemente i `Server-side Rendered` (SSR) stranice. [Saznajte više](https://nextjs.org/docs/going-to-production#caching)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-optimized-images": {
-    "message": "Koristite komponentu `next/image`, a ne `<img>`, da biste optimizovali slike. [Saznajte više](https://nextjs.org/docs/basic-features/image-optimization)."
+    "message": "Koristite komponentu `next/image`, a ne `<img>`, da biste podesili kvalitet slike. [Saznajte više](https://nextjs.org/docs/basic-features/image-optimization)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-responsive-images": {
     "message": "Koristite komponentu `next/image` da biste podesili odgovarajuće `sizes`. [Saznajte više](https://nextjs.org/docs/api-reference/next/image#sizes)."
   },
   "node_modules/lighthouse-stack-packs/packs/next.js | uses-text-compression": {
     "message": "Omogućite komprimovanje na Next.js serveru. [Saznajte više](https://nextjs.org/docs/api-reference/next.config.js/compression)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nuxt.js | modern-image-formats": {
+    "message": "Koristite komponentu `nuxt/image` i podesite `format=\"webp\"`. [Saznajte više](https://image.nuxtjs.org/components/nuxt-img#format)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nuxt.js | offscreen-images": {
+    "message": "Koristite komponentu `nuxt/image` i podesite `loading=\"lazy\"` za slike van ekrana. [Saznajte više](https://image.nuxtjs.org/components/nuxt-img#loading)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nuxt.js | prioritize-lcp-image": {
+    "message": "Koristite komponentu `nuxt/image` i navedite `preload` za LCP sliku. [Saznajte više](https://image.nuxtjs.org/components/nuxt-img#preload)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nuxt.js | unsized-images": {
+    "message": "Koristite komponentu `nuxt/image` i navedite eksplicitne atribute `width` i `height`. [Saznajte više](https://image.nuxtjs.org/components/nuxt-img#width--height)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nuxt.js | uses-optimized-images": {
+    "message": "Koristite komponentu `nuxt/image` i podesite odgovarajući `quality`. [Saznajte više](https://image.nuxtjs.org/components/nuxt-img#quality)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/nuxt.js | uses-responsive-images": {
+    "message": "Koristite komponentu `nuxt/image` i podesite odgovarajuće `sizes`. [Saznajte više](https://image.nuxtjs.org/components/nuxt-img#sizes)."
   },
   "node_modules/lighthouse-stack-packs/packs/octobercms.js | efficient-animated-content": {
     "message": "[Zamenite animirane GIF-ove video sadržajem](https://web.dev/replace-gifs-with-videos/) da bi se veb-stranice brže učitavale, a predlažemo i da koristite moderne formate fajlova, kao što je [WebM](https://web.dev/replace-gifs-with-videos/#create-webm-videos) ili [AV1](https://developers.google.com/web/updates/2018/09/chrome-70-media-updates#av1-decoder), da biste poboljšali efikasnost komprimovanja za više od 30% u odnosu na aktuelni najsavremeniji video kodek, VP9."
@@ -2271,7 +2817,7 @@
     "message": "Ako koristite React ruter, smanjite korišćenje komponente `<Redirect>` za [navigacije pomoću rute](https://reacttraining.com/react-router/web/api/Redirect)."
   },
   "node_modules/lighthouse-stack-packs/packs/react.js | server-response-time": {
-    "message": "Ako prikazujete bilo kakve React komponente na serveru, razmislite o tome da koristite `renderToNodeStream()` ili `renderToStaticNodeStream()` kako biste omogućili klijentu da prima i popunjava različite delove oznake umesto svih delova odjednom. [Saznajte više](https://reactjs.org/docs/react-dom-server.html#rendertonodestream)."
+    "message": "Ako prikazujete bilo kakve React komponente na serveru, razmislite o tome da koristite `renderToPipeableStream()` ili `renderToStaticNodeStream()` kako biste omogućili klijentu da prima i popunjava različite delove oznake umesto svih delova odjednom. [Saznajte više](https://reactjs.org/docs/react-dom-server.html#renderToPipeableStream)."
   },
   "node_modules/lighthouse-stack-packs/packs/react.js | unminified-css": {
     "message": "Ako sistem za prevođenje i povezivanje automatski umanjuje CSS fajlove, uverite se da primenjujete proizvodnu verziju aplikacije. To možete da proverite pomoću dodatka React Developer Tools. [Saznajte više](https://reactjs.org/docs/optimizing-performance.html#use-the-production-build)."
@@ -2289,7 +2835,7 @@
     "message": "Predlažemo da otpremite GIF u uslugu koja će ga kodirati za ugradnju kao HTML5 video."
   },
   "node_modules/lighthouse-stack-packs/packs/wordpress.js | modern-image-formats": {
-    "message": "Predlažemo da koristite [dodatnu komponentu](https://wordpress.org/plugins/search/convert+webp/) ili uslugu koja automatski konvertuje otpremljene slike u optimalne formate."
+    "message": "Predlažemo da koristite dodatnu komponentu [ Performance Lab](https://wordpress.org/plugins/performance-lab/) za automatsko konvertovanje otpremljenih JPEG slika u WebP uvek kada je to podržano."
   },
   "node_modules/lighthouse-stack-packs/packs/wordpress.js | offscreen-images": {
     "message": "Instalirajte [WordPress dodatnu komponentu za lako učitavanje](https://wordpress.org/plugins/search/lazy+load/) koja omogućava da odložite sve slike van ekrana ili da pređete na temu koja pruža tu funkciju. Preporučujemo i da koristite [dodatnu komponentu za AMP stranice](https://wordpress.org/plugins/amp/)."
@@ -2310,10 +2856,10 @@
     "message": "Neke [WordPress dodatne komponente](https://wordpress.org/plugins/search/minify+javascript/) mogu da ubrzaju sajt tako što povezuju, umanjuju i komprimuju skripte. Ovo umanjivanje možete da obavite i unapred pomoću procesa dizajniranja ako je moguće."
   },
   "node_modules/lighthouse-stack-packs/packs/wordpress.js | unused-css-rules": {
-    "message": "Preporučujemo da umanjite ili promenite broj [WordPress dodatnih komponenti](https://wordpress.org/plugins/) koje na stranici učitavaju CSS koji se ne koristi. Da biste identifikovali dodatne komponente koje dodaju suvišan CSS, probajte da pokrenete [pokrivenost koda](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) u alatki Chrome DevTools. Možete da identifikujete odgovornu temu/dodatnu komponentu u URL-u stilske stranice. Potražite dodatne komponente koje na listi imaju mnogo stilskih stranica sa dosta crvenila u pokrivenosti koda. Dodatna komponenta treba da stavi stilsku stranicu na listu samo ako se stvarno koristi na stranici."
+    "message": "Preporučujemo da umanjite ili promenite broj [WordPress dodatnih komponenti](https://wordpress.org/plugins/) koje na stranici učitavaju CSS koji se ne koristi. Da biste identifikovali dodatne komponente koje dodaju suvišan CSS, probajte da pokrenete [pokrivenost koda](https://developer.chrome.com/docs/devtools/coverage/) u alatki Chrome DevTools. Možete da identifikujete odgovornu temu/dodatnu komponentu u URL-u stilske stranice. Potražite dodatne komponente koje na listi imaju mnogo stilskih stranica sa dosta crvenila u pokrivenosti koda. Dodatna komponenta treba da stavi stilsku stranicu na listu samo ako se stvarno koristi na stranici."
   },
   "node_modules/lighthouse-stack-packs/packs/wordpress.js | unused-javascript": {
-    "message": "Preporučujemo da umanjite ili promenite broj [WordPress dodatnih komponenti](https://wordpress.org/plugins/) koje na stranici učitavaju JavaScript koji se ne koristi. Da biste identifikovali dodatne komponente koje dodaju suvišan JS, probajte da pokrenete [pokrivenost koda](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) u alatki Chrome DevTools. Možete da identifikujete odgovornu temu/dodatnu komponentu u URL-u skripte. Potražite dodatne komponente koje na listi imaju mnogo skripti sa dosta crvenila u pokrivenosti koda. Dodatna komponenta treba da stavi skriptu na listu samo ako se stvarno koristi na stranici."
+    "message": "Preporučujemo da umanjite ili promenite broj [WordPress dodatnih komponenti](https://wordpress.org/plugins/) koje na stranici učitavaju JavaScript koji se ne koristi. Da biste identifikovali dodatne komponente koje dodaju suvišan JS, probajte da pokrenete [pokrivenost koda](https://developer.chrome.com/docs/devtools/coverage/) u alatki Chrome DevTools. Možete da identifikujete odgovornu temu/dodatnu komponentu u URL-u skripte. Potražite dodatne komponente koje na listi imaju mnogo skripti sa dosta crvenila u pokrivenosti koda. Dodatna komponenta treba da stavi skriptu na listu samo ako se stvarno koristi na stranici."
   },
   "node_modules/lighthouse-stack-packs/packs/wordpress.js | uses-long-cache-ttl": {
     "message": "Pročitajte više o [keširanju pregledača u WordPress-u](https://wordpress.org/support/article/optimization/#browser-caching)."
@@ -2327,154 +2873,202 @@
   "node_modules/lighthouse-stack-packs/packs/wordpress.js | uses-text-compression": {
     "message": "Možete da omogućite komprimovanje teksta u konfiguraciji veb-servera."
   },
-  "report/renderer/util.js | calculatorLink": {
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | modern-image-formats": {
+    "message": "Omogućite Imagify na kartici Optimizacija slika u WP Rocket-u da biste konvertovali slike u WebP."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | offscreen-images": {
+    "message": "Omogućite [LazyLoad](https://docs.wp-rocket.me/article/1141-lazyload-for-images) u WP Rocket-u da biste popravili ovu preporuku. Ova funkcija odlaže učitavanje slika dok posetilac ne skroluje nadole na stranici i mora da ih vidi."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | render-blocking-resources": {
+    "message": "Omogućite [Ukloni nekorišćeni CSS](https://docs.wp-rocket.me/article/1529-remove-unused-css) i [Učitaj odloženi JavaScript](https://docs.wp-rocket.me/article/1265-load-javascript-deferred) u WP Rocket-u da biste odgovorili na ovu preporuku. Ove funkcije će optimizovati CSS i JavaScript datoteke tako da ne blokiraju prikazivanje stranice."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | unminified-css": {
+    "message": "Omogućite [Umanjite CSS datoteke](https://docs.wp-rocket.me/article/1350-css-minify-combine) u WP Rocket-u da biste rešili ovaj problem. Svi prostori i komentari u CSS datotekama sajta biće uklonjeni kako bi se veličina datoteke smanjila i kako bi se ubrzalo preuzimanje."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | unminified-javascript": {
+    "message": "Omogućite [Umanji JavaScript datoteke](https://docs.wp-rocket.me/article/1351-javascript-minify-combine) u WP Rocket-u da biste rešili ovaj problem. Prazni prostori i komentari će biti uklonjeni iz JavaScript datoteka radi smanjivanja veličine i bržeg preuzimanja."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | unused-css-rules": {
+    "message": "Omogućite [Ukloni nekorišćeni CSS](https://docs.wp-rocket.me/article/1529-remove-unused-css) u „WP Rocket-u“ da biste rešili ovaj problem. Smanjuje veličinu stranice uklanjanjem svih CSS-ova i opisa stilova koji se ne koriste, a zadržava samo CSS koji se koristi za svaku stranicu."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | unused-javascript": {
+    "message": "Da biste rešili ovaj problem, omogućite [Odloži izvršavanje JavaScript-a](https://docs.wp-rocket.me/article/1349-delay-javascript-execution) u WP Rocket-u. To će poboljšati učitavanje stranice odlaganjem izvršavanja skripti do interakcije korisnika. Ako sajt sadrži iframe-ove, možete da koristite i [LazyLoad za iframe-ove i video snimke](https://docs.wp-rocket.me/article/1674-lazyload-for-iframes-and-videos) WP Rocket-a, kao i [Zameni YouTube iframe slikom pregleda](https://docs.wp-rocket.me/article/1488-replace-youtube-iframe-with-preview-image)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | uses-optimized-images": {
+    "message": "Omogućite Imagify na kartici Optimizacija slika u WP Rocket-u i pokrenite grupnu optimizaciju da biste komprimovali slike."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | uses-rel-preconnect": {
+    "message": "Koristite [Predučitavaj DNS zahteve](https://docs.wp-rocket.me/article/1302-prefetch-dns-requests) u WP Rocket-u da biste dodali „dns-fetch“ i ubrzali vezu sa spoljnim domenima. Uz to, WP Rocket automatski dodaje „povezivanje unapred“ u [domen Google fontova](https://docs.wp-rocket.me/article/1312-optimize-google-fonts) i CNAME elemente dodate preko funkcije [Omogući CDN](https://docs.wp-rocket.me/article/42-using-wp-rocket-with-a-cdn)."
+  },
+  "node_modules/lighthouse-stack-packs/packs/wp-rocket.js | uses-rel-preload": {
+    "message": "Da biste rešili ovaj problem sa fontovima, omogućite [Uklonite nekorišćeni CSS](https://docs.wp-rocket.me/article/1529-remove-unused-css) u WP Rocket-u. Najvažniji fontovi sajta će se unapred učitati sa prioritetom."
+  },
+  "report/renderer/report-utils.js | calculatorLink": {
     "message": "Pogledajte kalkulator."
   },
-  "report/renderer/util.js | collapseView": {
+  "report/renderer/report-utils.js | collapseView": {
     "message": "Skupi prikaz"
   },
-  "report/renderer/util.js | crcInitialNavigation": {
+  "report/renderer/report-utils.js | crcInitialNavigation": {
     "message": "Početna navigacija"
   },
-  "report/renderer/util.js | crcLongestDurationLabel": {
+  "report/renderer/report-utils.js | crcLongestDurationLabel": {
     "message": "Maksimalno kašnjenje kritične putanje:"
   },
-  "report/renderer/util.js | dropdownCopyJSON": {
+  "report/renderer/report-utils.js | dropdownCopyJSON": {
     "message": "Kopiraj JSON"
   },
-  "report/renderer/util.js | dropdownDarkTheme": {
+  "report/renderer/report-utils.js | dropdownDarkTheme": {
     "message": "Uključi/isključi tamnu temu"
   },
-  "report/renderer/util.js | dropdownPrintExpanded": {
+  "report/renderer/report-utils.js | dropdownPrintExpanded": {
     "message": "Proširi dijalog za štampanje"
   },
-  "report/renderer/util.js | dropdownPrintSummary": {
+  "report/renderer/report-utils.js | dropdownPrintSummary": {
     "message": "Štampaj rezime"
   },
-  "report/renderer/util.js | dropdownSaveGist": {
+  "report/renderer/report-utils.js | dropdownSaveGist": {
     "message": "Sačuvaj kao Gist"
   },
-  "report/renderer/util.js | dropdownSaveHTML": {
+  "report/renderer/report-utils.js | dropdownSaveHTML": {
     "message": "Sačuvaj kao HTML"
   },
-  "report/renderer/util.js | dropdownSaveJSON": {
+  "report/renderer/report-utils.js | dropdownSaveJSON": {
     "message": "Sačuvaj kao JSON"
   },
-  "report/renderer/util.js | dropdownViewer": {
+  "report/renderer/report-utils.js | dropdownViewer": {
     "message": "Otvori u prikazivaču"
   },
-  "report/renderer/util.js | errorLabel": {
+  "report/renderer/report-utils.js | errorLabel": {
     "message": "Greška!"
   },
-  "report/renderer/util.js | errorMissingAuditInfo": {
+  "report/renderer/report-utils.js | errorMissingAuditInfo": {
     "message": "Prijavljivanje greške: nema informacija o proveri"
   },
-  "report/renderer/util.js | expandView": {
+  "report/renderer/report-utils.js | expandView": {
     "message": "Proširi prikaz"
   },
-  "report/renderer/util.js | footerIssue": {
+  "report/renderer/report-utils.js | firstPartyChipLabel": {
+    "message": "1. strana"
+  },
+  "report/renderer/report-utils.js | footerIssue": {
     "message": "Prijavite problem"
   },
-  "report/renderer/util.js | hide": {
+  "report/renderer/report-utils.js | hide": {
     "message": "Sakrij"
   },
-  "report/renderer/util.js | labDataTitle": {
+  "report/renderer/report-utils.js | labDataTitle": {
     "message": "Podaci o eksperimentalnim funkcijama"
   },
-  "report/renderer/util.js | lsPerformanceCategoryDescription": {
+  "report/renderer/report-utils.js | lsPerformanceCategoryDescription": {
     "message": "[Lighthouse](https://developers.google.com/web/tools/lighthouse/) analiza aktuelne stranice emulirane pomoću mobilne mreže. Vrednosti predstavljaju procene i mogu da variraju."
   },
-  "report/renderer/util.js | manualAuditsGroupTitle": {
+  "report/renderer/report-utils.js | manualAuditsGroupTitle": {
     "message": "Dodatne stavke za ručnu proveru"
   },
-  "report/renderer/util.js | notApplicableAuditsGroupTitle": {
+  "report/renderer/report-utils.js | notApplicableAuditsGroupTitle": {
     "message": "Nije primenjivo"
   },
-  "report/renderer/util.js | opportunityResourceColumnLabel": {
+  "report/renderer/report-utils.js | openInANewTabTooltip": {
+    "message": "Otvorite na novoj kartici"
+  },
+  "report/renderer/report-utils.js | opportunityResourceColumnLabel": {
     "message": "Mogućnost"
   },
-  "report/renderer/util.js | opportunitySavingsColumnLabel": {
+  "report/renderer/report-utils.js | opportunitySavingsColumnLabel": {
     "message": "Procenjena ušteda"
   },
-  "report/renderer/util.js | passedAuditsGroupTitle": {
+  "report/renderer/report-utils.js | passedAuditsGroupTitle": {
     "message": "Provere sa zadovoljavajućom ocenom"
   },
-  "report/renderer/util.js | runtimeAnalysisWindow": {
+  "report/renderer/report-utils.js | runtimeAnalysisWindow": {
     "message": "Početno učitavanje stranice"
   },
-  "report/renderer/util.js | runtimeCustom": {
+  "report/renderer/report-utils.js | runtimeCustom": {
     "message": "Prilagođeno ograničavanje"
   },
-  "report/renderer/util.js | runtimeDesktopEmulation": {
+  "report/renderer/report-utils.js | runtimeDesktopEmulation": {
     "message": "Emulirani računar"
   },
-  "report/renderer/util.js | runtimeMobileEmulation": {
-    "message": "Emulirani Moto G4"
+  "report/renderer/report-utils.js | runtimeMobileEmulation": {
+    "message": "Emulirani Moto G Power"
   },
-  "report/renderer/util.js | runtimeNoEmulation": {
+  "report/renderer/report-utils.js | runtimeNoEmulation": {
     "message": "Bez emulacije"
   },
-  "report/renderer/util.js | runtimeSettingsAxeVersion": {
+  "report/renderer/report-utils.js | runtimeSettingsAxeVersion": {
     "message": "Axe verzija"
   },
-  "report/renderer/util.js | runtimeSettingsBenchmark": {
-    "message": "Jačina procesora/memorije"
+  "report/renderer/report-utils.js | runtimeSettingsBenchmark": {
+    "message": "Dostupan procesor/memorija"
   },
-  "report/renderer/util.js | runtimeSettingsCPUThrottling": {
+  "report/renderer/report-utils.js | runtimeSettingsCPUThrottling": {
     "message": "Ograničavanje procesora"
   },
-  "report/renderer/util.js | runtimeSettingsDevice": {
+  "report/renderer/report-utils.js | runtimeSettingsDevice": {
     "message": "Uređaj"
   },
-  "report/renderer/util.js | runtimeSettingsNetworkThrottling": {
+  "report/renderer/report-utils.js | runtimeSettingsNetworkThrottling": {
     "message": "Ograničavanje mreže"
   },
-  "report/renderer/util.js | runtimeSettingsUANetwork": {
+  "report/renderer/report-utils.js | runtimeSettingsScreenEmulation": {
+    "message": "Emulacija ekrana"
+  },
+  "report/renderer/report-utils.js | runtimeSettingsUANetwork": {
     "message": "Korisnički agent (mreža)"
   },
-  "report/renderer/util.js | runtimeSingleLoad": {
+  "report/renderer/report-utils.js | runtimeSingleLoad": {
     "message": "Jedno učitavanje stranice"
   },
-  "report/renderer/util.js | runtimeSingleLoadTooltip": {
+  "report/renderer/report-utils.js | runtimeSingleLoadTooltip": {
     "message": "Ovi podaci su dobijeni na osnovu jednog učitavanja stranice, nasuprot podacima iz polja koji rezimiraju mnoge sesije."
   },
-  "report/renderer/util.js | runtimeSlow4g": {
+  "report/renderer/report-utils.js | runtimeSlow4g": {
     "message": "Ograničavanje poput spore 4G veze"
   },
-  "report/renderer/util.js | runtimeUnknown": {
+  "report/renderer/report-utils.js | runtimeUnknown": {
     "message": "Nepoznato"
   },
-  "report/renderer/util.js | show": {
+  "report/renderer/report-utils.js | show": {
     "message": "Prikaži"
   },
-  "report/renderer/util.js | showRelevantAudits": {
+  "report/renderer/report-utils.js | showRelevantAudits": {
     "message": "Prikaži revizije relevantne za:"
   },
-  "report/renderer/util.js | snippetCollapseButtonLabel": {
+  "report/renderer/report-utils.js | snippetCollapseButtonLabel": {
     "message": "Skupi fragment"
   },
-  "report/renderer/util.js | snippetExpandButtonLabel": {
+  "report/renderer/report-utils.js | snippetExpandButtonLabel": {
     "message": "Proširi fragment"
   },
-  "report/renderer/util.js | thirdPartyResourcesLabel": {
+  "report/renderer/report-utils.js | thirdPartyResourcesLabel": {
     "message": "Prikaži nezavisne resurse"
   },
-  "report/renderer/util.js | throttlingProvided": {
+  "report/renderer/report-utils.js | throttlingProvided": {
     "message": "Pruža okruženje"
   },
-  "report/renderer/util.js | toplevelWarningsMessage": {
+  "report/renderer/report-utils.js | toplevelWarningsMessage": {
     "message": "Bilo je izvesnih problema koji su uticali na ovo pokretanje Lighthouse-a:"
   },
-  "report/renderer/util.js | varianceDisclaimer": {
-    "message": "Vrednosti predstavljaju procene i mogu da variraju. [Ocena učinka sa izračunava](https://web.dev/performance-scoring/) direktno na osnovu tih pokazatelja."
+  "report/renderer/report-utils.js | unattributable": {
+    "message": "Nepripisivo"
   },
-  "report/renderer/util.js | viewTreemapLabel": {
+  "report/renderer/report-utils.js | varianceDisclaimer": {
+    "message": "Vrednosti predstavljaju procene i mogu da variraju. [Ocena učinka sa izračunava](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) direktno na osnovu tih pokazatelja."
+  },
+  "report/renderer/report-utils.js | viewOriginalTraceLabel": {
+    "message": "Prikaži originalni trag"
+  },
+  "report/renderer/report-utils.js | viewTraceLabel": {
+    "message": "Prikaži trag"
+  },
+  "report/renderer/report-utils.js | viewTreemapLabel": {
     "message": "Prikaži Treemap"
   },
-  "report/renderer/util.js | warningAuditsGroupTitle": {
+  "report/renderer/report-utils.js | warningAuditsGroupTitle": {
     "message": "Provere sa zadovoljavajućom ocenom koje sadrže upozorenja"
   },
-  "report/renderer/util.js | warningHeader": {
+  "report/renderer/report-utils.js | warningHeader": {
     "message": "Upozorenja: "
   },
   "treemap/app/src/util.js | allLabel": {

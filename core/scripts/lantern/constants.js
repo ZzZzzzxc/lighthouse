@@ -48,6 +48,9 @@ import {LH_ROOT} from '../../../root.js';
  * @property {number} [timeToConsistentlyInteractive]
  * @property {number} [speedIndex]
  * @property {number} [largestContentfulPaint]
+ * @property {number} [timeToFirstByte]
+ * @property {number} [largestContentfulPaintLoadStart]
+ * @property {number} [largestContentfulPaintLoadEnd]
  */
 
 /**
@@ -67,12 +70,14 @@ import {LH_ROOT} from '../../../root.js';
  * @property {number} roughEstimateOfSI
  * @property {number} roughEstimateOfTTI
  * @property {number} roughEstimateOfLCP
+ * @property {number} roughEstimateOfTTFB
+ * @property {number} roughEstimateOfLCPLoadStart
+ * @property {number} roughEstimateOfLCPLoadEnd
  */
 
 /** @type {Array<string>} */
 const WARNINGS = [];
 
-// TODO(esmodules): make non-default
 export default {
   WARNINGS,
   // prettier-ignore
@@ -197,6 +202,10 @@ export default {
       roughEstimateOfSI: evaluate('speedIndex', 'roughEstimateOfSI'),
       roughEstimateOfTTI: evaluate('timeToConsistentlyInteractive', 'roughEstimateOfTTI'),
       roughEstimateOfLCP: evaluate('largestContentfulPaint', 'roughEstimateOfLCP'),
+      // TODO: enable when new traces are collected.
+      // roughEstimateOfTTFB: evaluate('timeToFirstByte', 'roughEstimateOfTTFB'),
+      // roughEstimateOfLCPLoadStart: evaluate('largestContentfulPaintLoadStart', 'roughEstimateOfLCPLoadStart'),
+      // roughEstimateOfLCPLoadEnd: evaluate('largestContentfulPaintLoadEnd', 'roughEstimateOfLCPLoadEnd'),
     };
   },
 };

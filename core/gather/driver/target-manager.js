@@ -40,6 +40,7 @@ class TargetManager extends ProtocolEventEmitter {
 
     this._enabled = false;
     this._rootCdpSession = cdpSession;
+    this._mainFrameId = '';
 
     /**
      * A map of target id to target/session information. Used to ensure unique
@@ -47,9 +48,14 @@ class TargetManager extends ProtocolEventEmitter {
      * @type {Map<string, TargetWithSession>}
      */
     this._targetIdToTargets = new Map();
+    /** @type {Map<string, LH.Crdp.Runtime.ExecutionContextDescription>} */
+    this._executionContextIdToDescriptions = new Map();
 
     this._onSessionAttached = this._onSessionAttached.bind(this);
     this._onFrameNavigated = this._onFrameNavigated.bind(this);
+    this._onExecutionContextCreated = this._onExecutionContextCreated.bind(this);
+    this._onExecutionContextDestroyed = this._onExecutionContextDestroyed.bind(this);
+    this._onExecutionContextsCleared = this._onExecutionContextsCleared.bind(this);
   }
 
   /**
@@ -58,15 +64,22 @@ class TargetManager extends ProtocolEventEmitter {
   async _onFrameNavigated(frameNavigatedEvent) {
     // Child frames are handled in `_onSessionAttached`.
     if (frameNavigatedEvent.frame.parentId) return;
+    if (!this._enabled) return;
 
     // It's not entirely clear when this is necessary, but when the page switches processes on
     // navigating from about:blank to the `requestedUrl`, resetting `setAutoAttach` has been
     // necessary in the past.
-    await this._rootCdpSession.send('Target.setAutoAttach', {
-      autoAttach: true,
-      flatten: true,
-      waitForDebuggerOnStart: true,
-    });
+    try {
+      await this._rootCdpSession.send('Target.setAutoAttach', {
+        autoAttach: true,
+        flatten: true,
+        waitForDebuggerOnStart: true,
+      });
+    } catch (err) {
+      // The page can be closed at the end of the run before this CDP function returns.
+      // In these cases, just ignore the error since we won't need the page anyway.
+      if (this._enabled) throw err;
+    }
   }
 
   /**
@@ -88,6 +101,12 @@ class TargetManager extends ProtocolEventEmitter {
   rootSession() {
     const rootSessionId = this._rootCdpSession.id();
     return this._findSession(rootSessionId);
+  }
+
+  mainFrameExecutionContexts() {
+    return [...this._executionContextIdToDescriptions.values()].filter(executionContext => {
+      return executionContext.auxData.frameId === this._mainFrameId;
+    });
   }
 
   /**
@@ -112,7 +131,7 @@ class TargetManager extends ProtocolEventEmitter {
       const targetName = target.targetInfo.url || target.targetInfo.targetId;
       log.verbose('target-manager', `target ${targetName} attached`);
 
-      const trueProtocolListener = this._getProtocolEventListener(newSession.id());
+      const trueProtocolListener = this._getProtocolEventListener(targetType, newSession.id());
       /** @type {(event: unknown) => void} */
       // @ts-expect-error - pptr currently typed only for single arg emits.
       const protocolListener = trueProtocolListener;
@@ -147,11 +166,33 @@ class TargetManager extends ProtocolEventEmitter {
   }
 
   /**
+   * @param {LH.Crdp.Runtime.ExecutionContextCreatedEvent} event
+   */
+  _onExecutionContextCreated(event) {
+    if (event.context.name === '__puppeteer_utility_world__') return;
+    if (event.context.name === 'lighthouse_isolated_context') return;
+
+    this._executionContextIdToDescriptions.set(event.context.uniqueId, event.context);
+  }
+
+  /**
+   * @param {LH.Crdp.Runtime.ExecutionContextDestroyedEvent} event
+   */
+  _onExecutionContextDestroyed(event) {
+    this._executionContextIdToDescriptions.delete(event.executionContextUniqueId);
+  }
+
+  _onExecutionContextsCleared() {
+    this._executionContextIdToDescriptions.clear();
+  }
+
+  /**
    * Returns a listener for all protocol events from session, and augments the
    * event with the sessionId.
+   * @param {LH.Protocol.TargetType} targetType
    * @param {string} sessionId
    */
-  _getProtocolEventListener(sessionId) {
+  _getProtocolEventListener(targetType, sessionId) {
     /**
      * @template {keyof LH.Protocol.RawEventMessageRecord} EventName
      * @param {EventName} method
@@ -159,7 +200,8 @@ class TargetManager extends ProtocolEventEmitter {
      */
     const onProtocolEvent = (method, params) => {
       // Cast because tsc 4.7 still can't quite track the dependent parameters.
-      const payload = /** @type {LH.Protocol.RawEventMessage} */ ({method, params, sessionId});
+      const payload = /** @type {LH.Protocol.RawEventMessage} */ (
+        {method, params, targetType, sessionId});
       this.emit('protocolevent', payload);
     };
 
@@ -174,10 +216,17 @@ class TargetManager extends ProtocolEventEmitter {
 
     this._enabled = true;
     this._targetIdToTargets = new Map();
+    this._executionContextIdToDescriptions = new Map();
 
     this._rootCdpSession.on('Page.frameNavigated', this._onFrameNavigated);
+    this._rootCdpSession.on('Runtime.executionContextCreated', this._onExecutionContextCreated);
+    this._rootCdpSession.on('Runtime.executionContextDestroyed', this._onExecutionContextDestroyed);
+    this._rootCdpSession.on('Runtime.executionContextsCleared', this._onExecutionContextsCleared);
 
     await this._rootCdpSession.send('Page.enable');
+    await this._rootCdpSession.send('Runtime.enable');
+
+    this._mainFrameId = (await this._rootCdpSession.send('Page.getFrameTree')).frameTree.frame.id;
 
     // Start with the already attached root session.
     await this._onSessionAttached(this._rootCdpSession);
@@ -188,14 +237,23 @@ class TargetManager extends ProtocolEventEmitter {
    */
   async disable() {
     this._rootCdpSession.off('Page.frameNavigated', this._onFrameNavigated);
+    this._rootCdpSession.off('Runtime.executionContextCreated', this._onExecutionContextCreated);
+    this._rootCdpSession.off('Runtime.executionContextDestroyed',
+      this._onExecutionContextDestroyed);
+    this._rootCdpSession.off('Runtime.executionContextsCleared', this._onExecutionContextsCleared);
 
     for (const {cdpSession, protocolListener} of this._targetIdToTargets.values()) {
       cdpSession.off('*', protocolListener);
       cdpSession.off('sessionattached', this._onSessionAttached);
     }
 
+    await this._rootCdpSession.send('Page.disable');
+    await this._rootCdpSession.send('Runtime.disable');
+
     this._enabled = false;
     this._targetIdToTargets = new Map();
+    this._executionContextIdToDescriptions = new Map();
+    this._mainFrameId = '';
   }
 }
 

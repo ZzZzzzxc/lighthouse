@@ -65,7 +65,7 @@ class ResourceBudget extends Audit {
   }
 
   /**
-   * @param {Immutable<LH.Budget>} budget
+   * @param {LH.Util.Immutable<LH.Budget>} budget
    * @param {Record<LH.Budget.ResourceType, ResourceEntry>} summary
    * @return {Array<BudgetItem>}
    */
@@ -144,7 +144,7 @@ class ResourceBudget extends Audit {
 
     return {
       details: Audit.makeTableDetails(headers,
-        this.tableItems(budget, summary)),
+        this.tableItems(budget, summary), {sortedBy: ['sizeOverBudget']}),
       score: 1,
     };
   }

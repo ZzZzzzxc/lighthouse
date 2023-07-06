@@ -229,7 +229,47 @@ describe('asset-saver helper', () => {
       assert.strictEqual(artifacts.LighthouseRunWarnings.length, 2);
       assert.strictEqual(artifacts.URL.requestedUrl, 'https://www.reddit.com/r/nba');
       assert.strictEqual(artifacts.devtoolsLogs.defaultPass.length, 555);
-      assert.strictEqual(artifacts.traces.defaultPass.traceEvents.length, 13);
+      assert.strictEqual(artifacts.traces.defaultPass.traceEvents.length, 14);
+      assert.strictEqual(artifacts.DevtoolsLog.length, 555);
+      assert.strictEqual(artifacts.Trace.traceEvents.length, 14);
+    });
+  });
+
+  describe('loadFlowArtifacts', () => {
+    it('loads flow artifacts from disk', async () => {
+      const artifactsPath = moduleDir + '/../fixtures/fraggle-rock/artifacts/';
+      const flowArtifacts = await assetSaver.loadFlowArtifacts(artifactsPath);
+
+      expect(flowArtifacts.gatherSteps.map(gatherStep => gatherStep.flags)).toEqual([
+        {skipAboutBlank: true, usePassiveGathering: true},
+        {name: 'Search input', usePassiveGathering: true},
+        {name: 'Search results', usePassiveGathering: true},
+        {skipAboutBlank: true, disableStorageReset: true, usePassiveGathering: true},
+      ]);
+
+      const artifactsList = flowArtifacts.gatherSteps.map(gatherStep => gatherStep.artifacts);
+
+      expect(artifactsList).toHaveLength(4);
+
+      expect(artifactsList[0].GatherContext.gatherMode).toEqual('navigation');
+      expect(artifactsList[0].URL.finalDisplayedUrl).toEqual('https://www.mikescerealshack.co/');
+      expect(artifactsList[0].DevtoolsLog.length).toBeGreaterThan(10);
+      expect(artifactsList[0].Trace.traceEvents.length).toBeGreaterThan(10);
+
+      expect(artifactsList[1].GatherContext.gatherMode).toEqual('timespan');
+      expect(artifactsList[1].URL.finalDisplayedUrl).toEqual('https://www.mikescerealshack.co/search?q=call+of+duty');
+      expect(artifactsList[1].DevtoolsLog.length).toBeGreaterThan(10);
+      expect(artifactsList[1].Trace.traceEvents.length).toBeGreaterThan(10);
+
+      expect(artifactsList[2].GatherContext.gatherMode).toEqual('snapshot');
+      expect(artifactsList[2].URL.finalDisplayedUrl).toEqual('https://www.mikescerealshack.co/search?q=call+of+duty');
+      expect(artifactsList[2].DevtoolsLog).toBeUndefined();
+      expect(artifactsList[2].Trace).toBeUndefined();
+
+      expect(artifactsList[3].GatherContext.gatherMode).toEqual('navigation');
+      expect(artifactsList[3].URL.finalDisplayedUrl).toEqual('https://www.mikescerealshack.co/corrections');
+      expect(artifactsList[3].DevtoolsLog.length).toBeGreaterThan(10);
+      expect(artifactsList[3].Trace.traceEvents.length).toBeGreaterThan(10);
     });
   });
 
@@ -246,6 +286,15 @@ describe('asset-saver helper', () => {
 
       await assetSaver.saveArtifacts(originalArtifacts, outputPath);
       const roundTripArtifacts = await assetSaver.loadArtifacts(outputPath);
+      expect(roundTripArtifacts).toStrictEqual(originalArtifacts);
+    });
+
+    it('round trips saved flow artifacts', async () => {
+      const flowArtifactsPath = moduleDir + '/../fixtures/fraggle-rock/artifacts/';
+      const originalArtifacts = await assetSaver.loadFlowArtifacts(flowArtifactsPath);
+
+      await assetSaver.saveFlowArtifacts(originalArtifacts, outputPath);
+      const roundTripArtifacts = await assetSaver.loadFlowArtifacts(outputPath);
       expect(roundTripArtifacts).toStrictEqual(originalArtifacts);
     });
 
@@ -267,6 +316,32 @@ describe('asset-saver helper', () => {
       expect(fs.existsSync(existingTracePath)).toBe(false);
 
       const roundTripArtifacts = await assetSaver.loadArtifacts(outputPath);
+      expect(roundTripArtifacts).toStrictEqual(originalArtifacts);
+    });
+
+    it('deletes existing flow artifact files before saving', async () => {
+      // Write some fake artifact files to start with.
+      fs.mkdirSync(outputPath, {recursive: true});
+      fs.writeFileSync(`${outputPath}options.json`, '{}');
+
+      const step0Path = `${outputPath}step0`;
+      fs.mkdirSync(step0Path, {recursive: true});
+      fs.writeFileSync(`${step0Path}/options.json`, '{}');
+      fs.writeFileSync(`${step0Path}/artifacts.json`, '{"BenchmarkIndex": 1731.5}');
+      const existingTracePath = `${step0Path}/bestPass.trace.json`;
+      fs.writeFileSync(existingTracePath, '{"traceEvents": []}');
+      const existingDevtoolslogPath = `${step0Path}/bestPass.devtoolslog.json`;
+      fs.writeFileSync(existingDevtoolslogPath, '[]');
+
+      const artifactsPath = moduleDir + '/../fixtures/fraggle-rock/artifacts';
+      const originalArtifacts = await assetSaver.loadFlowArtifacts(artifactsPath);
+
+      await assetSaver.saveFlowArtifacts(originalArtifacts, outputPath);
+
+      expect(fs.existsSync(existingDevtoolslogPath)).toBe(false);
+      expect(fs.existsSync(existingTracePath)).toBe(false);
+
+      const roundTripArtifacts = await assetSaver.loadFlowArtifacts(outputPath);
       expect(roundTripArtifacts).toStrictEqual(originalArtifacts);
     });
 
@@ -295,7 +370,9 @@ describe('asset-saver helper', () => {
       // Use an LighthouseError that has an ICU replacement.
       const protocolMethod = 'Page.getFastness';
       const lhError = new LighthouseError(
-        LighthouseError.errors.PROTOCOL_TIMEOUT, {protocolMethod});
+        LighthouseError.errors.PROTOCOL_TIMEOUT,
+        {protocolMethod},
+        {cause: new Error('the cause')});
 
       const artifacts = {
         traces: {},
@@ -310,6 +387,8 @@ describe('asset-saver helper', () => {
       expect(roundTripArtifacts.ScriptElements).toBeInstanceOf(LighthouseError);
       expect(roundTripArtifacts.ScriptElements.code).toEqual('PROTOCOL_TIMEOUT');
       expect(roundTripArtifacts.ScriptElements.protocolMethod).toEqual(protocolMethod);
+      expect(roundTripArtifacts.ScriptElements.cause).toBeInstanceOf(Error);
+      expect(roundTripArtifacts.ScriptElements.cause.message).toEqual('the cause');
       expect(roundTripArtifacts.ScriptElements.stack).toMatch(
           /^LighthouseError: PROTOCOL_TIMEOUT.*test[\\/]lib[\\/]asset-saver-test\.js/s);
       expect(roundTripArtifacts.ScriptElements.friendlyMessage)
@@ -362,6 +441,31 @@ describe('asset-saver helper', () => {
           'https://www.googletagmanager.com': expect.any(Number),
         },
       });
+    });
+  });
+
+  describe('elideAuditErrorStacks', () => {
+    it('elides correctly', async () => {
+      const lhr = JSON.parse(JSON.stringify(dbwResults));
+      lhr.audits['bf-cache'].errorStack = `Error: LighthouseError: ERRORED_REQUIRED_ARTIFACT
+      at Runner._runAudit (${LH_ROOT}/core/runner.js:431:25)
+      at Runner._runAudits (${LH_ROOT}/core/runner.js:370:40)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async Runner.audit (${LH_ROOT}/core/runner.js:62:32)
+      at async runLighthouse (${LH_ROOT}/cli/run.js:250:8)
+      at async ${LH_ROOT}/cli/index.js:10:1
+      at <anonymous>:1:1`;
+      assetSaver.elideAuditErrorStacks(lhr);
+
+      // eslint-disable-next-line max-len
+      expect(lhr.audits['bf-cache'].errorStack).toEqual(`Error: LighthouseError: ERRORED_REQUIRED_ARTIFACT
+      at Runner._runAudit (/core/runner.js)
+      at Runner._runAudits (/core/runner.js)
+      at process.processTicksAndRejections (node:internal/process/task_queues)
+      at async Runner.audit (/core/runner.js)
+      at async runLighthouse (/cli/run.js)
+      at async /cli/index.js
+      at <anonymous>`);
     });
   });
 });

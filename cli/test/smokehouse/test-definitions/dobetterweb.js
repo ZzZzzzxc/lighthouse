@@ -4,7 +4,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-/** @type {LH.Config.Json} */
+/** @type {LH.Config} */
 const config = {
   extends: 'lighthouse:default',
   audits: [
@@ -36,15 +36,6 @@ const imgB = {
  * Expected Lighthouse audit values for Do Better Web tests.
  */
 const expectations = {
-  networkRequests: {
-    // Number of network requests differs between Fraggle Rock and legacy modes because
-    // FR has fewer passes, preserve this check moving forward.
-    _fraggleRockOnly: true,
-
-    // 22 requests made for a single navigation.
-    // 6 extra requests made because stylesheets are evicted from the cache by the time DT opens.
-    length: 28,
-  },
   artifacts: {
     BenchmarkIndex: '<10000',
     HostFormFactor: 'desktop',
@@ -213,6 +204,63 @@ const expectations = {
       lineNumber: '>300',
       columnNumber: '>30',
     }],
+    DevtoolsLog: {
+      _includes: [
+        // Ensure we are getting async call stacks.
+        {
+          method: 'Network.requestWillBeSent',
+          params: {
+            type: 'Image',
+            request: {
+              url: 'http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?async',
+            },
+            initiator: {
+              type: 'script',
+              stack: {
+                callFrames: [],
+                parent: {
+                  description: 'Image',
+                  callFrames: [
+                    {
+                      'functionName': '',
+                      'url': 'http://localhost:10200/dobetterweb/dbw_tester.html',
+                    },
+                  ],
+                  parent: {
+                    description: 'Promise.then',
+                    callFrames: [
+                      {
+                        'functionName': '',
+                        'url': 'http://localhost:10200/dobetterweb/dbw_tester.html',
+                      },
+                    ],
+                  },
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+    ImageElements: {
+      _includes: [{
+        src: 'http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?iar2',
+        srcset: '',
+        displayedWidth: 120,
+        displayedHeight: 80,
+        attributeWidth: '120',
+        attributeHeight: '80',
+        naturalDimensions: {
+          width: 1024,
+          height: 678,
+        },
+        isCss: false,
+        isPicture: false,
+        isInShadowDOM: false,
+        loading: 'lazy',
+        fetchPriority: 'low',
+      }],
+    },
   },
   lhr: {
     requestedUrl: 'http://localhost:10200/dobetterweb/dbw_tester.html',
@@ -243,6 +291,8 @@ const expectations = {
               sourceLocation: {url: 'http://localhost:10200/dobetterweb/fcp-delayer.js?delay=5000'},
             },
             4: {
+              // In the DT runner, the initial page load before staring Lighthouse will prevent this error.
+              _excludeRunner: 'devtools',
               source: 'network',
               description: 'Failed to load resource: the server responded with a status of 404 (Not Found)',
               sourceLocation: {url: 'http://localhost:10200/favicon.ico'},
@@ -250,17 +300,6 @@ const expectations = {
             // In legacy Lighthouse this audit will have additional duplicate failures which are a mistake.
             // Fraggle Rock ordering of gatherer `stopInstrumentation` and `getArtifact` fixes the re-request issue.
           },
-        },
-      },
-      'is-on-https': {
-        score: 0,
-        details: {
-          items: [
-            {
-              url: 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-              resolution: 'Allowed',
-            },
-          ],
         },
       },
       'geolocation-on-start': {
@@ -321,6 +360,9 @@ const expectations = {
         details: {
           items: [
             {
+              // This feature was removed in M110.
+              // TODO: Remove this expectation once M110 reaches stable.
+              _maxChromiumVersion: '109',
               value: /`window.webkitStorageInfo` is deprecated/,
               source: {
                 type: 'source-location',
@@ -345,7 +387,7 @@ const expectations = {
           ],
         },
       },
-      'password-inputs-can-be-pasted-into': {
+      'paste-preventing-inputs': {
         score: 0,
         details: {
           items: {
@@ -359,9 +401,9 @@ const expectations = {
           items: {
             0: {
               displayedAspectRatio: /^120 x 15/,
-              url: 'http://localhost:10200/dobetterweb/lighthouse-480x318.jpg?iar1',
+              url: 'http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?iar1',
             },
-            length: 1,
+            length: 2,
           },
         },
       },
@@ -447,30 +489,159 @@ const expectations = {
           }],
         },
       },
-      'full-page-screenshot': {
-        score: null,
+      'bf-cache': {
         details: {
-          type: 'full-page-screenshot',
-          screenshot: {
-            width: 360,
-            // Allow for differences in platforms.
-            height: '1350±100',
-            data: /^data:image\/webp;.{500,}/,
-          },
-          nodes: {
-            _includes: [
-              // Test that the numbers for individual elements are in the ballpark.
-              [/[0-9]-[0-9]+-IMG/, imgA],
-              [/[0-9]-[0-9]+-IMG/, imgB],
-              // And then many more nodes...
-            ],
-            _excludes: [
-              // Ensure that the nodes we found above are unique.
-              [/[0-9]-[0-9]+-IMG/, imgA],
-              [/[0-9]-[0-9]+-IMG/, imgB],
-            ],
+          items: [
+            {
+              reason: 'The page has an unload handler in the main frame.',
+              failureType: 'Actionable',
+              subItems: {
+                items: [{
+                  frameUrl: 'http://localhost:10200/dobetterweb/dbw_tester.html',
+                }],
+              },
+            },
+            {
+              // Support for this was added in M109
+              // https://crbug.com/1350944
+              _maxChromiumVersion: '108',
+              reason: 'Pages that have requested notifications permissions are not currently eligible for back/forward cache.',
+              failureType: 'Pending browser support',
+              subItems: {
+                items: [{
+                  frameUrl: 'http://localhost:10200/dobetterweb/dbw_tester.html',
+                }],
+              },
+            },
+            {
+              // This issue only appears in the DevTools runner for some reason.
+              // TODO: Investigate why this doesn't happen on the CLI runner.
+              _runner: 'devtools',
+              reason: 'There were permission requests upon navigating away.',
+              failureType: 'Pending browser support',
+              subItems: {
+                items: [{
+                  frameUrl: 'http://localhost:10200/dobetterweb/dbw_tester.html',
+                }],
+              },
+            },
+            {
+              // The DevTools runner uses Puppeteer to launch Chrome which disables BFCache by default.
+              // https://github.com/puppeteer/puppeteer/issues/8197
+              //
+              // If we ignore the Puppeteer args and force BFCache to be enabled, it causes thew viewport to be sized incorrectly for other tests.
+              // These viewport issues are not present when Lighthouse is run from DevTools manually.
+              // TODO: Investigate why BFCache causes viewport issues only in our DevTools smoke tests.
+              _runner: 'devtools',
+              reason: 'Back/forward cache is disabled by flags. Visit chrome://flags/#back-forward-cache to enable it locally on this device.',
+              failureType: 'Not actionable',
+              subItems: {
+                items: [{
+                  frameUrl: 'http://localhost:10200/dobetterweb/dbw_tester.html',
+                }],
+              },
+            },
+          ],
+        },
+      },
+      'prioritize-lcp-image': {
+        // In CI, there can sometimes be slight savings.
+        numericValue: '<=50',
+        details: {
+          items: [{
+            node: {
+              snippet: '<h2 id="toppy" style="background-image:url(\'\');">',
+              nodeLabel: 'Do better web tester page',
+            },
+            url: 'http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?redirected-lcp',
+            wastedMs: '<=50',
+          }],
+          debugData: {
+            initiatorPath: [{
+              url: 'http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?redirected-lcp',
+              initiatorType: 'redirect',
+            }, {
+              url: 'http://localhost:10200/dobetterweb/lighthouse-1024x680.jpg?lcp&redirect=lighthouse-1024x680.jpg%3Fredirected-lcp',
+              initiatorType: 'parser',
+            }, {
+              url: 'http://localhost:10200/dobetterweb/dbw_tester.css?delay=2000&async=true',
+              initiatorType: 'parser',
+            }, {
+              url: 'http://localhost:10200/dobetterweb/dbw_tester.html',
+              initiatorType: 'other',
+            }],
+            pathLength: 4,
           },
         },
+      },
+      'network-rtt': {
+        details: {
+          items: [
+            {origin: 'http://localhost:10200', rtt: '>0'},
+          ],
+        },
+      },
+      'network-server-latency': {
+        details: {
+          items: [
+            {origin: 'http://localhost:10200', serverResponseTime: '>0'},
+          ],
+        },
+      },
+      'metrics': {
+        // Flaky in DevTools
+        _excludeRunner: 'devtools',
+        details: {items: {0: {
+          timeToFirstByte: '450+/-100',
+          lcpLoadStart: '7750+/-500',
+          lcpLoadEnd: '7750+/-500',
+        }}},
+      },
+      'largest-contentful-paint-element': {
+        score: null,
+        displayValue: /\d+\xa0ms/,
+        details: {
+          items: [
+            {
+              items: [{
+                node: {
+                  type: 'node',
+                  nodeLabel: 'Do better web tester page',
+                  path: '2,HTML,1,BODY,9,DIV,2,H2',
+                },
+              }],
+            },
+            {
+              items: [
+                {timing: '>0'},
+                {timing: '>0'},
+                {timing: '>0'},
+                {timing: '>0'},
+              ],
+            },
+          ],
+        },
+      },
+    },
+    fullPageScreenshot: {
+      screenshot: {
+        width: 412,
+        // Allow for differences in platforms.
+        height: '1350±100',
+        data: /^data:image\/webp;.{500,}/,
+      },
+      nodes: {
+        _includes: [
+          // Test that the numbers for individual elements are in the ballpark.
+          [/[0-9]-[0-9]+-IMG/, imgA],
+          [/[0-9]-[0-9]+-IMG/, imgB],
+          // And then many more nodes...
+        ],
+        _excludes: [
+          // Ensure that the nodes we found above are unique.
+          [/[0-9]-[0-9]+-IMG/, imgA],
+          [/[0-9]-[0-9]+-IMG/, imgB],
+        ],
       },
     },
   },

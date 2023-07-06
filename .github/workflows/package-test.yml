@@ -5,10 +5,15 @@ on:
     branches: [main]
   pull_request: # run on all PRs, not just PRs to a particular branch
 
+env:
+  PUPPETEER_SKIP_DOWNLOAD: 1
+
 jobs:
   package-test:
     runs-on: ubuntu-latest
     name: Package Test
+    env:
+      FORCE_COLOR: true
 
     steps:
     - name: git clone
@@ -31,6 +36,8 @@ jobs:
   package-test-legacy:
     runs-on: ubuntu-latest
     name: Package Test Legacy Navigation
+    env:
+      FORCE_COLOR: true
 
     steps:
     - name: git clone

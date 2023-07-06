@@ -6,6 +6,7 @@
 
 /* global window */
 
+import * as LH from '../../../types/lh.js';
 import {pageFunctions} from '../../lib/page-functions.js';
 
 class ExecutionContext {
@@ -61,8 +62,8 @@ class ExecutionContext {
     await this._session.sendCommand('Page.enable');
     await this._session.sendCommand('Runtime.enable');
 
-    const resourceTreeResponse = await this._session.sendCommand('Page.getResourceTree');
-    const mainFrameId = resourceTreeResponse.frameTree.frame.id;
+    const frameTreeResponse = await this._session.sendCommand('Page.getFrameTree');
+    const mainFrameId = frameTreeResponse.frameTree.frame.id;
 
     const isolatedWorldResponse = await this._session.sendCommand('Page.createIsolatedWorld', {
       frameId: mainFrameId,
@@ -125,14 +126,22 @@ class ExecutionContext {
 
     this._session.setNextProtocolTimeout(timeout);
     const response = await this._session.sendCommand('Runtime.evaluate', evaluationParams);
-    if (response.exceptionDetails) {
+
+    const ex = response.exceptionDetails;
+    if (ex) {
       // An error occurred before we could even create a Promise, should be *very* rare.
       // Also occurs when the expression is not valid JavaScript.
-      const errorMessage = response.exceptionDetails.exception ?
-        `${response.exceptionDetails.exception.description} ${response.exceptionDetails.stackTrace?.callFrames.map(f => f.lineNumber).join('\n')}` :
-        response.exceptionDetails.text;
-      return Promise.reject(new Error(`Evaluation exception: ${errorMessage}`));
+      const elidedExpression = expression.replace(/\s+/g, ' ').substring(0, 100);
+      const messageLines = [
+        'Runtime.evaluate exception',
+        `Expression: ${elidedExpression}\n---- (elided)`,
+        !ex.stackTrace ? `Parse error at: ${ex.lineNumber + 1}:${ex.columnNumber + 1}` : null,
+        ex.exception?.description || ex.text,
+      ].filter(Boolean);
+      const evaluationError = new Error(messageLines.join('\n'));
+      return Promise.reject(evaluationError);
     }
+
     // Protocol should always return a 'result' object, but it is sometimes undefined.  See #6026.
     if (response.result === undefined) {
       return Promise.reject(
@@ -246,13 +255,6 @@ class ExecutionContext {
       window.__nativeFetch = window.fetch;
       window.__ElementMatches = window.Element.prototype.matches;
       window.__HTMLElementBoundingClientRect = window.HTMLElement.prototype.getBoundingClientRect;
-      // Ensure the native `performance.now` is not overwritable.
-      const performance = window.performance;
-      const performanceNow = window.performance.now;
-      Object.defineProperty(performance, 'now', {
-        value: () => performanceNow.call(performance),
-        writable: false,
-      });
       /* c8 ignore stop */
     }, {args: []});
   }

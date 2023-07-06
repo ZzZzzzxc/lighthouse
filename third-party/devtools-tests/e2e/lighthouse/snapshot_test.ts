@@ -5,7 +5,7 @@
 import {assert} from 'chai';
 
 import {expectError} from '../../conductor/events.js';
-import {getBrowserAndPages} from '../../shared/helper.js';
+import {$textContent, getBrowserAndPages} from '../../shared/helper.js';
 import {describe, it} from '../../shared/mocha-extensions.js';
 import {
   clickStartButton,
@@ -14,6 +14,7 @@ import {
   navigateToLighthouseTab,
   registerServiceWorker,
   selectMode,
+  unregisterAllServiceWorkers,
   waitForResult,
 } from '../helpers/lighthouse-helpers.js';
 
@@ -22,15 +23,24 @@ import {
 
 describe('Snapshot', async function() {
   // The tests in this suite are particularly slow
-  this.timeout(60_000);
+  if (this.timeout() !== 0) {
+    this.timeout(60_000);
+  }
 
   beforeEach(() => {
+    // https://github.com/GoogleChrome/lighthouse/issues/14572
+    expectError(/Request CacheStorage\.requestCacheNames failed/);
+
     // https://bugs.chromium.org/p/chromium/issues/detail?id=1357791
     expectError(/Protocol Error: the message with wrong session id/);
     expectError(/Protocol Error: the message with wrong session id/);
     expectError(/Protocol Error: the message with wrong session id/);
     expectError(/Protocol Error: the message with wrong session id/);
     expectError(/Protocol Error: the message with wrong session id/);
+  });
+
+  afterEach(async () => {
+    await unregisterAllServiceWorkers();
   });
 
   it('successfully returns a Lighthouse report for the page state', async () => {
@@ -61,16 +71,16 @@ describe('Snapshot', async function() {
     assert.strictEqual(lhr.gatherMode, 'snapshot');
 
     assert.deepStrictEqual(artifacts.ViewportDimensions, {
-      innerHeight: 640,
-      innerWidth: 360,
-      outerHeight: 640,
-      outerWidth: 360,
-      devicePixelRatio: 3,
+      innerHeight: 823,
+      innerWidth: 412,
+      outerHeight: 823,
+      outerWidth: 412,
+      devicePixelRatio: 1.75,
     });
 
     const {auditResults, erroredAudits, failedAudits} = getAuditsBreakdown(lhr);
-    assert.strictEqual(auditResults.length, 72);
-    assert.strictEqual(erroredAudits.length, 0);
+    assert.strictEqual(auditResults.length, 83);
+    assert.deepStrictEqual(erroredAudits, []);
     assert.deepStrictEqual(failedAudits.map(audit => audit.id), [
       'document-title',
       'html-has-lang',
@@ -83,8 +93,10 @@ describe('Snapshot', async function() {
     assert.strictEqual(lhr.audits['label'].details.items.length, 3);
 
     // No trace was collected in snapshot mode.
-    const viewTrace = await reportEl.$('.lh-button--trace');
+    const viewTrace = await $textContent('View Trace', reportEl);
     assert.strictEqual(viewTrace, null);
+    const viewOriginalTrace = await $textContent('View Original Trace', reportEl);
+    assert.strictEqual(viewOriginalTrace, null);
 
     // Ensure service worker is not cleared in snapshot mode.
     assert.strictEqual(await getServiceWorkerCount(), 1);

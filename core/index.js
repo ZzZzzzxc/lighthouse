@@ -8,15 +8,15 @@ import log from 'lighthouse-logger';
 
 import {Runner} from './runner.js';
 import {CriConnection} from './legacy/gather/connections/cri.js';
-import {Config} from './legacy/config/config.js';
+import {LegacyResolvedConfig} from './legacy/config/config.js';
 import UrlUtils from './lib/url-utils.js';
 import {Driver} from './legacy/gather/driver.js';
-import {initializeConfig} from './config/config.js';
 import {UserFlow, auditGatherSteps} from './user-flow.js';
 import {ReportGenerator} from '../report/generator/report-generator.js';
 import {startTimespanGather} from './gather/timespan-runner.js';
 import {snapshotGather} from './gather/snapshot-runner.js';
 import {navigationGather} from './gather/navigation-runner.js';
+import * as LH from '../types/lh.js';
 
 /** @typedef {import('./legacy/gather/connections/connection.js').Connection} Connection */
 
@@ -38,13 +38,13 @@ import {navigationGather} from './gather/navigation-runner.js';
  * @param {string=} url The URL to test. Optional if running in auditMode.
  * @param {LH.Flags=} flags Optional settings for the Lighthouse run. If present,
  *   they will override any settings in the config.
- * @param {LH.Config.Json=} configJSON Configuration for the Lighthouse run. If
+ * @param {LH.Config=} config Configuration for the Lighthouse run. If
  *   not present, the default config is used.
  * @param {LH.Puppeteer.Page=} page
  * @return {Promise<LH.RunnerResult|undefined>}
  */
-async function lighthouse(url, flags = {}, configJSON, page) {
-  return navigation(page, url, {config: configJSON, flags});
+async function lighthouse(url, flags = {}, config, page) {
+  return navigation(page, url, {config, flags});
 }
 
 /**
@@ -54,19 +54,19 @@ async function lighthouse(url, flags = {}, configJSON, page) {
  * @param {string=} url The URL to test. Optional if running in auditMode.
  * @param {LH.Flags=} flags Optional settings for the Lighthouse run. If present,
  *   they will override any settings in the config.
- * @param {LH.Config.Json=} configJSON Configuration for the Lighthouse run. If
+ * @param {LH.Config=} config Configuration for the Lighthouse run. If
  *   not present, the default config is used.
  * @param {Connection=} userConnection
  * @return {Promise<LH.RunnerResult|undefined>}
  */
-async function legacyNavigation(url, flags = {}, configJSON, userConnection) {
+async function legacyNavigation(url, flags = {}, config, userConnection) {
   // set logging preferences, assume quiet
   flags.logLevel = flags.logLevel || 'error';
   log.setLevel(flags.logLevel);
 
-  const config = await generateLegacyConfig(configJSON, flags);
+  const resolvedConfig = await LegacyResolvedConfig.fromJson(config, flags);
   const computedCache = new Map();
-  const options = {config, computedCache};
+  const options = {resolvedConfig, computedCache};
   const connection = userConnection || new CriConnection(flags.port, flags.hostname);
 
   // kick off a lighthouse run
@@ -88,7 +88,7 @@ async function startFlow(page, options) {
 /**
  * @param {LH.Puppeteer.Page|undefined} page
  * @param {LH.NavigationRequestor|undefined} requestor
- * @param {{config?: LH.Config.Json, flags?: LH.Flags}} [options]
+ * @param {{config?: LH.Config, flags?: LH.Flags}} [options]
  * @return {Promise<LH.RunnerResult|undefined>}
  */
 async function navigation(page, requestor, options) {
@@ -98,7 +98,7 @@ async function navigation(page, requestor, options) {
 
 /**
  * @param {LH.Puppeteer.Page} page
- * @param {{config?: LH.Config.Json, flags?: LH.Flags}} [options]
+ * @param {{config?: LH.Config, flags?: LH.Flags}} [options]
  * @return {Promise<LH.RunnerResult|undefined>}
  */
 async function snapshot(page, options) {
@@ -108,7 +108,7 @@ async function snapshot(page, options) {
 
 /**
  * @param {LH.Puppeteer.Page} page
- * @param {{config?: LH.Config.Json, flags?: LH.Flags}} [options]
+ * @param {{config?: LH.Config, flags?: LH.Flags}} [options]
  * @return {Promise<{endTimespan: () => Promise<LH.RunnerResult|undefined>}>}
  */
 async function startTimespan(page, options) {
@@ -139,39 +139,11 @@ function generateReport(result, format = 'html') {
 
 /**
  * @param {LH.UserFlow.FlowArtifacts} flowArtifacts
- * @param {LH.Config.Json} [config]
+ * @param {LH.Config} [config]
  */
 async function auditFlowArtifacts(flowArtifacts, config) {
   const {gatherSteps, name} = flowArtifacts;
   return await auditGatherSteps(gatherSteps, {name, config});
-}
-
-/**
- * Generate a Lighthouse Config.
- * @param {LH.Config.Json=} configJson Configuration for the Lighthouse run. If
- *   not present, the default config is used.
- * @param {LH.Flags=} flags Optional settings for the Lighthouse run. If present,
- *   they will override any settings in the config.
- * @param {LH.Gatherer.GatherMode=} gatherMode Gather mode used to collect artifacts. If present
- *   the config may override certain settings based on the mode.
- * @return {Promise<LH.Config.FRConfig>}
- */
-async function generateConfig(configJson, flags = {}, gatherMode = 'navigation') {
-  const {config} = await initializeConfig(gatherMode, configJson, flags);
-  return config;
-}
-
-/**
- * Generate a legacy Lighthouse Config.
- * @deprecated
- * @param {LH.Config.Json=} configJson Configuration for the Lighthouse run. If
- *   not present, the default config is used.
- * @param {LH.Flags=} flags Optional settings for the Lighthouse run. If present,
- *   they will override any settings in the config.
- * @return {Promise<Config>}
- */
-function generateLegacyConfig(configJson, flags) {
-  return Config.fromJson(configJson, flags);
 }
 
 function getAuditList() {
@@ -184,6 +156,9 @@ export default lighthouse;
 export {Audit} from './audits/audit.js';
 export {default as Gatherer} from './gather/base-gatherer.js';
 export {NetworkRecords} from './computed/network-records.js';
+export {default as defaultConfig} from './config/default-config.js';
+export {default as desktopConfig} from './config/desktop-config.js';
+export * from '../types/lh.js';
 export {
   legacyNavigation,
   startFlow,
@@ -192,8 +167,6 @@ export {
   snapshot,
   generateReport,
   auditFlowArtifacts,
-  generateConfig,
-  generateLegacyConfig,
   getAuditList,
   traceCategories,
 };

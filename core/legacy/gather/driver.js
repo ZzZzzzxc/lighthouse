@@ -8,6 +8,7 @@ import {EventEmitter} from 'events';
 
 import log from 'lighthouse-logger';
 
+import * as LH from '../../../types/lh.js';
 import {Fetcher} from '../../gather/fetcher.js';
 import {ExecutionContext} from '../../gather/driver/execution-context.js';
 import {LighthouseError} from '../../lib/lh-error.js';
@@ -15,6 +16,7 @@ import {fetchResponseBodyFromCache} from '../../gather/driver/network.js';
 import {DevtoolsMessageLog} from '../../gather/gatherers/devtools-log.js';
 import TraceGatherer from '../../gather/gatherers/trace.js';
 import {getBrowserVersion} from '../../gather/driver/environment.js';
+import {enableAsyncStacks} from '../../gather/driver/prepare.js';
 
 // Controls how long to wait for a response after sending a DevTools protocol command.
 const DEFAULT_PROTOCOL_TIMEOUT = 30000;
@@ -98,6 +100,17 @@ class Driver {
     this.targetManager = {
       rootSession: () => {
         return this.defaultSession;
+      },
+      // For legacy driver, only bother supporting access to the default execution context.
+      mainFrameExecutionContexts: () => {
+        // @ts-expect-error - undefined ids are OK for purposes of calling protocol commands like Runtime.evaluate.
+        return [/** @type {LH.Crdp.Runtime.ExecutionContextDescription} */({
+          id: undefined,
+          uniqueId: undefined,
+          origin: '',
+          name: '',
+          auxData: {isDefault: true, type: 'default', frameId: ''},
+        })];
       },
       /**
        * Bind to *any* protocol event.
@@ -406,23 +419,6 @@ class Driver {
   }
 
   /**
-   * @param {{x: number, y: number}} position
-   * @return {Promise<void>}
-   */
-  scrollTo(position) {
-    const scrollExpression = `window.scrollTo(${position.x}, ${position.y})`;
-    return this.executionContext.evaluateAsync(scrollExpression, {useIsolation: true});
-  }
-
-  /**
-   * @return {Promise<{x: number, y: number}>}
-   */
-  getScrollPosition() {
-    return this.executionContext.evaluateAsync(`({x: window.scrollX, y: window.scrollY})`,
-      {useIsolation: true});
-  }
-
-  /**
    * @param {{additionalTraceCategories?: string|null}=} settings
    * @return {Promise<void>}
    */
@@ -459,17 +455,19 @@ class Driver {
   /**
    * Begin recording devtools protocol messages.
    */
-  beginDevtoolsLog() {
+  async beginDevtoolsLog() {
+    this._disableAsyncStacks = await enableAsyncStacks(this);
     this._devtoolsLog.reset();
     this._devtoolsLog.beginRecording();
   }
 
   /**
    * Stop recording to devtoolsLog and return log contents.
-   * @return {LH.DevtoolsLog}
+   * @return {Promise<LH.DevtoolsLog>}
    */
-  endDevtoolsLog() {
+  async endDevtoolsLog() {
     this._devtoolsLog.endRecording();
+    await this._disableAsyncStacks?.();
     return this._devtoolsLog.messages;
   }
 

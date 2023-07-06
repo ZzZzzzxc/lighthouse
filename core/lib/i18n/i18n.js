@@ -123,7 +123,7 @@ const UIStrings = {
  * If `locale` isn't provided or one could not be found, DEFAULT_LOCALE is returned.
  *
  * By default any of the locales Lighthouse has strings for can be returned, but this
- * can be overriden with `possibleLocales`, useful e.g. when Lighthouse is bundled and
+ * can be overridden with `possibleLocales`, useful e.g. when Lighthouse is bundled and
  * only DEFAULT_LOCALE is available, but `possibleLocales` can be used to select a
  * locale available to be downloaded on demand.
  * @param {string|string[]=} locales
@@ -173,6 +173,11 @@ function lookupLocale(locales, possibleLocales) {
 function createIcuMessageFn(filename, fileStrings) {
   if (filename.startsWith('file://')) filename = url.fileURLToPath(filename);
 
+  // In the common case, `filename` is an absolute path that needs to be transformed
+  // to be relative to LH_ROOT. In other cases, `filename` might be the exact i18n identifier
+  // already (see: stack-packs.js, or bundled lighthouse).
+  if (path.isAbsolute(filename)) filename = path.relative(LH_ROOT, filename);
+
   /**
    * Combined so fn can access both caller's strings and i18n.UIStrings shared across LH.
    * @type {Record<string, string>}
@@ -189,8 +194,12 @@ function createIcuMessageFn(filename, fileStrings) {
     const keyname = Object.keys(mergedStrings).find(key => mergedStrings[key] === message);
     if (!keyname) throw new Error(`Could not locate: ${message}`);
 
-    const filenameToLookup = keyname in fileStrings ? filename : getModulePath(import.meta);
-    const unixStyleFilename = path.relative(LH_ROOT, filenameToLookup).replace(/\\/g, '/');
+    // `message` can be a UIString defined within the provided `fileStrings`, or it could be
+    // one of the common strings found in `i18n.UIStrings`.
+    const filenameToLookup = keyname in fileStrings ?
+      filename :
+      path.relative(LH_ROOT, getModulePath(import.meta));
+    const unixStyleFilename = filenameToLookup.replace(/\\/g, '/');
     const i18nId = `${unixStyleFilename} | ${keyname}`;
 
     return {

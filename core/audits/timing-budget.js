@@ -80,7 +80,7 @@ class TimingBudget extends Audit {
   }
 
   /**
-   * @param {Immutable<LH.Budget>} budget
+   * @param {LH.Util.Immutable<LH.Budget>} budget
    * @param {LH.Artifacts.TimingSummary} summary
    * @return {Array<BudgetItem>}
    */
@@ -164,7 +164,8 @@ class TimingBudget extends Audit {
     ];
 
     return {
-      details: Audit.makeTableDetails(headers, this.tableItems(budget, summary)),
+      details: Audit.makeTableDetails(headers, this.tableItems(budget, summary),
+      {sortedBy: ['overBudget']}),
       score: 1,
     };
   }

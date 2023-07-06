@@ -19,7 +19,7 @@ const UIStrings = {
   /** Description of a Lighthouse audit that tells the user that they should reduce the amount of time spent executing javascript and one method of doing so. This is displayed after a user expands the section to see more. No character length limits. The last sentence starting with 'Learn' becomes link text to additional documentation. */
   description: 'Consider reducing the time spent parsing, compiling, and executing JS. ' +
     'You may find delivering smaller JS payloads helps with this. ' +
-    '[Learn how to reduce Javascript execution time](https://web.dev/bootup-time/).',
+    '[Learn how to reduce Javascript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/).',
   /** Label for the total time column in a data table; entries will be the number of milliseconds spent executing per resource loaded by the page. */
   columnTotal: 'Total CPU Time',
   /** Label for a time column in a data table; entries will be the number of milliseconds spent evaluating script for every script loaded by the page. */
@@ -117,8 +117,6 @@ class BootupTime extends Audit {
       runWarnings = [str_(UIStrings.chromeExtensionsWarning)];
     }
 
-    const summary = {wastedMs: totalBootupTime};
-
     /** @type {LH.Audit.Details.Table['headings']} */
     const headings = [
       {key: 'url', valueType: 'url', label: str_(i18n.UIStrings.columnURL)},
@@ -128,7 +126,8 @@ class BootupTime extends Audit {
         label: str_(UIStrings.columnScriptParse)},
     ];
 
-    const details = BootupTime.makeTableDetails(headings, results, summary);
+    const details = BootupTime.makeTableDetails(headings, results,
+      {wastedMs: totalBootupTime, sortedBy: ['total']});
 
     const score = Audit.computeLogNormalScore(
       {p10: context.options.p10, median: context.options.median},

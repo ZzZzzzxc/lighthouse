@@ -74,7 +74,7 @@ const rawArgv = y
 // Augmenting yargs type with auto-camelCasing breaks in tsc@4.1.2 and @types/yargs@15.0.11,
 // so for now cast to add yarg's camelCase properties to type.
 const argv =
-  /** @type {Awaited<typeof rawArgv> & CamelCasify<Awaited<typeof rawArgv>>} */ (rawArgv);
+  /** @type {Awaited<typeof rawArgv> & LH.Util.CamelCasify<Awaited<typeof rawArgv>>} */ (rawArgv);
 
 const reportExcludeRegex =
   argv.reportExclude !== 'none' ? new RegExp(argv.reportExclude, 'i') : null;
@@ -143,8 +143,15 @@ async function gather() {
   const outputDir = dir(argv.name);
   if (fs.existsSync(outputDir)) {
     console.log('Collection already started - resuming.');
+  } else {
+    await mkdir(outputDir, {recursive: true});
+    fs.writeFileSync(`${outputDir}/meta.json`, JSON.stringify({
+      name: argv.name,
+      lhFlags: argv.lhFlags.split(' '),
+      urls: argv.urls,
+      n: argv.n,
+    }, null, 2));
   }
-  await mkdir(outputDir, {recursive: true});
 
   const progress = new ProgressLogger();
   progress.log('Gathering…');
@@ -167,7 +174,7 @@ async function gather() {
         `${LH_ROOT}/cli`,
         url,
         `--gather-mode=${gatherDir}`,
-        argv.lhFlags,
+        ...argv.lhFlags.split(' '),
       ]);
     }
   }
@@ -202,8 +209,8 @@ async function audit() {
           `--audit-mode=${gatherDir}`,
           `--output-path=${outputPath}`,
           '--output=json',
+          ...argv.lhFlags.split(' '),
         ];
-        if (argv.lhFlags) args.push(argv.lhFlags);
         await execFile('node', args);
       } catch (e) {
         console.error('audit error:', e);

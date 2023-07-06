@@ -7,8 +7,10 @@
 const pid = 1111;
 const tid = 222;
 const browserPid = 13725;
-const rootFrame = '3EFC2700D7BC3F4734CAF2F726EFB78C';
+const rootFrame = 'ROOT_FRAME';
 const defaultUrl = 'https://example.com/';
+const lcpNodeId = 16;
+const lcpImageUrl = 'http://www.example.com/image.png';
 
 /** @typedef {{ts: number, duration: number, children?: Array<ChildTaskDef>}} TopLevelTaskDef */
 /** @typedef {{ts: number, duration: number, url: string | undefined}} ChildTaskDef */
@@ -25,6 +27,7 @@ const defaultUrl = 'https://example.com/';
 
 /**
  * @param {TopLevelTaskDef} options
+ * @return {LH.TraceEvent}
  */
 function getTopLevelTask({ts, duration}) {
   return {
@@ -41,6 +44,7 @@ function getTopLevelTask({ts, duration}) {
 
 /**
  * @param {ChildTaskDef} options
+ * @return {LH.TraceEvent}
  */
 function getChildTask({ts, duration, url}) {
   return {
@@ -65,11 +69,13 @@ function getChildTask({ts, duration, url}) {
  * generation, e.g a trace that will result in particular long-task quiet
  * periods. Input times should be in milliseconds.
  * @param {TraceOptions} options
+ * @return {{traceEvents: LH.TraceEvent[]}}
  */
 function createTestTrace(options) {
   const frameUrl = options.frameUrl ?? defaultUrl;
   const timeOrigin = (options.timeOrigin || 0) * 1000;
 
+  /** @type {LH.TraceEvent[]} */
   const traceEvents = [{
     name: 'TracingStartedInBrowser',
     ts: timeOrigin,
@@ -77,6 +83,7 @@ function createTestTrace(options) {
     tid,
     ph: 'I',
     cat: 'disabled-by-default-devtools.timeline',
+    dur: 0,
     args: {
       data: {
         frameTreeNodeId: 6,
@@ -92,6 +99,7 @@ function createTestTrace(options) {
     tid,
     ph: 'R',
     cat: 'blink.user_timing',
+    dur: 0,
     args: {
       frame: rootFrame,
       data: {
@@ -107,6 +115,7 @@ function createTestTrace(options) {
     tid,
     ph: 'M',
     cat: '__metadata',
+    dur: 0,
     args: {name: 'CrRendererMain'},
   }, {
     // Used for identifying frame tree.
@@ -116,6 +125,7 @@ function createTestTrace(options) {
     tid,
     ph: 'I',
     cat: 'disabled-by-default-devtools.timeline',
+    dur: 0,
     args: {
       data: {frame: rootFrame, url: frameUrl, name: '', processId: pid},
     },
@@ -126,6 +136,7 @@ function createTestTrace(options) {
     tid,
     ph: 'R',
     cat: 'blink.user_timing,rail',
+    dur: 0,
     args: {frame: rootFrame},
   }, {
     name: 'firstContentfulPaint',
@@ -134,6 +145,7 @@ function createTestTrace(options) {
     tid,
     ph: 'R',
     cat: 'loading,rail,devtools.timeline',
+    dur: 0,
     args: {frame: rootFrame},
   }, {
     name: 'firstMeaningfulPaint',
@@ -142,6 +154,7 @@ function createTestTrace(options) {
     tid,
     ph: 'R',
     cat: 'loading,rail,devtools.timeline',
+    dur: 0,
     args: {frame: rootFrame},
   }];
 
@@ -154,6 +167,7 @@ function createTestTrace(options) {
         tid,
         ph: 'I',
         cat: 'disabled-by-default-devtools.timeline',
+        dur: 0,
         args: {
           data: {
             frame: childFrame.frame,
@@ -175,7 +189,34 @@ function createTestTrace(options) {
       tid,
       ph: 'R',
       cat: 'loading,rail,devtools.timeline',
-      args: {frame: rootFrame, isMainFrame: true, data: {size: 50}},
+      dur: 0,
+      args: {
+        frame: rootFrame,
+        data: {
+          isMainFrame: true,
+          nodeId: lcpNodeId,
+          size: 50,
+          type: 'image',
+        },
+      },
+    });
+
+    traceEvents.push({
+      name: 'LargestImagePaint::Candidate',
+      ts: options.largestContentfulPaint * 1000,
+      pid,
+      tid,
+      ph: 'R',
+      cat: 'loading',
+      dur: 0,
+      args: {
+        frame: rootFrame,
+        data: {
+          DOMNodeId: lcpNodeId,
+          size: 50,
+          imageUrl: lcpImageUrl,
+        },
+      },
     });
   }
 
@@ -198,4 +239,7 @@ function createTestTrace(options) {
   return {traceEvents};
 }
 
-export {createTestTrace};
+export {
+  createTestTrace,
+  rootFrame,
+};

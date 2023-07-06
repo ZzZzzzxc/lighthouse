@@ -24,6 +24,14 @@
         aria-checked="true">
       </div>
     </section>
+    <p>aria-command-name</p>
+    <section>
+      <div id="aria-command-name" role="button"></div>
+    </section>
+    <p>aria-dialog-name</p>
+    <section>
+      <div role="alertdialog" id="aria-dialog-name" aria-label=""></div>
+    </section>
     <p>aria-hidden-focus</p>
     <section>
       <div id="aria-hidden-focus" aria-hidden="true">
@@ -44,10 +52,6 @@
         <div id="aria-treeitem-name" role="treeitem"></div>
       </div>
     </section>
-    <p>aria-command-name</p>
-    <section>
-      <div id="aria-command-name" role="button"></div>
-    </section>
     <p>aria-tooltip-name</p>
     <section>
       <div id="aria-tooltip-name" role="tooltip"></div>
@@ -67,8 +71,8 @@
     <section>
       <div
         id="aria-required-children"
-        role="radiogroup">
-        <div></div>
+        role="list">
+        <div>Item</div>
       </div>
     </section>
     <p>aria-required-parent</p>
@@ -83,6 +87,12 @@
     <p>aria-roles</p>
     <section>
       <div role="foo"></div>
+    </section>
+    <p>aria-text</p>
+    <section>
+      <span role="text" id="aria-text">
+        <a href="google.com">Not announced</a>
+      </span>
     </section>
     <p>aria-valid-attr</p>
     <section>
@@ -135,6 +145,10 @@
       <div id="duplicate-id-aria"></div>
       <input type="text" aria-labelledby="duplicate-id-aria"/>
     </section>
+    <p>empty-heading</p>
+    <section>
+      <h1 id="empty-heading"></h1>
+    </section>
     <p>form-field-multiple-labels</p>
     <section>
       <label for="form-field-multiple-labels" id="label1">label1</label>
@@ -150,12 +164,23 @@
       <h1>top header</h1>
       <h3>sub-sub-header</h3>
     </section>
+    <p>identical-links-same-purpose</p>
+    <section>
+      <a id="identical-links-same-purpose-1" href="https://example.com/" aria-label="a link"></a>
+      <a id="identical-links-same-purpose-2" href="https://google.com/" aria-label="a link"></a>
+    </section>
     <p>image-alt</p>
     <section>
       <img
         id="image-alt"
         src="./bogus.jpg">
       </img>
+    </section>
+    <p>input-button-name</p>
+    <section>
+      <form action="#">
+        <input type="button" id="input-button-name" />
+      </form>
     </section>
     <p>input-image-alt</p>
     <section>
@@ -174,6 +199,19 @@
       <table id="layout-table">
       </table>
     </section>
+    <p>link-in-text-block</p>
+    <section>
+      <p>
+          paragraph text
+          <a
+            style="text-decoration: none; color: blue"
+            href="#"
+            id="link-in-text-block">
+            link text
+          </a>
+          paragraph text
+      </p>
+    </section>
     <p>link-name</p>
     <section>
       <a id="link-name" href="google.com"></a>
@@ -190,7 +228,11 @@
     </section>
     <p>object-alt</p>
     <section>
-      <object id="object-alt"></object>
+      <object id="object-alt" data="data:text/html,data"></object>
+    </section>
+    <p>select-name</p>
+    <section>
+      <select id="select-name"></select>
     </section>
     <p>tabindex</p>
     <section>
@@ -205,6 +247,11 @@
         <tr><td colspan="2">FOO</td></tr>
         <tr><td>foo</td><td>foo</td><tr>
       </table>
+    </section>
+    <p>target-size</p>
+    <section>
+      <button id="target-size-1">+</button>
+      <span role="button" tabindex="0" id="target-size-2">o</span>
     </section>
     <p>td-has-header</p>
     <section>

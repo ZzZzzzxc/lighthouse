@@ -14,7 +14,7 @@ const UIStrings = {
   /** Title of a diagnostic audit that provides detail on how long it took from starting a request to when the server started responding. This imperative title is shown to users when there is a significant amount of execution time that could be reduced. */
   failureTitle: 'Reduce initial server response time',
   /** Description of a Lighthouse audit that tells the user *why* they should reduce the amount of time it takes their server to start responding to requests. This is displayed after a user expands the section to see more. No character length limits. The last sentence starting with 'Learn' becomes link text to additional documentation. */
-  description: 'Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://web.dev/time-to-first-byte/).',
+  description: 'Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://developer.chrome.com/docs/lighthouse/performance/time-to-first-byte/).',
   /** Used to summarize the total Server Response Time duration for the primary HTML response. The `{timeInMs}` placeholder will be replaced with the time duration, shown in milliseconds (e.g. 210 ms) */
   displayValue: `Root document took {timeInMs, number, milliseconds}\xa0ms`,
 };
@@ -43,10 +43,15 @@ class ServerResponseTime extends Audit {
 
   /**
    * @param {LH.Artifacts.NetworkRequest} record
+   * @return {number|null}
    */
   static calculateResponseTime(record) {
-    const timing = record.timing;
-    return timing ? timing.receiveHeadersEnd - timing.sendEnd : 0;
+    // Lightrider does not have timings for sendEnd, but we do have this timing which should be
+    // close to the response time.
+    if (global.isLightrider && record.lrStatistics) return record.lrStatistics.requestMs;
+
+    if (!record.timing) return null;
+    return record.timing.receiveHeadersStart - record.timing.sendEnd;
   }
 
   /**
@@ -61,6 +66,10 @@ class ServerResponseTime extends Audit {
     const mainResource = await MainResource.request({devtoolsLog, URL: artifacts.URL}, context);
 
     const responseTime = ServerResponseTime.calculateResponseTime(mainResource);
+    if (responseTime === null) {
+      throw new Error('no timing found for main resource');
+    }
+
     const passed = responseTime < TOO_SLOW_THRESHOLD_MS;
     const displayValue = str_(UIStrings.displayValue, {timeInMs: responseTime});
 
@@ -70,10 +79,11 @@ class ServerResponseTime extends Audit {
       {key: 'responseTime', valueType: 'timespanMs', label: str_(i18n.UIStrings.columnTimeSpent)},
     ];
 
+    const overallSavingsMs = Math.max(responseTime - TARGET_MS, 0);
     const details = Audit.makeOpportunityDetails(
       headings,
       [{url: mainResource.url, responseTime}],
-      responseTime - TARGET_MS
+      {overallSavingsMs}
     );
 
     return {
@@ -82,6 +92,10 @@ class ServerResponseTime extends Audit {
       score: Number(passed),
       displayValue,
       details,
+      metricSavings: {
+        FCP: overallSavingsMs,
+        LCP: overallSavingsMs,
+      },
     };
   }
 }
