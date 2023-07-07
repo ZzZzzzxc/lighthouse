@@ -196,21 +196,9 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
         plugins.partialLoaders.rmGetModuleDirectory,
         plugins.partialLoaders.replaceText({
           '/* BUILD_REPLACE_BUNDLED_MODULES */': `[\n${bundledMapEntriesCode},\n]`,
-          // This package exports to default in a way that causes Rollup to get confused,
-          // resulting in MessageFormat being undefined.
-          'require(\'intl-messageformat\').default': 'require(\'intl-messageformat\')',
-          // Below we replace lighthouse-logger with a local copy, which is ES modules. Need
-          // to change every require of the package to reflect this.
-          'require(\'lighthouse-logger\');': 'require(\'lighthouse-logger\').default;',
-          // Rollup doesn't replace this, so let's manually change it to false.
-          'require.main === module': 'false',
           // TODO: Use globalThis directly.
           'global.isLightrider': 'globalThis.isLightrider',
           'global.isDevtools': 'globalThis.isDevtools',
-          // For some reason, `shim` doesn't work to force this module to return false, so instead
-          // just replace usages of it with false.
-          'esMain(import.meta)': 'false',
-          'import esMain from \'es-main\'': '',
           // By default esbuild converts `import.meta` to an empty object.
           // We need at least the url property for i18n things.
           /** @param {string} id */
