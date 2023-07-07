@@ -154,7 +154,7 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
     format: 'iife',
     charset: 'utf8',
     bundle: true,
-    // minify: opts.minify,
+    // For now, we defer to terser.
     minify: false,
     treeShaking: true,
     sourcemap: DEBUG,
@@ -238,31 +238,7 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
           build.onEnd(result => {
             if (!result.outputFiles) throw new Error();
 
-            // TODO !
-            // esbuild sees the usages of these functions in page functions (ex: see AnchorElements)
-            // and treats them as globals. Because the names are "taken" by the global, esbuild renames
-            // the actual functions (ex: to getNodeDetails2). The page functions expect a certain name, so
-            // here we undo what esbuild did.
-
-            // const replacements = [
-            //   ['getBoundingClientRect2', 'getBoundingClientRect'],
-            //   ['getElementsInDocument2', 'getElementsInDocument'],
-            //   ['getNodeDetails2', 'getNodeDetails'],
-            //   ['getRectCenterPoint2', 'getRectCenterPoint'],
-            //   ['isPositionFixed2', 'isPositionFixed'],
-            // ];
-
             let code = result.outputFiles[0].text;
-            // for (const [k, v] of replacements) {
-            //   // @ts-expect-error
-            //   if (String.prototype.replaceAll) {
-            //     // @ts-expect-error
-            //     code = code.replaceAll(k, v);
-            //   } else {
-            //     // TODO: delete when not supporting node 14
-            //     while (code.includes(k)) code = code.replace(k, v);
-            //   }
-            // }
 
             // Get rid of our extra license comments.
             // https://stackoverflow.com/a/35923766
@@ -284,31 +260,20 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
           });
         },
       },
-
-      // TODO
-      // opts.minify && rollupPlugins.terser({
-      //   ecma: 2019,
-      //   output: {
-      //     comments: (node, comment) => {
-      //       const text = comment.value;
-      //       if (text.includes('The Lighthouse Authors') && comment.line > 1) return false;
-      //       return /@ts-nocheck - Prevent tsc|@preserve|@license|@cc_on|^!/i.test(text);
-      //     },
-      //     max_line_len: 1000,
-      //   },
-      //   // The config relies on class names for gatherers.
-      //   keep_classnames: true,
-      //   // Runtime.evaluate errors if function names are elided.
-      //   keep_fnames: true,
-      // }),
     ],
   });
 
   // Ideally we'd let esbuild minify, but we need to disable variable name mangling otherwise
-  // our usage of pageFunctions breaks. For now, defer to terser.
+  // code generated dynamically to run inside the browser (pageFunctions) breaks. For example,
+  // the `truncate` function is unable to properly reference `Util`.
   let code = result.outputFiles[0].text;
   if (opts.minify) {
-    code = (await terser.minify(result.outputFiles[0].text, {mangle: false})).code;
+    code = (await terser.minify(result.outputFiles[0].text, {
+      mangle: false,
+      format: {
+        max_line_len: 1000,
+      },
+    })).code || '';
   }
 
   await fs.promises.writeFile(result.outputFiles[0].path, code);

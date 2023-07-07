@@ -515,8 +515,8 @@ function truncate(string, characterLimit) {
 
 // This is to support bundled lighthouse.
 // esbuild calls every function with a builtin `__name`, whose purpose is to store the
-// real name of the function so that esbuild can mangle it. There is no way to disable this
-// mangling, so we do not use esbuild to minify. However, this builtin is still used.
+// real name of the function so that esbuild can rename it to avoid collisions. There is no way to
+// disable this renaming.
 // Anywhere we inject dynamically generated code at runtime for the browser to process,
 // we must manually include this function (because esbuild only does so once at the top scope
 // of the bundle, which is irrelevant for code executed in the browser).

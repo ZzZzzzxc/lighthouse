@@ -133,11 +133,11 @@ async function runLighthouse(url, config, testRunnerOptions = {}) {
   const log = logs.join('') + '\n';
 
   if (workerResponse.type === 'error') {
-    new Error(`Worker returned an error: ${workerResponse.value}\nLog:\n${log}`);
+    throw new Error(`Worker returned an error: ${workerResponse.value}\nLog:\n${log}`);
   }
 
   const result = workerResponse.value;
-  if (result.type === 'error' || !result.lhr || !result.assetsDir) {
+  if (!result.lhr || !result.assetsDir) {
     throw new Error(`invalid response from worker:\n${JSON.stringify(result, null, 2)}`);
   }
 
