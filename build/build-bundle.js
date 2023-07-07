@@ -83,10 +83,6 @@ const banner = `
  * @return {Promise<void>}
  */
 async function buildBundle(entryPath, distPath, opts = {minify: true}) {
-  if (fs.existsSync(LH_ROOT + '/lighthouse-logger/node_modules')) {
-    throw new Error('delete `lighthouse-logger/node_modules` because it messes up rollup bundle');
-  }
-
   // List of paths (absolute / relative to config-helpers.js) to include
   // in bundle and make accessible via config-helpers.js `requireWrapper`.
   const dynamicModulePaths = [
@@ -115,6 +111,7 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
   const shimsObj = {
     [require.resolve('../core/legacy/gather/connections/cri.js')]:
       'export const CriConnection = {}',
+    // zlib's decompression code is very large and we don't need it.
     '__zlib-lib/inflate': `
       export function inflateInit2() {};
       export function inflate() {};
@@ -161,6 +158,7 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
     banner: {js: banner},
     // Because of page-functions!
     keepNames: true,
+    /** @type {esbuild.Plugin[]} */
     plugins: [
       plugins.replaceModules({
         ...shimsObj,
@@ -207,8 +205,8 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
       ]),
       {
         name: 'alias',
-        setup(build) {
-          build.onResolve({filter: /\.*/}, (args) => {
+        setup({onResolve}) {
+          onResolve({filter: /\.*/}, (args) => {
             /** @type {Record<string, string>} */
             const entries = {
               'debug': require.resolve('debug/src/browser.js'),
@@ -222,8 +220,8 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
       },
       {
         name: 'postprocess',
-        setup(build) {
-          build.onEnd(result => {
+        setup({onEnd}) {
+          onEnd(result => {
             if (!result.outputFiles) throw new Error();
 
             let code = result.outputFiles[0].text;
@@ -251,10 +249,16 @@ async function buildBundle(entryPath, distPath, opts = {minify: true}) {
     ],
   });
 
+  let code = result.outputFiles[0].text;
+
+  // Just make sure the above shimming worked.
+  if (code.includes('inflate_fast')) {
+    throw new Error('Expected zlib inflate code to have been removed');
+  }
+
   // Ideally we'd let esbuild minify, but we need to disable variable name mangling otherwise
   // code generated dynamically to run inside the browser (pageFunctions) breaks. For example,
   // the `truncate` function is unable to properly reference `Util`.
-  let code = result.outputFiles[0].text;
   if (opts.minify) {
     code = (await terser.minify(result.outputFiles[0].text, {
       mangle: false,
