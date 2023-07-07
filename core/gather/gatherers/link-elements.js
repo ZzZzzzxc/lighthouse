@@ -190,15 +190,6 @@ class LinkElements extends FRGatherer {
   }
 
   /**
-   * @param {LH.Gatherer.PassContext} context
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts['LinkElements']>}
-   */
-  async afterPass(context, loadData) {
-    return this._getArtifact({...context, dependencies: {}}, loadData.devtoolsLog);
-  }
-
-  /**
    * @param {LH.Gatherer.FRTransitionalContext<'DevtoolsLog'>} context
    * @return {Promise<LH.Artifacts['LinkElements']>}
    */

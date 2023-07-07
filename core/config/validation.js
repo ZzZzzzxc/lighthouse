@@ -9,14 +9,6 @@ import BaseFRGatherer from '../gather/base-gatherer.js';
 import * as i18n from '../lib/i18n/i18n.js';
 
 /**
- * @param {LH.Config.GathererDefn | LH.Config.AnyFRGathererDefn} gathererDefn
- * @return {gathererDefn is LH.Config.AnyFRGathererDefn}
- */
-function isFRGathererDefn(gathererDefn) {
-  return 'meta' in gathererDefn.instance;
-}
-
-/**
  * Determines if the artifact dependency direction is valid. The dependency's minimum supported mode
  * must be less than or equal to the dependent's.
  *
@@ -309,7 +301,6 @@ function throwInvalidArtifactDependency(artifactId, dependencyKey) {
 }
 
 export {
-  isFRGathererDefn,
   isValidArtifactDependency,
   assertValidPluginName,
   assertValidFRGatherer,

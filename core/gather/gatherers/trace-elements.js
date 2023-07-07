@@ -324,17 +324,6 @@ class TraceElements extends FRGatherer {
   async getArtifact(context) {
     return this._getArtifact(context, context.dependencies.Trace);
   }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts.TraceElement[]>}
-   */
-  async afterPass(passContext, loadData) {
-    const context = {...passContext, dependencies: {}};
-    await this.stopInstrumentation(context);
-    return this._getArtifact(context, loadData.trace);
-  }
 }
 
 export default TraceElements;

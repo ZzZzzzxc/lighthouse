@@ -7,14 +7,11 @@
 import jestMock from 'jest-mock';
 
 import ImageElements from '../../../gather/gatherers/image-elements.js';
-import {NetworkRecorder} from '../../../lib/network-recorder.js';
 import {createMockContext, createMockDriver, createMockSession} from
   '../mock-driver.js';
 import {fnAny, readJson, timers} from '../../test-utils.js';
 
 const devtoolsLog = readJson('../../fixtures/traces/lcp-m78.devtools.log.json', import.meta);
-
-const networkRecords = NetworkRecorder.recordsFromLogs(devtoolsLog);
 
 /**
  * @param {Partial<LH.Artifacts.ImageElement>=} partial
@@ -298,40 +295,8 @@ describe('.collectExtraDetails', () => {
   });
 });
 
-describe('FR compat (image-elements)', () => {
-  it('uses loadData in legacy mode', async () => {
-    const gatherer = new ImageElements();
-    const mockContext = createMockContext();
-    mockContext.driver.defaultSession.sendCommand
-      .mockResponse('DOM.enable')
-      .mockResponse('CSS.enable')
-      .mockResponse('DOM.getDocument')
-      .mockResponse('DOM.pushNodeByPathToFrontend', {nodeId: 1})
-      .mockResponse('CSS.getMatchedStylesForNode', {attributesStyle: {cssProperties: [
-        {name: 'width', value: '200px'},
-        {name: 'height', value: '200px'},
-      ]}})
-      .mockResponse('CSS.disable')
-      .mockResponse('DOM.disable');
-    mockContext.driver._executionContext.evaluate.mockReturnValue([mockElement()]);
-
-    const artifact = await gatherer.afterPass(mockContext.asLegacyContext(), {
-      devtoolsLog,
-      networkRecords,
-    });
-
-    expect(artifact).toEqual([
-      mockElement({
-        cssEffectiveRules: {
-          width: '200px',
-          height: '200px',
-          aspectRatio: null,
-        },
-      }),
-    ]);
-  });
-
-  it('uses dependencies in FR', async () => {
+describe('ImageElements', () => {
+  it('uses dependencies to get image elements', async () => {
     const gatherer = new ImageElements();
     const mockContext = createMockContext();
     mockContext.driver.defaultSession.sendCommand

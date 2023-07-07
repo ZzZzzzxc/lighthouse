@@ -140,15 +140,6 @@ class ResponseCompression extends FRGatherer {
     const networkRecords = await NetworkRecords.request(devtoolsLog, context);
     return this._getArtifact(context, networkRecords);
   }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts['ResponseCompression']>}
-   */
-  async afterPass(passContext, loadData) {
-    return this._getArtifact({...passContext, dependencies: {}}, loadData.networkRecords);
-  }
 }
 
 export default ResponseCompression;

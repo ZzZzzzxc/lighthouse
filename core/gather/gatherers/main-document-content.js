@@ -39,15 +39,6 @@ class MainDocumentContent extends FRGatherer {
     const devtoolsLog = context.dependencies.DevtoolsLog;
     return this._getArtifact(context, devtoolsLog);
   }
-
-  /**
-   * @param {LH.Gatherer.PassContext} passContext
-   * @param {LH.Gatherer.LoadData} loadData
-   * @return {Promise<LH.Artifacts['MainDocumentContent']>}
-   */
-  async afterPass(passContext, loadData) {
-    return this._getArtifact({...passContext, dependencies: {}}, loadData.devtoolsLog);
-  }
 }
 
 export default MainDocumentContent;
