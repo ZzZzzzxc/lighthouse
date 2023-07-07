@@ -286,6 +286,7 @@ class TraceElements extends FRGatherer {
           response = await session.sendCommand('Runtime.callFunctionOn', {
             objectId,
             functionDeclaration: `function () {
+              ${pageFunctions.esbuildFunctionNameStubString}
               ${getNodeDetailsData.toString()};
               ${pageFunctions.getNodeDetails};
               return getNodeDetailsData.call(this);
