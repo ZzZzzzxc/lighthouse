@@ -108,7 +108,6 @@ class ExecutionContext {
         ${ExecutionContext._cachedNativesPreamble};
         globalThis.__lighthouseExecutionContextUniqueIdentifier =
           ${uniqueExecutionContextIdentifier};
-        var s=(r,e)=>Object.defineProperty(r,"name",{value:e,configurable:!0});
         ${pageFunctions.esbuildFunctionNameStubString}
         return new Promise(function (resolve) {
           return Promise.resolve()
