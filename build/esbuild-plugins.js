@@ -172,11 +172,12 @@ function replaceModules(replaceMap, opts = {disableUnusedError: false}) {
 }
 
 /**
- * @param {string[]=} builtinList
+ * @param {{exclude?: string[]}=} opts
  * @return {esbuild.Plugin}
  */
-function ignoreBuiltins(builtinList) {
-  if (!builtinList) builtinList = [...builtin];
+function ignoreBuiltins(opts = {}) {
+  let builtinList = [...builtin];
+  if (opts.exclude) builtinList = builtinList.filter(b => !opts.exclude.includes(b));
   const builtinRegexp = new RegExp(`^(${builtinList.join('|')})\\/?(.+)?`);
   return {
     name: 'ignore-builtins',

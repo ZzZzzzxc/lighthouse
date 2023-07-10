@@ -34,6 +34,12 @@ async function main() {
             };
           };
         `,
+        'assert/strict': `
+          const equal = (a, b)  => {
+            if (a !== b) throw new Error('expected: ' + b + ' but got: ' + a);
+          };
+          export default {equal};
+        `,
       }),
       plugins.bulkLoader([
         plugins.partialLoaders.inlineFs({verbose: Boolean(process.env.DEBUG)}),
