@@ -35,10 +35,12 @@ async function main() {
           };
         `,
         'assert/strict': `
-          const equal = (a, b)  => {
+          export const equal = (a, b)  => {
             if (a !== b) throw new Error('expected: ' + b + ' but got: ' + a);
           };
-          export default {equal};
+          export default (val, msg) => {
+            if (!val) throw new Error('assertion failed: ' + msg);
+          };
         `,
       }),
       plugins.bulkLoader([
