@@ -247,6 +247,7 @@ function umd(moduleName) {
         }
 
         const umdCode = generateUMD(result.outputFiles[0].text, moduleName);
+        // @ts-expect-error build-viewer needs to extract the umd bundle as a string.
         result.outputFiles[0].textUmd = umdCode;
         if (originalWrite) {
           await fs.promises.writeFile(result.outputFiles[0].path, umdCode);

@@ -33,6 +33,7 @@ async function buildReportGenerator() {
     ],
   });
 
+  // @ts-expect-error placed here by the umd plugin.
   return result.outputFiles[0].textUmd;
 }
 
