@@ -218,10 +218,40 @@ function generateUMD(iifeCode, moduleName) {
 `;
 }
 
+/**
+ * @param {string} moduleName
+ * @return {esbuild.Plugin}
+ */
+function umd(moduleName) {
+  return {
+    name: 'umd',
+    setup(build) {
+      if (build.initialOptions.globalName) {
+        throw new Error('Using the umd plugin requires not setting the globalName');
+      }
+      build.initialOptions.globalName = 'umdExports';
+
+      if (build.initialOptions.format) {
+        throw new Error('Using the umd plugin requires not setting the format');
+      }
+      build.initialOptions.format = 'iife';
+
+      build.onEnd(async (result) => {
+        if (result.outputFiles?.length !== 1) {
+          throw new Error('unexpected number of output files');
+        }
+
+        const umdCode = generateUMD(result.outputFiles[0].text, moduleName);
+        await fs.promises.writeFile(result.outputFiles[0].path, umdCode);
+      });
+    },
+  };
+}
+
 export {
   partialLoaders,
   bulkLoader,
   replaceModules,
   ignoreBuiltins,
-  generateUMD,
+  umd,
 };

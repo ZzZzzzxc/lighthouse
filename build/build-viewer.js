@@ -18,11 +18,10 @@ async function buildReportGenerator() {
   const result = await esbuild.build({
     entryPoints: ['report/generator/report-generator.js'],
     write: false,
-    format: 'iife',
-    globalName: 'umdExports',
     bundle: true,
     minify: !process.env.DEBUG,
     plugins: [
+      plugins.umd('ReportGenerator'),
       plugins.replaceModules({
         [`${LH_ROOT}/report/generator/flow-report-assets.js`]: 'export const flowReportAssets = {}',
       }),
@@ -34,8 +33,7 @@ async function buildReportGenerator() {
     ],
   });
 
-  const code = plugins.generateUMD(result.outputFiles[0].text, 'ReportGenerator');
-  return code;
+  return result.outputFiles[0].text;
 }
 
 /**

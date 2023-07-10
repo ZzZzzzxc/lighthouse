@@ -31,15 +31,14 @@ fs.mkdirSync(distDir, {recursive: true});
 writeFile('report-generator.mjs.d.ts', 'export {}');
 
 async function buildReportGenerator() {
-  const result = await esbuild.build({
+  await esbuild.build({
     entryPoints: ['report/generator/report-generator.js'],
     outfile: bundleOutFile,
     write: false,
-    format: 'iife', // really umd! see plugins.generateUMD
-    globalName: 'umdExports',
     bundle: true,
     minify: false,
     plugins: [
+      plugins.umd('ReportGenerator'),
       plugins.replaceModules({
         [`${LH_ROOT}/report/generator/flow-report-assets.js`]: 'export const flowReportAssets = {}',
       }),
@@ -50,10 +49,6 @@ async function buildReportGenerator() {
       plugins.ignoreBuiltins(),
     ],
   });
-
-  // TODO: plugin this.
-  const code = plugins.generateUMD(result.outputFiles[0].text, 'ReportGenerator');
-  await fs.promises.writeFile(result.outputFiles[0].path, code);
 }
 
 await buildReportGenerator();

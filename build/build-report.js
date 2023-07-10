@@ -4,8 +4,6 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import fs from 'fs';
-
 import esbuild from 'esbuild';
 import esMain from 'es-main';
 
@@ -130,15 +128,14 @@ export const format = {registerLocaleData, hasLocale};
 }
 
 async function buildUmdBundle() {
-  const result = await esbuild.build({
+  await esbuild.build({
     entryPoints: ['report/clients/bundle.js'],
     outfile: 'dist/report/bundle.umd.js',
     write: false,
-    format: 'iife', // really umd! see plugins.generateUMD
-    globalName: 'umdExports',
     bundle: true,
     minify: false,
     plugins: [
+      plugins.umd('report'),
       plugins.replaceModules({
         [`${LH_ROOT}/shared/localization/locales.js`]: 'export const locales = {}',
       }),
@@ -146,9 +143,6 @@ async function buildUmdBundle() {
       buildReportBulkLoader,
     ],
   });
-
-  const code = plugins.generateUMD(result.outputFiles[0].text, 'report');
-  await fs.promises.writeFile(result.outputFiles[0].path, code);
 }
 
 async function main() {
