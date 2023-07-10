@@ -203,18 +203,36 @@ function ignoreBuiltins(opts = {}) {
  * @return {string}
  */
 function generateUMD(iifeCode, moduleName) {
+  const moduleComponents = moduleName.split('.');
+  const moduleLastName = moduleComponents[moduleComponents.length - 1];
+  if (moduleComponents.length > 2) {
+    throw new Error('only one level of modules is supported currently');
+  }
+  const initParentModules = moduleComponents.length === 2 ?
+    `root.${moduleComponents[0]} = root.${moduleComponents[0]} || {}` :
+    '';
+  const initModule = moduleComponents.length === 2 ?
+    `root.${moduleComponents[0]}.${moduleComponents[1]} = factory();` :
+    `root.${moduleName} = factory();`;
+  // TODO: we need to change `Lighthouse.ReportGenerator.ReportGenerator` to `Lighthouse.ReportGenerator` in CDT.
+  const devtoolsHack = moduleName === 'Lighthouse.ReportGenerator' ? 
+    'root.Lighthouse.ReportGenerator.ReportGenerator = root.Lighthouse.ReportGenerator;' :
+    '';
+
   return `(function(root, factory) {
   if (typeof define === "function" && define.amd) {
     define(factory);
   } else if (typeof module === "object" && module.exports) {
     module.exports = factory();
   } else {
-    root.${moduleName} = factory();
+    ${initParentModules}
+    ${initModule}
+    ${devtoolsHack}
   }
 }(typeof self !== "undefined" ? self : this, function() {
   "use strict";
   ${iifeCode.replace('"use strict";\n', '')};
-  return umdExports.${moduleName} ?? umdExports;
+  return umdExports.${moduleLastName} ?? umdExports;
 }));
 `;
 }

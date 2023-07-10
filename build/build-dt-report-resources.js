@@ -37,7 +37,7 @@ async function buildReportGenerator() {
     bundle: true,
     minify: false,
     plugins: [
-      plugins.umd('ReportGenerator'),
+      plugins.umd('Lighthouse.ReportGenerator'),
       plugins.replaceModules({
         [`${LH_ROOT}/report/generator/flow-report-assets.js`]: 'export const flowReportAssets = {}',
       }),
