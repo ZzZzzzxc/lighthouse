@@ -35,15 +35,13 @@ async function main() {
           };
         `,
         'assert/strict': `
-          export const equal = (a, b)  => {
-            if (a !== b) throw new Error('expected: ' + b + ' but got: ' + a);
-          };
-          export const strictEqual = (a, b)  => {
-            if (a !== b) throw new Error('expected: ' + b + ' but got: ' + a);
-          };
-          export default (val, msg) => {
+          const assertFn = (val, msg) => {
             if (!val) throw new Error('assertion failed: ' + msg);
           };
+          assertFn.equal = assertFn.strictEqual = (a, b)  => {
+            if (a !== b) throw new Error('expected: ' + b + ' but got: ' + a);
+          };
+          export default assertFn;
         `,
       }),
       plugins.bulkLoader([
