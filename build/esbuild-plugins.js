@@ -177,7 +177,9 @@ function replaceModules(replaceMap, opts = {disableUnusedError: false}) {
  */
 function ignoreBuiltins(opts = {}) {
   let builtinList = [...builtin];
-  if (opts.exclude) builtinList = builtinList.filter(b => !opts.exclude.includes(b));
+  if (opts.exclude) {
+    builtinList = builtinList.filter(b => !opts?.exclude?.includes(b));
+  }
   const builtinRegexp = new RegExp(`^(${builtinList.join('|')})\\/?(.+)?`);
   return {
     name: 'ignore-builtins',
@@ -215,7 +217,7 @@ function generateUMD(iifeCode, moduleName) {
     `root.${moduleComponents[0]}.${moduleComponents[1]} = factory();` :
     `root.${moduleName} = factory();`;
   // TODO: we need to change `Lighthouse.ReportGenerator.ReportGenerator` to `Lighthouse.ReportGenerator` in CDT.
-  const devtoolsHack = moduleName === 'Lighthouse.ReportGenerator' ? 
+  const devtoolsHack = moduleName === 'Lighthouse.ReportGenerator' ?
     'root.Lighthouse.ReportGenerator.ReportGenerator = root.Lighthouse.ReportGenerator;' :
     '';
 
