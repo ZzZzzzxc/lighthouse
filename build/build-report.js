@@ -131,7 +131,6 @@ async function buildUmdBundle() {
   await esbuild.build({
     entryPoints: ['report/clients/bundle.js'],
     outfile: 'dist/report/bundle.umd.js',
-    write: false,
     bundle: true,
     minify: false,
     plugins: [

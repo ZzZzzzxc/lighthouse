@@ -34,7 +34,6 @@ async function buildReportGenerator() {
   await esbuild.build({
     entryPoints: ['report/generator/report-generator.js'],
     outfile: bundleOutFile,
-    write: false,
     bundle: true,
     minify: false,
     plugins: [

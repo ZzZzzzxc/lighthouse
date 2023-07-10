@@ -31,7 +31,6 @@ async function buildReportGenerator() {
   await esbuild.build({
     entryPoints: ['report/generator/report-generator.js'],
     outfile: 'dist/lightrider/report-generator-bundle.js',
-    write: false,
     bundle: true,
     minify: false,
     plugins: [

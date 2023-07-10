@@ -33,7 +33,7 @@ async function buildReportGenerator() {
     ],
   });
 
-  return result.outputFiles[0].text;
+  return result.outputFiles[0].textUmd;
 }
 
 /**

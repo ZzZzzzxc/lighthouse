@@ -226,13 +226,18 @@ function umd(moduleName) {
   return {
     name: 'umd',
     setup(build) {
+      // We _must_ disable the write option so that `result.outputFiles` is set.
+      // Node API defaults to false.
+      const originalWrite = build.initialOptions.write ?? true;
+      build.initialOptions.write = false;
+
       if (build.initialOptions.globalName) {
-        throw new Error('Using the umd plugin requires not setting the globalName');
+        throw new Error('Using the umd plugin requires not setting `globalName`');
       }
       build.initialOptions.globalName = 'umdExports';
 
       if (build.initialOptions.format) {
-        throw new Error('Using the umd plugin requires not setting the format');
+        throw new Error('Using the umd plugin requires not setting `format`');
       }
       build.initialOptions.format = 'iife';
 
@@ -242,7 +247,10 @@ function umd(moduleName) {
         }
 
         const umdCode = generateUMD(result.outputFiles[0].text, moduleName);
-        await fs.promises.writeFile(result.outputFiles[0].path, umdCode);
+        result.outputFiles[0].textUmd = umdCode;
+        if (originalWrite) {
+          await fs.promises.writeFile(result.outputFiles[0].path, umdCode);
+        }
       });
     },
   };
