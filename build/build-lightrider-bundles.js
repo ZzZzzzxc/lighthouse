@@ -38,10 +38,6 @@ async function buildReportGenerator() {
       plugins.umd('ReportGenerator'),
       plugins.replaceModules({
         [`${LH_ROOT}/report/generator/flow-report-assets.js`]: 'export const flowReportAssets = {}',
-        // 'fs': 'export default {}',
-        // 'module': 'export function createRequire(){}',
-        // 'path': 'export default {}',
-        // 'url': 'export default {}',
       }),
       plugins.bulkLoader([
         plugins.partialLoaders.inlineFs({verbose: Boolean(process.env.DEBUG)}),
@@ -65,7 +61,6 @@ async function buildStaticServerBundle() {
         plugins.partialLoaders.rmGetModuleDirectory,
       ]),
       plugins.ignoreBuiltins(),
-      // rollupPlugins.nodeResolve(), // TODO ?
     ],
     external: ['mime-types', 'glob'],
   });

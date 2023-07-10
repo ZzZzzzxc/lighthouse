@@ -8,6 +8,7 @@ import esbuild from 'esbuild';
 
 import * as plugins from './esbuild-plugins.js';
 import {LH_ROOT} from '../root.js';
+import {nodeModulesPolyfillPlugin} from '../third-party/esbuild-plugins-polyfills/esbuild-polyfills.js';
 
 const distDir = `${LH_ROOT}/dist`;
 const bundleOutFile = `${distDir}/smokehouse-bundle.js`;
@@ -38,6 +39,7 @@ async function main() {
         plugins.partialLoaders.inlineFs({verbose: Boolean(process.env.DEBUG)}),
         plugins.partialLoaders.rmGetModuleDirectory,
       ]),
+      nodeModulesPolyfillPlugin(),
       plugins.ignoreBuiltins(),
     ],
   });
