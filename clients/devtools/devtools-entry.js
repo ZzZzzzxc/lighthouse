@@ -16,9 +16,6 @@ import {lookupLocale} from '../../core/lib/i18n/i18n.js';
 import {registerLocaleData, getCanonicalLocales} from '../../shared/localization/format.js';
 import * as constants from '../../core/config/constants.js';
 
-// import {pageFunctions} from '../../core/lib/page-functions.js';
-// console.log(pageFunctions);
-
 /** @typedef {import('../../core/legacy/gather/connections/connection.js')} Connection */
 
 // Rollup seems to overlook some references to `Buffer`, so it must be made explicit.

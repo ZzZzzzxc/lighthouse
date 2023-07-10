@@ -7,7 +7,6 @@ import escapeStringRegexp from 'escape-string-regexp';
 import {getModules as builtinsPolyfills} from 'rollup-plugin-polyfill-node/dist/modules.js';
 import polyfillLib from 'rollup-plugin-polyfill-node/dist/polyfills.js';
 
-// import { NodeResolvePlugin } from '@esbuild-plugins/node-resolve'
 const NAME = 'node-modules-polyfills';
 const NAMESPACE = NAME;
 
