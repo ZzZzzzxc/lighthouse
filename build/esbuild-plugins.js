@@ -213,7 +213,7 @@ function generateUMD(iifeCode, moduleName) {
 }(typeof self !== "undefined" ? self : this, function() {
   "use strict";
   ${iifeCode.replace('"use strict";\n', '')};
-  return umdExports;
+  return umdExports.${moduleName} ?? umdExports;
 }));
 `;
 }
