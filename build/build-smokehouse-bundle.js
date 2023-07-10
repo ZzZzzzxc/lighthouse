@@ -34,14 +34,10 @@ async function main() {
             };
           };
         `,
+        // Our node modules polyfill plugin does not support assert/strict.
         'assert/strict': `
-          const assertFn = (val, msg) => {
-            if (!val) throw new Error('assertion failed: ' + msg);
-          };
-          assertFn.equal = assertFn.strictEqual = (a, b)  => {
-            if (a !== b) throw new Error('expected: ' + b + ' but got: ' + a);
-          };
-          export default assertFn;
+          import assert from 'assert';
+          export default assert;
         `,
       }),
       plugins.bulkLoader([
