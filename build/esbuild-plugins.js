@@ -45,7 +45,6 @@ const partialLoaders = {
             replaceWith = v;
           }
 
-          // @ts-expect-error
           code = code.replaceAll(k, replaceWith);
         }
 
@@ -96,7 +95,7 @@ function bulkLoader(partialLoaders) {
  *
  * - If the module is a file on disk, the path MUST be absolute.
  * - Bare builtin specifiers (ex: 'fs', 'path') work too.
- * - Other loaders may give a resolved path that doesn't reference a filepath–
+ * - Other loaders may give a resolved path that doesn't reference a filepath.
  * - In all cases where a module is replaced, no other loaders will process that module.
  *   If this is ever problematic, this plugin should be converted to be a partial loader.
  * - This plugin should always be the first loader plugin.
@@ -126,26 +125,19 @@ function replaceModules(replaceMap, opts = {disableUnusedError: false}) {
       // Capture modules of interest and resolve them to their absolute paths.
       // This handles real-files on disk, and builtin specifiers.
       build.onResolve({filter: /.*/}, (args) => {
-        // const isBuiltin = builtin.includes(args.path);
-        // TODO: delete, right?
-        // if (!isBuiltin && args.resolveDir.includes('node_modules')) return;
-
-        // `import.meta.resolve` would be amazing here!
-        // ex: 'puppeteer-core' or 'pako/lib/zlib/inflate.js'
-        // const isPackageSpecifier = !(args.path.startsWith('/') || args.path.startsWith('.'));
-        // const resolvedPath = isBuiltin || isPackageSpecifier ?
-        //   args.path :
-        //   path.resolve(args.resolveDir, args.path);
         let resolvedPath;
         try {
           resolvedPath = require.resolve(args.path, {paths: [args.resolveDir]});
         } catch {
-          // We should append .js and .ts and .tsx to try and file the correct file...
+          // We should append .js and .ts and .tsx to try and find the correct file...
           // but we aren't shimming such modules at the moment, so whatever.
           return;
         }
+
+        // `resolvedPath` is now either an absolute path on disk, or a builtin module (like `url`).
         if (!(resolvedPath in replaceMap)) return;
 
+        // Put everything we see here into our namespace.
         return {path: resolvedPath, namespace: 'replace-modules'};
       });
 
@@ -156,10 +148,11 @@ function replaceModules(replaceMap, opts = {disableUnusedError: false}) {
         return {contents: replaceMap[args.path], resolveDir: path.dirname(args.path)};
       });
 
-      // Handle the third case - when the module i
-      // Note that if there is a match here, that means the module is something that could not
-      // be `require.resolve`'d above, ie. a fake resolved path from some other plugin.
+      // Handle the third case - when a module is created by some other plugin, and the user of this
+      // plugin wishes to replace it.
       build.onLoad({filter: /.*/}, async (args) => {
+        // The `onResolve` hook moved all the real modules (builtins and real files on disk) to the `replace-modules`
+        // namespace. What remains here are modules that were injected by other plugins. Example: __zlib-lib/inflate
         if (args.path in replaceMap) {
           modulesNotSeen.delete(args.path);
           return {contents: replaceMap[args.path], resolveDir: path.dirname(args.path)};
