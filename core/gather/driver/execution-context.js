@@ -156,6 +156,25 @@ class ExecutionContext {
   }
 
   /**
+   * Serializes an array of functions or strings.
+   *
+   * Also makes sure that an esbuild-bundled version of Lighthouse will
+   * continue to create working code to be executed within the browser.
+   * @param {Array<Function|string>=} deps
+   * @return {string}
+   */
+  _serializeDeps(deps) {
+    deps = [pageFunctions.esbuildFunctionNameStubString, ...deps || []];
+    return deps.map(dep => {
+      if (typeof dep === 'function') {
+        return `const ${dep.name} = ${dep}`;
+      } else {
+        return dep;
+      }
+    }).join('\n');
+  }
+
+  /**
    * Note: Prefer `evaluate` instead.
    * Evaluate an expression in the context of the current page. If useIsolation is true, the expression
    * will be evaluated in a content script that has access to the page's DOM but whose JavaScript state
@@ -197,13 +216,7 @@ class ExecutionContext {
    */
   evaluate(mainFn, options) {
     const argsSerialized = ExecutionContext.serializeArguments(options.args);
-    const depsSerialized = (options.deps || []).map(dep => {
-      if (typeof dep === 'function') {
-        return `const ${dep.name} = ${dep}`;
-      } else {
-        return dep;
-      }
-    }).join('\n');
+    const depsSerialized = this._serializeDeps(options.deps);
 
     const expression = `(() => {
       ${depsSerialized}
@@ -223,13 +236,7 @@ class ExecutionContext {
    */
   async evaluateOnNewDocument(mainFn, options) {
     const argsSerialized = ExecutionContext.serializeArguments(options.args);
-    const depsSerialized = (options.deps || []).map(dep => {
-      if (typeof dep === 'function') {
-        return `const ${dep.name} = ${dep}`;
-      } else {
-        return dep;
-      }
-    }).join('\n');
+    const depsSerialized = this._serializeDeps(options.deps);
 
     const expression = `(() => {
       ${ExecutionContext._cachedNativesPreamble};
