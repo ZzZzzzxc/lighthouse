@@ -234,7 +234,7 @@ const fetch = globalThis.__nativeFetch || globalThis.fetch;
         return new Promise(function (resolve) {
           return Promise.resolve()
             .then(_ => (() => {
-
+      var __name=(fn)=>fn;
       return (function main(value) {
       return value;
     })(1);
@@ -274,7 +274,7 @@ const fetch = globalThis.__nativeFetch || globalThis.fetch;
 
     const code = mockFn.mock.calls[0][0];
     expect(trimTrailingWhitespace(code)).toBe(`(() => {
-
+      var __name=(fn)=>fn;
       return (function mainFn(value) {
       return value;
     })(1);
@@ -297,7 +297,7 @@ const fetch = globalThis.__nativeFetch || globalThis.fetch;
 
     const code = mockFn.mock.calls[0][0];
     expect(trimTrailingWhitespace(code)).toBe(`(() => {
-
+      var __name=(fn)=>fn;
       return ((value) => {
       return value;
     })(1);
@@ -339,7 +339,8 @@ const fetch = globalThis.__nativeFetch || globalThis.fetch;
 
     const code = mockFn.mock.calls[0][0];
     expect(trimTrailingWhitespace(code)).toEqual(`(() => {
-      const abs = function abs(val) {
+      var __name=(fn)=>fn;
+const abs = function abs(val) {
       return Math.abs(val);
     }
 const square = function square(val) {
