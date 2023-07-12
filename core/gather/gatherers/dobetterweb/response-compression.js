@@ -95,7 +95,7 @@ class ResponseCompression extends FRGatherer {
    * @param {LH.Artifacts.NetworkRequest[]} networkRecords
    * @return {Promise<LH.Artifacts['ResponseCompression']>}
    */
-  async _getArtifact(context, networkRecords) {
+  async getCompressibleRecords(context, networkRecords) {
     const session = context.driver.defaultSession;
     const textRecords = ResponseCompression.filterUnoptimizedResponses(networkRecords);
 
@@ -138,7 +138,7 @@ class ResponseCompression extends FRGatherer {
   async getArtifact(context) {
     const devtoolsLog = context.dependencies.DevtoolsLog;
     const networkRecords = await NetworkRecords.request(devtoolsLog, context);
-    return this._getArtifact(context, networkRecords);
+    return this.getCompressibleRecords(context, networkRecords);
   }
 }
 
