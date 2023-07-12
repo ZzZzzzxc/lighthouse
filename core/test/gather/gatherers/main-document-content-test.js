@@ -13,7 +13,7 @@ const devtoolsLog = readJson('../../fixtures/traces/lcp-m78.devtools.log.json', 
 const URL = getURLArtifactFromDevtoolsLog(devtoolsLog);
 
 describe('MainDocumentContent', () => {
-  it('uses dependencies', async () => {
+  it('returns response content', async () => {
     const gatherer = new MainDocumentContent();
     const mockContext = createMockContext();
     mockContext.baseArtifacts.URL = URL;
