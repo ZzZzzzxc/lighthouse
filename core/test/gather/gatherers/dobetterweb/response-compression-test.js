@@ -145,8 +145,9 @@ describe('Optimized responses', () => {
     expect(artifact[0].gzipSize).toEqual(26);
   });
 
-  it('recovers from driver errors', async () => {
-    mocks.networkMock.fetchResponseBodyFromCache.mockRejectedValue(new Error('Failed'));
+  it('recovers from cache ejection errors', async () => {
+    mocks.networkMock.fetchResponseBodyFromCache.mockRejectedValue(
+      new Error('No resource with given identifier found'));
     const artifact = await gatherer._getArtifact(context, networkRecords);
     expect(artifact).toHaveLength(2);
     expect(artifact[0].resourceSize).toEqual(6);
